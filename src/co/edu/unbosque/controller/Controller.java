@@ -15,7 +15,7 @@ public class Controller {
 	MimeMessage mensaje;
 	
 	public Controller() {
-		sendEmail("juosmas@unbosque.edu.co");
+		sendEmail("natalia.rodriguez@tars.dev");
 	}
 
 	public void sendEmail(String correo){

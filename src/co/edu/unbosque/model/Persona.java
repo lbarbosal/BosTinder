@@ -1,7 +1,5 @@
 package co.edu.unbosque.model;
 
-import java.util.Date;
-
 public class Persona {
 	private int id;
 	private String nombre;
