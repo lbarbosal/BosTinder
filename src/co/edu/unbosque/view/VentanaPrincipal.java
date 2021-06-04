@@ -8,12 +8,12 @@ public class VentanaPrincipal extends JFrame {
 	
 	private ViewInicio pInicio;
 	private ViewRegistro pRegistro;
-	
+	private ViewConocer pConocer;
 	
 	public VentanaPrincipal() {
 		
 		setTitle("Bostinder");
-		setSize(600,600);
+		setSize(616,638);
 		setBackground(new Color(245,213,215));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
@@ -28,12 +28,18 @@ public class VentanaPrincipal extends JFrame {
 		pInicio.setBackground(new Color(245,213,215));
 		pInicio.setVisible(false);
 		getContentPane().add(pInicio);
-		System.out.println("inicio");
+		
 		pRegistro= new ViewRegistro();
 		pRegistro.setBounds(0,0,600,600);
 		pRegistro.setBackground(new Color(245,213,215));
 		pRegistro.setVisible(true);
 		getContentPane().add(pRegistro);
+		
+		pConocer= new ViewConocer();
+		pConocer.setBounds(0,0,600,600);
+		pConocer.setBackground(new Color(204,0,0));
+		pConocer.setVisible(false);
+		getContentPane().add(pConocer);
 		
 	}
 

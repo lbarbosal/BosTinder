@@ -8,14 +8,22 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import co.edu.unbosque.view.VentanaPrincipal;
+
 public class Controller {
+	private VentanaPrincipal vista;
 	final String username = "anatalia1287@gmail.com";
 	final String password = "butqjmpsrcvekwms";
 	Properties propiedad;
 	MimeMessage mensaje;
 	
 	public Controller() {
-		sendEmail("natalia.rodriguez@tars.dev");
+		iniciarAplicacion();
+	}
+	
+	public void iniciarAplicacion(){
+		vista = new VentanaPrincipal();
+		vista.setVisible(true);
 	}
 
 	public void sendEmail(String correo){

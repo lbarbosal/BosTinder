@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
+import javax.swing.border.MatteBorder;
 
 public class ViewInicio extends JPanel{
 	
@@ -49,6 +50,7 @@ public class ViewInicio extends JPanel{
 		btnRegistro.setBackground(new Color(204,0,0));
 		btnRegistro.setForeground(Color.white);
 		btnRegistro.setFont(new Font("arial",0,11));
+		btnRegistro.setBorder( new MatteBorder(0,0,3,3,Color.black));
 		add(btnRegistro);
 		
 		btnIngresar = new JButton("Ingresar");
@@ -56,6 +58,7 @@ public class ViewInicio extends JPanel{
 		btnIngresar.setBackground(new Color(204,0,0));
 		btnIngresar.setForeground(Color.white);
 		btnIngresar.setFont(new Font("arial",0,11));
+		btnIngresar.setBorder( new MatteBorder(0,0,3,3,Color.black));
 		add(btnIngresar);
 	}
 

@@ -13,6 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.border.MatteBorder;
+
+import com.toedter.calendar.JDateChooser;
 
 public class ViewRegistro extends JPanel{
 	
@@ -22,7 +25,7 @@ public class ViewRegistro extends JPanel{
 	private JTextField txtCorreo;
 	private JTextField txtNombre;
 	private JTextField txtApellido;
-	private JTextField txtFNacimiento;
+	private JDateChooser txtFNacimiento;
 	private JTextField txtContrasenia;
 	private JTextField txtEstatura;
 	private JTextField txtIngresos;
@@ -82,7 +85,7 @@ public class ViewRegistro extends JPanel{
 		JLabel lbFecha = new JLabel("Fecha De Nacimiento");
 		lbFecha.setBounds(322,284,124,21);
 		add(lbFecha);
-		txtFNacimiento = new JTextField();
+		txtFNacimiento = new JDateChooser();
 		txtFNacimiento.setBounds(322, 309, 177, 27);
 		add(txtFNacimiento);
 		
@@ -137,6 +140,7 @@ public class ViewRegistro extends JPanel{
 		btnRegistrar.setBounds(411,513,87,27);
 		btnRegistrar.setForeground(Color.white);
 		btnRegistrar.setFont(new Font("arial",0,11));
+		btnRegistrar.setBorder( new MatteBorder(0,0,3,3,Color.black));
 		add(btnRegistrar);
 		
 		btnInicio = new JButton("Inicio");
@@ -144,6 +148,7 @@ public class ViewRegistro extends JPanel{
 		btnInicio.setBounds(101,513,87,27);
 		btnInicio.setForeground(Color.white);
 		btnInicio.setFont(new Font("arial",0,11));
+		btnInicio.setBorder( new MatteBorder(0,0,3,3,Color.black));
 		add(btnInicio);
 		
 	}
