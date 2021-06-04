@@ -62,4 +62,44 @@ public class ViewInicio extends JPanel{
 		add(btnIngresar);
 	}
 
+	public JLabel getBosstinder() {
+		return bosstinder;
+	}
+
+	public void setBosstinder(JLabel bosstinder) {
+		this.bosstinder = bosstinder;
+	}
+
+	public JTextField getTxtAlias() {
+		return txtAlias;
+	}
+
+	public void setTxtAlias(JTextField txtAlias) {
+		this.txtAlias = txtAlias;
+	}
+
+	public JPasswordField getTxtContrasenia() {
+		return txtContrasenia;
+	}
+
+	public void setTxtContrasenia(JPasswordField txtContrasenia) {
+		this.txtContrasenia = txtContrasenia;
+	}
+
+	public JButton getBtnRegistro() {
+		return btnRegistro;
+	}
+
+	public void setBtnRegistro(JButton btnRegistro) {
+		this.btnRegistro = btnRegistro;
+	}
+
+	public JButton getBtnIngresar() {
+		return btnIngresar;
+	}
+
+	public void setBtnIngresar(JButton btnIngresar) {
+		this.btnIngresar = btnIngresar;
+	}
+
 }

@@ -172,6 +172,126 @@ public class ViewConocer extends JPanel{
 		
 		
 	}
+
+	public JLabel getBosstinder() {
+		return bosstinder;
+	}
+
+	public void setBosstinder(JLabel bosstinder) {
+		this.bosstinder = bosstinder;
+	}
+
+	public JLabel getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(JLabel perfil) {
+		this.perfil = perfil;
+	}
+
+	public JLabel getLbEstado() {
+		return lbEstado;
+	}
+
+	public void setLbEstado(JLabel lbEstado) {
+		this.lbEstado = lbEstado;
+	}
+
+	public JLabel getLbEdad() {
+		return lbEdad;
+	}
+
+	public void setLbEdad(JLabel lbEdad) {
+		this.lbEdad = lbEdad;
+	}
+
+	public JLabel getLbAlias() {
+		return lbAlias;
+	}
+
+	public void setLbAlias(JLabel lbAlias) {
+		this.lbAlias = lbAlias;
+	}
+
+	public JLabel getLbGenero() {
+		return lbGenero;
+	}
+
+	public void setLbGenero(JLabel lbGenero) {
+		this.lbGenero = lbGenero;
+	}
+
+	public JLabel getLbEstatura() {
+		return lbEstatura;
+	}
+
+	public void setLbEstatura(JLabel lbEstatura) {
+		this.lbEstatura = lbEstatura;
+	}
+
+	public JLabel getLbDepende() {
+		return lbDepende;
+	}
+
+	public void setLbDepende(JLabel lbDepende) {
+		this.lbDepende = lbDepende;
+	}
+
+	public JLabel getLbRespuesta() {
+		return lbRespuesta;
+	}
+
+	public void setLbRespuesta(JLabel lbRespuesta) {
+		this.lbRespuesta = lbRespuesta;
+	}
+
+	public JLabel getLbLResividos() {
+		return lbLResividos;
+	}
+
+	public void setLbLResividos(JLabel lbLResividos) {
+		this.lbLResividos = lbLResividos;
+	}
+
+	public JLabel getLbLOtorgados() {
+		return lbLOtorgados;
+	}
+
+	public void setLbLOtorgados(JLabel lbLOtorgados) {
+		this.lbLOtorgados = lbLOtorgados;
+	}
+
+	public JButton getBtnSalir() {
+		return btnSalir;
+	}
+
+	public void setBtnSalir(JButton btnSalir) {
+		this.btnSalir = btnSalir;
+	}
+
+	public JButton getBtnPerfil() {
+		return btnPerfil;
+	}
+
+	public void setBtnPerfil(JButton btnPerfil) {
+		this.btnPerfil = btnPerfil;
+	}
+
+	public JButton getBtnLike() {
+		return btnLike;
+	}
+
+	public void setBtnLike(JButton btnLike) {
+		this.btnLike = btnLike;
+	}
+
+	public JButton getBtnDislike() {
+		return btnDislike;
+	}
+
+	public void setBtnDislike(JButton btnDislike) {
+		this.btnDislike = btnDislike;
+	}
 	
 
 }

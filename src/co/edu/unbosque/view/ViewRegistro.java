@@ -153,4 +153,174 @@ public class ViewRegistro extends JPanel{
 		
 	}
 
+
+	public JLabel getBosstinder() {
+		return bosstinder;
+	}
+
+
+	public void setBosstinder(JLabel bosstinder) {
+		this.bosstinder = bosstinder;
+	}
+
+
+	public JLabel getLbOpcional() {
+		return lbOpcional;
+	}
+
+
+	public void setLbOpcional(JLabel lbOpcional) {
+		this.lbOpcional = lbOpcional;
+	}
+
+
+	public JTextField getTxtAlias() {
+		return txtAlias;
+	}
+
+
+	public void setTxtAlias(JTextField txtAlias) {
+		this.txtAlias = txtAlias;
+	}
+
+
+	public JTextField getTxtCorreo() {
+		return txtCorreo;
+	}
+
+
+	public void setTxtCorreo(JTextField txtCorreo) {
+		this.txtCorreo = txtCorreo;
+	}
+
+
+	public JTextField getTxtNombre() {
+		return txtNombre;
+	}
+
+
+	public void setTxtNombre(JTextField txtNombre) {
+		this.txtNombre = txtNombre;
+	}
+
+
+	public JTextField getTxtApellido() {
+		return txtApellido;
+	}
+
+
+	public void setTxtApellido(JTextField txtApellido) {
+		this.txtApellido = txtApellido;
+	}
+
+
+	public JDateChooser getTxtFNacimiento() {
+		return txtFNacimiento;
+	}
+
+
+	public void setTxtFNacimiento(JDateChooser txtFNacimiento) {
+		this.txtFNacimiento = txtFNacimiento;
+	}
+
+
+	public JTextField getTxtContrasenia() {
+		return txtContrasenia;
+	}
+
+
+	public void setTxtContrasenia(JTextField txtContrasenia) {
+		this.txtContrasenia = txtContrasenia;
+	}
+
+
+	public JTextField getTxtEstatura() {
+		return txtEstatura;
+	}
+
+
+	public void setTxtEstatura(JTextField txtEstatura) {
+		this.txtEstatura = txtEstatura;
+	}
+
+
+	public JTextField getTxtIngresos() {
+		return txtIngresos;
+	}
+
+
+	public void setTxtIngresos(JTextField txtIngresos) {
+		this.txtIngresos = txtIngresos;
+	}
+
+
+	public JComboBox<?> getCbxEstado() {
+		return cbxEstado;
+	}
+
+
+	public void setCbxEstado(JComboBox<?> cbxEstado) {
+		this.cbxEstado = cbxEstado;
+	}
+
+
+	public JComboBox<?> getCbxGenero() {
+		return cbxGenero;
+	}
+
+
+	public void setCbxGenero(JComboBox<?> cbxGenero) {
+		this.cbxGenero = cbxGenero;
+	}
+
+
+	public ButtonGroup getBtnGDivorcios() {
+		return btnGDivorcios;
+	}
+
+
+	public void setBtnGDivorcios(ButtonGroup btnGDivorcios) {
+		this.btnGDivorcios = btnGDivorcios;
+	}
+
+
+	public JRadioButton getSi() {
+		return si;
+	}
+
+
+	public void setSi(JRadioButton si) {
+		this.si = si;
+	}
+
+
+	public JRadioButton getNo() {
+		return no;
+	}
+
+
+	public void setNo(JRadioButton no) {
+		this.no = no;
+	}
+
+
+	public JButton getBtnRegistrar() {
+		return btnRegistrar;
+	}
+
+
+	public void setBtnRegistrar(JButton btnRegistrar) {
+		this.btnRegistrar = btnRegistrar;
+	}
+
+
+	public JButton getBtnInicio() {
+		return btnInicio;
+	}
+
+
+	public void setBtnInicio(JButton btnInicio) {
+		this.btnInicio = btnInicio;
+	}
+
 }

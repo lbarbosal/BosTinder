@@ -43,6 +43,30 @@ public class VentanaPrincipal extends JFrame {
 		
 	}
 
+	public ViewInicio getpInicio() {
+		return pInicio;
+	}
+
+	public void setpInicio(ViewInicio pInicio) {
+		this.pInicio = pInicio;
+	}
+
+	public ViewRegistro getpRegistro() {
+		return pRegistro;
+	}
+
+	public void setpRegistro(ViewRegistro pRegistro) {
+		this.pRegistro = pRegistro;
+	}
+
+	public ViewConocer getpConocer() {
+		return pConocer;
+	}
+
+	public void setpConocer(ViewConocer pConocer) {
+		this.pConocer = pConocer;
+	}
+
 	
 
 	
