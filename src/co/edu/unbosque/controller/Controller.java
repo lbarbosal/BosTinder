@@ -1,5 +1,7 @@
 package co.edu.unbosque.controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
@@ -10,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 
 import co.edu.unbosque.view.VentanaPrincipal;
 
-public class Controller {
+public class Controller implements ActionListener{
 	private VentanaPrincipal vista;
 	final String username = "anatalia1287@gmail.com";
 	final String password = "butqjmpsrcvekwms";
@@ -24,6 +26,14 @@ public class Controller {
 	public void iniciarAplicacion(){
 		vista = new VentanaPrincipal();
 		vista.setVisible(true);
+		vista.getpInicio().getBtnIngresar().addActionListener(this);
+		vista.getpInicio().getBtnRegistro().addActionListener(this);
+		vista.getpRegistro().getBtnInicio().addActionListener(this);
+		vista.getpRegistro().getBtnRegistrar().addActionListener(this);
+		vista.getpConocer().getBtnDislike().addActionListener(this);
+		vista.getpConocer().getBtnLike().addActionListener(this);
+		vista.getpConocer().getBtnSalir().addActionListener(this);
+		vista.getpConocer().getBtnPerfil().addActionListener(this);
 	}
 
 	public void sendEmail(String correo){
@@ -51,5 +61,11 @@ public class Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
