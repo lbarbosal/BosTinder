@@ -34,10 +34,58 @@ public class Controller implements ActionListener{
 		vista.getpConocer().getBtnLike().addActionListener(this);
 		vista.getpConocer().getBtnSalir().addActionListener(this);
 		vista.getpConocer().getBtnPerfil().addActionListener(this);
+		vista.getpRegistro().getCbxGenero().addActionListener(this);
 	}
 
-	public void sendEmail(String correo){
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getActionCommand().equals("Registrar")) {
+			vista.getpInicio().setVisible(false);
+			vista.getpRegistro().setVisible(true);
+		}
+		
+		if (e.getActionCommand().equals("Ingresar")) {
+			vista.getpInicio().setVisible(false);
+			vista.getpConocer().setVisible(true);
+		}
+		
+		if (e.getActionCommand().equals("Inicio")) {
+			vista.getpInicio().setVisible(true);
+			vista.getpRegistro().setVisible(false);
+		}
+		
+		if (e.getActionCommand().equals("Registro")) {
+			
+			String genero = vista.getpRegistro().getCbxGenero().getSelectedItem().toString();
+
+			// REGISTRO
+			vista.getpInicio().setVisible(true);
+			vista.getpRegistro().setVisible(false);
+		}
+		
+		if(e.getActionCommand().equals("pRegistroGenero")) {
+			String genero = vista.getpRegistro().getCbxGenero().getSelectedItem().toString();
+			if(genero.equals("Femenino")) {
+				vista.getpRegistro().getSi().setVisible(true);
+				vista.getpRegistro().getNo().setVisible(true);
+				vista.getpRegistro().getTxtIngresos().setVisible(false);
+				vista.getpRegistro().getLbOpcional().setText("¿Ha tenido divorcios?");
+			} else if(genero.equals("Masculino")) {
+				vista.getpRegistro().getLbOpcional().setText("¿Cuáles son sus ingresos?");
+				vista.getpRegistro().getSi().setVisible(false);
+				vista.getpRegistro().getNo().setVisible(false);
+				vista.getpRegistro().getTxtIngresos().setVisible(true);
+			}else{
+				vista.getpRegistro().getLbOpcional().setText("");
+				vista.getpRegistro().getSi().setVisible(false);
+				vista.getpRegistro().getNo().setVisible(false);
+				vista.getpRegistro().getTxtIngresos().setVisible(false);
+			}
+		}	
+	}
 	
+	public void sendEmail(String correo){
+		
 		Properties propiedad = new Properties();
 		propiedad.put("mail.smtp.auth", "true");
 		propiedad.put("mail.smtp.starttls.enable", "true");
@@ -61,11 +109,5 @@ public class Controller implements ActionListener{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 }
