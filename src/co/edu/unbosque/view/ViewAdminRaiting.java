@@ -4,6 +4,7 @@ import java.awt.Image;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 public class ViewAdminRaiting extends JPanel{
 	
 	private JLabel bosstinder;
+	private JButton btnBuscar;
 	 private JComboBox<?> cbxSentido;
 	 private JComboBox<?> cbxDato;
 	 private JTable tabla;
@@ -30,19 +32,26 @@ public class ViewAdminRaiting extends JPanel{
 			bosstinder.setIcon(new ImageIcon(titulo.getImage().getScaledInstance(bosstinder.getWidth(), bosstinder.getHeight(),Image.SCALE_SMOOTH)));
 			add(bosstinder);
 			
+			btnBuscar = new JButton();
+			btnBuscar.setBounds(537,170,24,24);
+			btnBuscar.setBackground(null);
+			btnBuscar.setBorder(null);
+			btnBuscar.setIcon(new ImageIcon(lbBuscar.getImage().getScaledInstance(btnBuscar.getWidth(), btnBuscar.getHeight(),Image.SCALE_SMOOTH)));
+			add(btnBuscar);
+			
 			cbxDato = new JComboBox();
-			cbxDato.setModel(new DefaultComboBoxModel(new String[] {"Numero De Likes","Edad"}));
-			cbxDato.setBounds(322,378,177,27);
+			cbxDato.setModel(new DefaultComboBoxModel(new String[] {"Numero De Likes","Apellido","Edad","Alias"}));
+			cbxDato.setBounds(35,169,242,27);
 			add(cbxDato);
 			
 			cbxSentido = new JComboBox();
 			cbxSentido.setModel(new DefaultComboBoxModel(new String[] {"Ascendente","Descendente"}));
-			cbxSentido.setBounds(322,378,177,27);
+			cbxSentido.setBounds(393,169,220,27);
 			add(cbxSentido);
 			
 			modelo = new DefaultTableModel();
 			tabla = new JTable();
-			tabla.setBounds(50, 200, 700, 300);
+			tabla.setBounds(35, 226, 529, 231);
 			modelo.addColumn("Nombre");
 			modelo.addColumn("Apellido");
 			modelo.addColumn("Cédula");
@@ -55,7 +64,7 @@ public class ViewAdminRaiting extends JPanel{
 			add(tabla);
 			
 			JScrollPane scrollPane = new JScrollPane(tabla);
-			scrollPane.setBounds(50, 200, 700, 300);
+			scrollPane.setBounds(35, 226,529,231);
 			add(scrollPane);
 	 }
 

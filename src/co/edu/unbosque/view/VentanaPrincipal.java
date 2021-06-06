@@ -13,6 +13,8 @@ public class VentanaPrincipal extends JFrame {
 	private ViewPerfil pPerfil;
 	private ViewAdminBuscar pABuscar;
 	private ViewAdminMenu pAMenu;
+	private ViewAdminEstadisticas pAEstadisticas;
+	private ViewAdminRaiting pARaiting;
 	
 	public VentanaPrincipal() {
 		
@@ -31,7 +33,7 @@ public class VentanaPrincipal extends JFrame {
 		pInicio = new ViewInicio();
 		pInicio.setBounds(0,0,600,600);
 		pInicio.setBackground(new Color(245,213,215));
-		pInicio.setVisible(true);
+		pInicio.setVisible(false);
 		getContentPane().add(pInicio);
 		
 		pRegistro= new ViewRegistro();
@@ -62,8 +64,21 @@ public class VentanaPrincipal extends JFrame {
 		pABuscar = new ViewAdminBuscar();
 		pABuscar.setBounds(0,40,600,560);
 		pABuscar.setBackground(new Color(245,213,215));
-		pABuscar.setVisible(true);
+		pABuscar.setVisible(false);
 		getContentPane().add(pABuscar);
+		
+		pAEstadisticas = new ViewAdminEstadisticas();
+		pAEstadisticas.setBounds(0,40,600,560);
+		pAEstadisticas.setBackground(new Color(245,213,215));
+		pAEstadisticas.setVisible(true);
+		getContentPane().add(pAEstadisticas);
+		
+		pARaiting = new ViewAdminRaiting();
+		pARaiting.setBounds(0,40,600,560);
+		pARaiting.setBackground(new Color(245,213,215));
+		pARaiting.setVisible(false);
+		getContentPane().add(pAEstadisticas);
+		
 		
 	}
 

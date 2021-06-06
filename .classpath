@@ -9,5 +9,7 @@
 	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/activation.jar"/>
 	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/mail.jar"/>
 	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/proyectoC2/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/proyectoC2/jfreechart-1.0.19.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
