@@ -151,6 +151,8 @@ public class ViewRegistro extends JPanel{
 		btnInicio.setBorder( new MatteBorder(0,0,3,3,Color.black));
 		add(btnInicio);
 		
+		
+		
 	}
 
 

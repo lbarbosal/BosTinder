@@ -3,12 +3,16 @@ package co.edu.unbosque.view;
 import java.awt.Color;
 
 import javax.swing.JFrame;
+import javax.swing.border.MatteBorder;
 
 public class VentanaPrincipal extends JFrame {
 	
 	private ViewInicio pInicio;
 	private ViewRegistro pRegistro;
 	private ViewConocer pConocer;
+	private ViewPerfil pPerfil;
+	private ViewAdminBuscar pABuscar;
+	private ViewAdminMenu pAMenu;
 	
 	public VentanaPrincipal() {
 		
@@ -32,7 +36,7 @@ public class VentanaPrincipal extends JFrame {
 		pRegistro= new ViewRegistro();
 		pRegistro.setBounds(0,0,600,600);
 		pRegistro.setBackground(new Color(245,213,215));
-		pRegistro.setVisible(true);
+		pRegistro.setVisible(false);
 		getContentPane().add(pRegistro);
 		
 		pConocer= new ViewConocer();
@@ -40,6 +44,25 @@ public class VentanaPrincipal extends JFrame {
 		pConocer.setBackground(new Color(204,0,0));
 		pConocer.setVisible(false);
 		getContentPane().add(pConocer);
+		
+		pPerfil= new ViewPerfil();
+		pPerfil.setBounds(0,0,600,600);
+		pPerfil.setBackground(new Color(204,0,0));
+		pPerfil.setVisible(false);
+		getContentPane().add(pPerfil);
+		
+		pAMenu= new ViewAdminMenu();
+		pAMenu.setBounds(0,0,600,40);
+		pAMenu.setBackground(new Color(204,0,0));
+		pAMenu.setVisible(true);
+		pAMenu.setBorder( new MatteBorder(0,0,3,3,Color.black));
+		getContentPane().add(pAMenu);
+		
+		pABuscar = new ViewAdminBuscar();
+		pABuscar.setBounds(0,40,600,560);
+		pABuscar.setBackground(new Color(245,213,215));
+		pABuscar.setVisible(true);
+		getContentPane().add(pABuscar);
 		
 	}
 

@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -9,17 +10,19 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
 
-public class ViewConocer extends JPanel{
+public class ViewPerfil extends JPanel{
 	
 	private JLabel bosstinder;
 	private JLabel perfil;
 	private JLabel lbEstado;
-	
-
+	private JLabel lbNombre;
+	private JLabel lbApellido;
+	private JLabel lbFNacimiento;
 	private JLabel lbEdad;
 	private JLabel lbAlias;
-
+	private JLabel lbCorreo;
 	private JLabel lbGenero;
 	private JLabel lbEstatura;
 	private JLabel lbDepende;
@@ -27,44 +30,42 @@ public class ViewConocer extends JPanel{
 	private JLabel lbLResividos;
 	private JLabel lbLOtorgados;
 	private JButton btnSalir;
-	private JButton btnPerfil;
-	private JButton btnLike;
-	private JButton btnDislike;
+	private JButton btnConocer;
+	private JButton btnEditar;
+	private JButton btnEliminar;
 	
-	public ViewConocer() {
+	public ViewPerfil() {
 		setLayout(null);
 		ImageIcon titulo = new ImageIcon("graphics/titulo2.png");
 		ImageIcon lbperfil = new ImageIcon("graphics/perfil.png");
 		ImageIcon lbLikeR = new ImageIcon("graphics/corazonR.png");
-		ImageIcon lbLike = new ImageIcon("graphics/like.png");
-		ImageIcon lbDislike = new ImageIcon("graphics/dislike.png");
 		ImageIcon lbSalir = new ImageIcon("graphics/salir.png");
-		ImageIcon lbPerfil = new ImageIcon("graphics/perfil.png");
+		ImageIcon lbPerfil = new ImageIcon("graphics/buscar.png");
 		
 		bosstinder = new JLabel();
-		bosstinder.setBounds(175,67,232,44);
+		bosstinder.setBounds(192,51,232,44);
 		bosstinder.setIcon(new ImageIcon(titulo.getImage().getScaledInstance(bosstinder.getWidth(), bosstinder.getHeight(),Image.SCALE_SMOOTH)));
 		add(bosstinder);
 		
 		
 		perfil = new JLabel();
-		perfil.setBounds(220,130,148,148);
+		perfil.setBounds(236,114,148,148);
 		perfil.setIcon(new ImageIcon(lbperfil.getImage().getScaledInstance(perfil.getWidth(), perfil.getHeight(),Image.SCALE_SMOOTH)));
 		add(perfil);
 		
-		btnDislike = new JButton();
-		btnDislike.setBounds(53,482,40,40);
-		btnDislike.setBackground(null);
-		btnDislike.setBorder(null);
-		btnDislike.setIcon(new ImageIcon(lbDislike.getImage().getScaledInstance(btnDislike.getWidth(), btnDislike.getHeight(),Image.SCALE_SMOOTH)));
-		add(btnDislike);
+		btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(53,482,60,27);
+		btnEliminar.setBackground(Color.white);
+		btnEliminar.setFont(new Font("arial",0,11));
+		btnEliminar.setBorder( new MatteBorder(0,0,3,3,Color.black));
+		add(btnEliminar);
 		
-		btnLike = new JButton();
-		btnLike.setBounds(489,482,40,40);
-		btnLike.setBackground(null);
-		btnLike.setBorder(null);
-		btnLike.setIcon(new ImageIcon(lbLike.getImage().getScaledInstance(btnLike.getWidth(), btnLike.getHeight(),Image.SCALE_SMOOTH)));
-		add(btnLike);
+		btnEditar = new JButton("Editar");
+		btnEditar.setBounds(489,482,60,27);
+		btnEditar.setBackground(Color.white);
+		btnEditar.setFont(new Font("arial",0,11));
+		btnEditar.setBorder( new MatteBorder(0,0,3,3,Color.black));
+		add(btnEditar);
 		
 		btnSalir = new JButton();
 		btnSalir.setBounds(560,40,24,24);
@@ -73,82 +74,114 @@ public class ViewConocer extends JPanel{
 		btnSalir.setIcon(new ImageIcon(lbSalir.getImage().getScaledInstance(btnSalir.getWidth(), btnSalir.getHeight(),Image.SCALE_SMOOTH)));
 		add(btnSalir);
 		
-		btnPerfil = new JButton();
-		btnPerfil.setBounds(530,40,24,24);
-		btnPerfil.setBackground(null);
-		btnPerfil.setBorder(null);
-		btnPerfil.setIcon(new ImageIcon(lbPerfil.getImage().getScaledInstance(btnPerfil.getWidth(), btnPerfil.getHeight(),Image.SCALE_SMOOTH)));
-		add(btnPerfil);
+		btnConocer = new JButton();
+		btnConocer.setBounds(530,40,24,24);
+		btnConocer.setBackground(null);
+		btnConocer.setBorder(null);
+		btnConocer.setIcon(new ImageIcon(lbPerfil.getImage().getScaledInstance(btnConocer.getWidth(), btnConocer.getHeight(),Image.SCALE_SMOOTH)));
+		add(btnConocer);
 		
-		JLabel lbUsuario = new JLabel("alias");
-		lbUsuario.setBounds(72,317,105,21);
+		JLabel lbnombre = new JLabel("Nombre");
+		lbnombre.setBounds(90,289,105,21);
+		lbnombre.setHorizontalAlignment(JLabel.RIGHT);
+		add(lbnombre);
+		lbNombre = new JLabel("--");
+		lbNombre.setBounds(202,289,105,21);
+		add(lbNombre);
+		
+		JLabel lbapellido = new JLabel("Apellido");
+		lbapellido.setBounds(290,289,116,21);
+		lbapellido.setHorizontalAlignment(JLabel.RIGHT);
+		add(lbapellido);
+		lbApellido = new JLabel("--");
+		lbApellido.setBounds(413,289,116,21);
+		add(lbApellido);
+		
+		JLabel lbnacimiento = new JLabel("Fecha De Nacimiento");
+		lbnacimiento.setBounds(90,316,105,21);
+		lbnacimiento.setHorizontalAlignment(JLabel.RIGHT);
+		add(lbnacimiento);
+		lbFNacimiento = new JLabel("--");
+		lbFNacimiento.setBounds(202,316,67,21);
+		add(lbFNacimiento);
+		
+		JLabel lbUsuario = new JLabel("Alias");
+		lbUsuario.setBounds(90,339,105,21);
 		lbUsuario.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbUsuario);
 		lbAlias = new JLabel("--");
-		lbAlias.setBounds(184,317,105,21);
+		lbAlias.setBounds(202,339,105,21);
 		add(lbAlias);
 		
+		JLabel lbcorreo = new JLabel("E-Mail");
+		lbcorreo.setBounds(290,339,116,21);
+		lbcorreo.setHorizontalAlignment(JLabel.RIGHT);
+		add(lbcorreo);
+		lbCorreo = new JLabel("--");
+		lbCorreo.setBounds(414,339,116,21);
+		add(lbCorreo);
+		
 		JLabel lbedad = new JLabel("Edad");
-		lbedad.setBounds(277,318,116,21);
+		lbedad.setBounds(290,316,116,21);
 		lbedad.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbedad);
 		lbEdad = new JLabel("--");
-		lbEdad.setBounds(400,318,105,21);	
+		lbEdad.setBounds(413,316,105,21);	
 		add(lbEdad);
 		
 		JLabel lbestado = new JLabel("Estado");
-		lbestado.setBounds(72,339,105,21);
+		lbestado.setBounds(90 ,361,105,21);
 		lbestado.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbestado);
 		lbEstado = new JLabel("--");
-		lbEstado.setBounds(184,339,105,21);
+		lbEstado.setBounds(202,361,105,21);
 		add(lbEstado);
 		
 		JLabel lbgenero = new JLabel("Genero");
-		lbgenero.setBounds(277,339,116,21);
+		lbgenero.setBounds(290,362,116,21);
 		lbgenero.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbgenero);
 		lbGenero = new JLabel("--");
-		lbGenero.setBounds(400,339,105,21);
+		lbGenero.setBounds(413,362,116,21);
 		add(lbGenero);
 		
 		JLabel lbestatura = new JLabel("Estatura");
-		lbestatura.setBounds(72,362,105,21);
+		lbestatura.setBounds(90,384,105,21);
 		lbestatura.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbestatura);
 		lbEstatura = new JLabel("--");
-		lbEstatura.setBounds(184,362,105,21);
+		lbEstatura.setBounds(202,384,105,21);
 		add(lbEstatura);
 		
 		lbDepende = new JLabel("--");
-		lbDepende.setBounds(277,361,116,21);
+		lbDepende.setBounds(290,384,116,21);
 		lbDepende.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbDepende);
 		lbRespuesta = new JLabel("--");
-		lbRespuesta.setBounds(400,361,105,21);
+		lbRespuesta.setBounds(413,384,116,21);
 		add(lbRespuesta);
 		
 		JLabel lblResividos = new JLabel("Like Resividos");
-		lblResividos.setBounds(114,423,105,21);
+		lblResividos.setBounds(130,430,105,21);
 		add(lblResividos);
 		lbLResividos = new JLabel("-");
-		lbLResividos.setBounds(83,420,24,24);
+		lbLResividos.setBounds(99,427,24,24);
 		lbLResividos.setHorizontalAlignment(JLabel.CENTER);
 		add(lbLResividos);
 		JLabel LResividos = new JLabel();
-		LResividos.setBounds(83,420,24,24);
+		LResividos.setBounds(99,427,24,24);
 		LResividos.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(lbLResividos.getWidth(), lbLResividos.getHeight(),Image.SCALE_SMOOTH)));
 		add(LResividos);
 		
 		JLabel lblOtorgados = new JLabel("Like Otorgados");
-		lblOtorgados.setBounds(399,423,105,21);
+		lblOtorgados.setBounds(415,430,105,21);
 		add(lblOtorgados);
 		lbLOtorgados = new JLabel("-");
-		lbLOtorgados.setBounds(368,420,24,24);
+		lbLOtorgados.setBounds(384,427,24,24);
 		lbLOtorgados.setHorizontalAlignment(JLabel.CENTER);
 		add(lbLOtorgados);
 		JLabel LOtorgados = new JLabel();
-		LOtorgados.setBounds(368,420,24,24);
+		LOtorgados.setBounds(384,427,24,24);
 		LOtorgados.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(LOtorgados.getWidth(), LOtorgados.getHeight(),Image.SCALE_SMOOTH)));
 		add(LOtorgados);
 				
@@ -156,14 +189,14 @@ public class ViewConocer extends JPanel{
 		fondo2.setOpaque(true);
 		fondo2.setBackground(Color.white);
 		fondo2.setBorder(new LineBorder(Color.black,5));
-		fondo2.setBounds(53,409,482,46);
+		fondo2.setBounds(69,416,482,46);
 		add(fondo2);
 		
 		JLabel fondo1 = new JLabel();
 		fondo1.setOpaque(true);
 		fondo1.setBackground(Color.white);
 		fondo1.setBorder(new LineBorder(Color.black,5));
-		fondo1.setBounds(53,294,482,120);
+		fondo1.setBounds(69,278,482,184);
 		add(fondo1);
 		
 		
@@ -270,27 +303,27 @@ public class ViewConocer extends JPanel{
 	}
 
 	public JButton getBtnPerfil() {
-		return btnPerfil;
+		return btnConocer;
 	}
 
 	public void setBtnPerfil(JButton btnPerfil) {
-		this.btnPerfil = btnPerfil;
+		this.btnConocer = btnPerfil;
 	}
 
 	public JButton getBtnLike() {
-		return btnLike;
+		return btnEditar;
 	}
 
 	public void setBtnLike(JButton btnLike) {
-		this.btnLike = btnLike;
+		this.btnEditar = btnLike;
 	}
 
 	public JButton getBtnDislike() {
-		return btnDislike;
+		return btnEliminar;
 	}
 
 	public void setBtnDislike(JButton btnDislike) {
-		this.btnDislike = btnDislike;
+		this.btnEliminar = btnDislike;
 	}
 	
 
