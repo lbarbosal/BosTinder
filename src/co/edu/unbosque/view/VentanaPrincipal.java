@@ -17,6 +17,7 @@ public class VentanaPrincipal extends JFrame {
 		setBackground(new Color(245,213,215));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
+	    setLocationRelativeTo(null);
 		inicializar();
 	}
 	

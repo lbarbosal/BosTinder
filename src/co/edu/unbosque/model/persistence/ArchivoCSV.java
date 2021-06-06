@@ -11,49 +11,41 @@ public class ArchivoCSV {
 
 	public static final String SEPARADOR = ";";
 
-	/**
-	 * Metodo para cargar el archivo
-	 * <b>pre</b> Se deben tener el archivo plano y demas informacion de las personas<br>
-	 * <b>pos</b> Carga al programa el archivo<br>
-	 * 
-	 * @return personas Muestra las informacion en la consola
-	 */
 	public ArrayList cargarArchivo() {
 		BufferedReader bufferLectura = null;
 		ArrayList<Persona> personas = new ArrayList();
+		String genero = "";
 		try {
-			// Abrir el .csv en buffer de lectura
-			bufferLectura = new BufferedReader(new FileReader("data/Personas.csv"));
-
-			// Leer una linea del archivo
+			bufferLectura = new BufferedReader(new FileReader("data/Personas1.csv"));
 			String linea = bufferLectura.readLine();
-
+			boolean esPrimeraLinea = true;
 			while (linea != null) {
-				// Sepapar la linea leída con el separador definido previamente
 				String[] campos = linea.split(SEPARADOR);
-				personas.add(new Persona(Integer.valueOf(campos[0]),
-						 				campos[1],
-						 				campos[2] + " " + campos[3],
-						 				campos[4],
-						 				campos[5],
-						 				campos[6],
-						 				campos[7],
-						 				campos[8],
-						 				Integer.valueOf(campos[9]),
-						 				Double.parseDouble(campos[10]),
+				if(campos[4].equals("M")) {
+					genero = "Femenino";
+				} else {
+					genero = "Masculino";
+				}
+				personas.add(new Persona(Integer.parseInt(campos[0]),
+						 				campos[1].toString(),
+						 				campos[2].toString() + " " + campos[3].toString(),
+						 				genero,
+						 				campos[5].toString(),
+						 				campos[6].toString(),
+						 				campos[7].toString(),
+						 				campos[8].toString(),
+						 				Integer.parseInt(campos[9]),
+						 				(!campos[10].isEmpty()) ? Double.parseDouble(campos[10]):-1,
 						 				campos[11],
-						 				Integer.valueOf(campos[12]),
-						 				Integer.valueOf(campos[13]),
-						 				Integer.valueOf(campos[14]),
+						 				Integer.parseInt(campos[12]),
+						 				Integer.parseInt(campos[13]),
+						 				Integer.parseInt(campos[14]),
 						 				campos[15]));
-
-				// Volver a leer otra línea del fichero
 				linea = bufferLectura.readLine();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			// Cierro el buffer de lectura
 			if (bufferLectura != null) {
 				try {
 					bufferLectura.close();
