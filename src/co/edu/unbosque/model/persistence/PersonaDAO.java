@@ -2,11 +2,16 @@ package co.edu.unbosque.model.persistence;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import co.edu.unbosque.model.Persona;
 
+
+
 public class PersonaDAO {
+	
 	public Archivo archivo;
 	
 	public PersonaDAO() {
@@ -21,11 +26,11 @@ public class PersonaDAO {
 	public Persona iniSesion(String alias, String contrasena,  ArrayList<Persona> personas) {
 		Persona p = buscarPersona(alias, personas);
 		if(p != null) {
-			if(p.getContrasena() == contrasena && p.getAlias() == alias) {  // la verificación del alias creo que sobra
+			if(p.getContrasena().equals(contrasena) && p.getAlias().equals(alias)) {  // la verificación del alias creo que sobra
 				return p;
 			}
 		}
-		 return null; // rol
+		 return null;
 	}
 	
 	public Persona buscarPersona(String alias, ArrayList<Persona> personas) {
@@ -41,15 +46,22 @@ public class PersonaDAO {
 		return encontrado;
 	}
 	
-	public boolean agregarPersona(int id, String nombre, String apellido, String genero, String alias, String contrasena, String correo, String fecha, int edad, double ingresos, String divorcios, int numLR, int numLO, int numM, String estado, ArrayList<Persona> personas, File file) {
-		Persona p = new Persona(id, nombre, apellido, genero, alias, contrasena, correo, fecha, edad, ingresos, divorcios, numLR, numLO, numM, estado);
-
-		if (buscarPersona(alias, personas) == null && p.getEdad() > 18) {
+	public boolean agregarPersona(int id, String nombre, String apellido, String genero, String alias, String contrasena, String correo, String fecha, int edad, double ingresos, String divorcios, String estado, String estatura ,ArrayList<Persona> personas, File file) {
+		Persona p = new Persona(id, nombre, apellido, genero, alias, contrasena, correo, fecha, edad ,ingresos, divorcios, 0, 0, 0, estado);		
+		if (buscarPersona(alias, personas) == null) {
 			personas.add(p);
-			//archivo.escribirEnArchivo(personas, file);
+			archivo.escribirEnArchivo(personas, file);
 			return true;
 		} 
 		return false;
+	}
+	
+	public int calcularEdad(String date) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		LocalDate fechaNacimiento = LocalDate.parse(date, formatter);
+		LocalDate ahoraActual = LocalDate.now();
+		Period edad = Period.between(fechaNacimiento, ahoraActual);
+		return edad.getYears();
 	}
 	
 	public boolean eliminarPersona(String alias, ArrayList<Persona> personas, File file) {
@@ -82,7 +94,7 @@ public class PersonaDAO {
 		p2.setGenero(genero);
 		personas.remove(p);
 		personas.add(p2);
-//		archivo.escribirEnArchivo(personas, file);
+		archivo.escribirEnArchivo(personas, file);
 		return true;
 	}
 

@@ -7,14 +7,26 @@ import co.edu.unbosque.model.persistence.Archivo;
 import co.edu.unbosque.model.persistence.ArchivoCSV;
 import co.edu.unbosque.model.persistence.PersonaDAO;
 
-public class AgenciaDAO {
+/**
+ * Clase DTO es la encargada de transferir los datos de la clase personaDAO.
+ * 
+ * @author: Grupo 3
+ * @version: 06/06/2021
+ * 
+ */
+
+public class AgenciaDTO {
 	private ArrayList<Persona> personas;
 	private PersonaDAO personaDAO;
 	private File file = new File("data/informacion.dat");
 	private Archivo archivo;
 	private ArchivoCSV a;
 	
-	public AgenciaDAO() {
+	/**
+	 * Constructor de la clase AgenciaDTO, asigna valores a los atributos de la clase.
+	 */
+	
+	public AgenciaDTO() {
 		personas = new ArrayList<Persona>();
 		archivo = new Archivo(file);
 		personaDAO = new PersonaDAO(archivo);

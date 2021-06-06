@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
@@ -26,7 +27,7 @@ public class ViewRegistro extends JPanel{
 	private JTextField txtNombre;
 	private JTextField txtApellido;
 	private JDateChooser txtFNacimiento;
-	private JTextField txtContrasenia;
+	private JPasswordField txtContrasenia;
 	private JTextField txtEstatura;
 	private JTextField txtIngresos;
 	private JComboBox<?> cbxEstado;
@@ -71,7 +72,7 @@ public class ViewRegistro extends JPanel{
 		JLabel lbContrasenia = new JLabel("Contraseña");
 		lbContrasenia.setBounds(322,212,69,21);
 		add(lbContrasenia);
-		txtContrasenia = new JTextField();
+		txtContrasenia = new JPasswordField();
 		txtContrasenia.setBounds(322, 237, 177, 27);
 		add(txtContrasenia);
 
@@ -97,10 +98,10 @@ public class ViewRegistro extends JPanel{
 		add(txtEstatura);
 		
 		lbOpcional = new JLabel("");
-		lbOpcional.setBounds(322,421,110,21);
+		lbOpcional.setBounds(322,421,200,21);
 		add(lbOpcional);
 		txtIngresos = new JTextField();
-		txtIngresos.setBounds(322, 455, 177, 27);
+		txtIngresos.setBounds(322, 445, 177, 27);
 		txtIngresos.setVisible(false);
 		add(txtIngresos);
 		
@@ -123,7 +124,7 @@ public class ViewRegistro extends JPanel{
 		lbEstado.setBounds(102, 357, 42, 21);
 		add(lbEstado);
 		cbxEstado = new JComboBox();
-		cbxEstado.setModel(new DefaultComboBoxModel(new String[] {"Disponible", "No Disponible"}));
+		cbxEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione","Disponible", "No Disponible"}));
 		cbxEstado.setBounds(102,378,177,27);
 		add(cbxEstado);
 		
@@ -131,8 +132,9 @@ public class ViewRegistro extends JPanel{
 		lbGenero.setBounds(322, 357, 45, 21);
 		add(lbGenero);
 		cbxGenero = new JComboBox();
-		cbxGenero.setModel(new DefaultComboBoxModel(new String[] {"Masculino","Femenino"}));
+		cbxGenero.setModel(new DefaultComboBoxModel(new String[] {"Seleccione", "Masculino","Femenino"}));
 		cbxGenero.setBounds(322,378,177,27);
+		cbxGenero.setActionCommand("pRegistroGenero");
 		add(cbxGenero);
 		
 		btnRegistrar = new JButton("Registro");
@@ -226,12 +228,12 @@ public class ViewRegistro extends JPanel{
 	}
 
 
-	public JTextField getTxtContrasenia() {
+	public JPasswordField getTxtContrasenia() {
 		return txtContrasenia;
 	}
 
 
-	public void setTxtContrasenia(JTextField txtContrasenia) {
+	public void setTxtContrasenia(JPasswordField txtContrasenia) {
 		this.txtContrasenia = txtContrasenia;
 	}
 

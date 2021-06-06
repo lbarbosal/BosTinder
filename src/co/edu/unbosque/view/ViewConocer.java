@@ -56,6 +56,7 @@ public class ViewConocer extends JPanel{
 		btnDislike.setBounds(53,482,40,40);
 		btnDislike.setBackground(null);
 		btnDislike.setBorder(null);
+		btnDislike.setActionCommand("disLike");
 		btnDislike.setIcon(new ImageIcon(lbDislike.getImage().getScaledInstance(btnDislike.getWidth(), btnDislike.getHeight(),Image.SCALE_SMOOTH)));
 		add(btnDislike);
 		
@@ -63,6 +64,7 @@ public class ViewConocer extends JPanel{
 		btnLike.setBounds(489,482,40,40);
 		btnLike.setBackground(null);
 		btnLike.setBorder(null);
+		btnLike.setActionCommand("like");
 		btnLike.setIcon(new ImageIcon(lbLike.getImage().getScaledInstance(btnLike.getWidth(), btnLike.getHeight(),Image.SCALE_SMOOTH)));
 		add(btnLike);
 		
@@ -70,6 +72,7 @@ public class ViewConocer extends JPanel{
 		btnSalir.setBounds(560,40,24,24);
 		btnSalir.setBackground(null);
 		btnSalir.setBorder(null);
+		btnSalir.setActionCommand("logout");
 		btnSalir.setIcon(new ImageIcon(lbSalir.getImage().getScaledInstance(btnSalir.getWidth(), btnSalir.getHeight(),Image.SCALE_SMOOTH)));
 		add(btnSalir);
 		
@@ -77,6 +80,7 @@ public class ViewConocer extends JPanel{
 		btnPerfil.setBounds(530,40,24,24);
 		btnPerfil.setBackground(null);
 		btnPerfil.setBorder(null);
+		btnPerfil.setActionCommand("miPerfil");
 		btnPerfil.setIcon(new ImageIcon(lbPerfil.getImage().getScaledInstance(btnPerfil.getWidth(), btnPerfil.getHeight(),Image.SCALE_SMOOTH)));
 		add(btnPerfil);
 		
@@ -128,7 +132,7 @@ public class ViewConocer extends JPanel{
 		lbRespuesta.setBounds(400,361,105,21);
 		add(lbRespuesta);
 		
-		JLabel lblResividos = new JLabel("Like Resividos");
+		JLabel lblResividos = new JLabel("Like Recibidos");
 		lblResividos.setBounds(114,423,105,21);
 		add(lblResividos);
 		lbLResividos = new JLabel("-");

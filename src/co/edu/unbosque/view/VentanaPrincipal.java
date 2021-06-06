@@ -21,6 +21,7 @@ public class VentanaPrincipal extends JFrame {
 		setBackground(new Color(245,213,215));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
+	    setLocationRelativeTo(null);
 		inicializar();
 	}
 	
@@ -30,7 +31,7 @@ public class VentanaPrincipal extends JFrame {
 		pInicio = new ViewInicio();
 		pInicio.setBounds(0,0,600,600);
 		pInicio.setBackground(new Color(245,213,215));
-		pInicio.setVisible(false);
+		pInicio.setVisible(true);
 		getContentPane().add(pInicio);
 		
 		pRegistro= new ViewRegistro();
