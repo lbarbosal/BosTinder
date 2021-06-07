@@ -70,14 +70,14 @@ public class VentanaPrincipal extends JFrame {
 		pAEstadisticas = new ViewAdminEstadisticas();
 		pAEstadisticas.setBounds(0,40,600,560);
 		pAEstadisticas.setBackground(new Color(245,213,215));
-		pAEstadisticas.setVisible(true);
+		pAEstadisticas.setVisible(false);
 		getContentPane().add(pAEstadisticas);
 		
 		pARaiting = new ViewAdminRaiting();
 		pARaiting.setBounds(0,40,600,560);
 		pARaiting.setBackground(new Color(245,213,215));
-		pARaiting.setVisible(false);
-		getContentPane().add(pAEstadisticas);
+		pARaiting.setVisible(true);
+		getContentPane().add(pARaiting);
 		
 		
 	}
@@ -104,6 +104,46 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setpConocer(ViewConocer pConocer) {
 		this.pConocer = pConocer;
+	}
+
+	public ViewPerfil getpPerfil() {
+		return pPerfil;
+	}
+
+	public void setpPerfil(ViewPerfil pPerfil) {
+		this.pPerfil = pPerfil;
+	}
+
+	public ViewAdminBuscar getpABuscar() {
+		return pABuscar;
+	}
+
+	public void setpABuscar(ViewAdminBuscar pABuscar) {
+		this.pABuscar = pABuscar;
+	}
+
+	public ViewAdminMenu getpAMenu() {
+		return pAMenu;
+	}
+
+	public void setpAMenu(ViewAdminMenu pAMenu) {
+		this.pAMenu = pAMenu;
+	}
+
+	public ViewAdminEstadisticas getpAEstadisticas() {
+		return pAEstadisticas;
+	}
+
+	public void setpAEstadisticas(ViewAdminEstadisticas pAEstadisticas) {
+		this.pAEstadisticas = pAEstadisticas;
+	}
+
+	public ViewAdminRaiting getpARaiting() {
+		return pARaiting;
+	}
+
+	public void setpARaiting(ViewAdminRaiting pARaiting) {
+		this.pARaiting = pARaiting;
 	}
 
 	

@@ -61,6 +61,7 @@ public class Controller implements ActionListener {
 		vista.getpConocer().getBtnSalir().addActionListener(this);
 		vista.getpConocer().getBtnPerfil().addActionListener(this);
 		vista.getpRegistro().getCbxGenero().addActionListener(this);
+		vista.getpAEstadisticas().getBtnGenePDF().addActionListener(this);
 	}
 
 	@Override

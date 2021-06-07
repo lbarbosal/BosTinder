@@ -71,5 +71,41 @@ public class ViewAdminEstadisticas extends JPanel{
 		int width;
 		
 	}
+	public JButton getBtnGenePDF() {
+		return btnGenePDF;
+	}
+	public void setBtnGenePDF(JButton btnGenePDF) {
+		this.btnGenePDF = btnGenePDF;
+	}
+	public ChartPanel getPanel() {
+		return panel;
+	}
+	public void setPanel(ChartPanel panel) {
+		this.panel = panel;
+	}
+	public JFreeChart getGraficoBarra() {
+		return graficoBarra;
+	}
+	public void setGraficoBarra(JFreeChart graficoBarra) {
+		this.graficoBarra = graficoBarra;
+	}
+	public JComboBox<?> getCbxDatos() {
+		return cbxDatos;
+	}
+	public void setCbxDatos(JComboBox<?> cbxDatos) {
+		this.cbxDatos = cbxDatos;
+	}
+	public JComboBox<?> getCbxGenero() {
+		return cbxGenero;
+	}
+	public void setCbxGenero(JComboBox<?> cbxGenero) {
+		this.cbxGenero = cbxGenero;
+	}
+	public JLabel getBostinder() {
+		return bostinder;
+	}
+	public void setBostinder(JLabel bostinder) {
+		this.bostinder = bostinder;
+	}
 
 }

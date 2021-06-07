@@ -46,7 +46,7 @@ public class ViewAdminRaiting extends JPanel{
 			
 			cbxSentido = new JComboBox();
 			cbxSentido.setModel(new DefaultComboBoxModel(new String[] {"Ascendente","Descendente"}));
-			cbxSentido.setBounds(393,169,220,27);
+			cbxSentido.setBounds(293,169,220,27);
 			add(cbxSentido);
 			
 			modelo = new DefaultTableModel();
