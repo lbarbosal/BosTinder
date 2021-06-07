@@ -62,6 +62,8 @@ public class Controller implements ActionListener {
 		vista.getpConocer().getBtnPerfil().addActionListener(this);
 		vista.getpRegistro().getCbxGenero().addActionListener(this);
 		vista.getpAEstadisticas().getBtnGenePDF().addActionListener(this);
+		vista.getpAEstadisticas().getCbxDatos().addActionListener(this);
+		vista.getpAEstadisticas().getCbxGenero().addActionListener(this);
 	}
 
 	@Override
@@ -172,6 +174,8 @@ public class Controller implements ActionListener {
 			vista.getpInicio().setVisible(true);
 			vista.getpConocer().setVisible(false); 
 		}
+		
+	
 	}
 	
 	public void cambioAleatorio() {
