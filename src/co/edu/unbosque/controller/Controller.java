@@ -198,7 +198,6 @@ public class Controller implements ActionListener {
 			
 		}
 		if(e.getActionCommand().equals("pRai")) {
-			System.out.println("Natalia mentirosa");
 			vista.getpABuscar().setVisible(false);
 			vista.getpRegistro().setVisible(false);
 			vista.getpAEstadisticas().setVisible(false);

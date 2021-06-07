@@ -52,13 +52,13 @@ public class ViewAdminEstadisticas extends JPanel{
 		add(bostinder);
 		
 		cbxDatos = new JComboBox();
-		cbxDatos.setModel(new DefaultComboBoxModel(new String[] {"SELECCIONE","Número de likes", "Ingresos"}));
+		cbxDatos.setModel(new DefaultComboBoxModel(new String[] {"Número de likes", "Ingresos"}));
 		cbxDatos.setActionCommand("pLikes");
 		cbxDatos.setBounds(114, 130, 175, 27);
 		add(cbxDatos);
 		
 		cbxGenero = new JComboBox();
-		cbxGenero.setModel(new DefaultComboBoxModel(new String[] {"SELECCIONE","Masculino", "Femenino"}));
+		cbxGenero.setModel(new DefaultComboBoxModel(new String[] {"Masculino", "Femenino"}));
 		cbxGenero.setActionCommand("pGen");
 		cbxGenero.setBounds(317, 130, 152, 27);
 		add(cbxGenero);
