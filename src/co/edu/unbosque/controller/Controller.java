@@ -190,13 +190,16 @@ public class Controller implements ActionListener {
 			vista.getpAEstadisticas().updateGraficaG(persona);
 		}
 		if(e.getActionCommand().equals("Buscar Usuario")){
+			
 			vista.getpInicio().setVisible(false);
 			vista.getpARaiting().setVisible(false);
 			vista.getpAEstadisticas().setVisible(false);
 			vista.getpRegistro().setVisible(true);
-			System.out.println("Natalia mentirosa");
+			
 		}
 		if(e.getActionCommand().equals("pRai")) {
+			System.out.println("Natalia mentirosa");
+			vista.getpABuscar().setVisible(false);
 			vista.getpRegistro().setVisible(false);
 			vista.getpAEstadisticas().setVisible(false);
 			vista.getpARaiting().setVisible(true);
