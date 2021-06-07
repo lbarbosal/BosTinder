@@ -12,7 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class ViewAdminRaiting extends JPanel{
+public class ViewAdminUsuarios extends JPanel{
 	
 	private JLabel bosstinder;
 	private JButton btnBuscar;
@@ -21,7 +21,7 @@ public class ViewAdminRaiting extends JPanel{
 	 private JTable tabla;
 	private DefaultTableModel modelo;
 		
-	 public ViewAdminRaiting() {
+	 public ViewAdminUsuarios() {
 		 setLayout(null);
 		 ImageIcon titulo = new ImageIcon("graphics/tituloAdmin.png");
 		 ImageIcon lbLikeR = new ImageIcon("graphics/corazonR.png");

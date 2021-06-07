@@ -12,7 +12,7 @@ import javax.swing.border.MatteBorder;
 public class ViewAdminMenu extends JPanel{
 	
 	 private JButton btnBuscarU;
-	 private JButton btnGenerar;
+
 	 private JButton btnRaiting;
 	 private JButton btnUsuarios;
 	 private JButton btnSalir;
@@ -26,6 +26,7 @@ public class ViewAdminMenu extends JPanel{
 			btnSalir.setBackground(new Color(204,0,0));
 			btnSalir.setBorder(null);
 			btnSalir.setIcon(new ImageIcon(lbSalir.getImage().getScaledInstance(btnSalir.getWidth(), btnSalir.getHeight(),Image.SCALE_SMOOTH)));
+			btnSalir.setActionCommand("salir2");
 			add(btnSalir);
 			
 			btnBuscarU = new JButton("Buscar Usuario");
@@ -36,17 +37,10 @@ public class ViewAdminMenu extends JPanel{
 			btnBuscarU.setBorder(new MatteBorder(0,0,0,2,Color.black));
 			btnBuscarU.setEnabled(false);
 			add(btnBuscarU);
-			
-			btnGenerar = new JButton("Generar");
-			btnGenerar.setBounds(100,7,100,24);
-			btnGenerar.setBackground(new Color(204,0,0));
-			btnGenerar.setForeground(Color.white);
-			btnGenerar.setFont(new Font("arial",0,12));
-			btnGenerar.setBorder(new MatteBorder(0,0,0,2,Color.black));
-			add(btnGenerar);
+		
 			
 			btnRaiting = new JButton("Raiting");
-			btnRaiting.setBounds(200,7,100,24);
+			btnRaiting.setBounds(100,7,100,24);
 			btnRaiting.setBackground(new Color(204,0,0));
 			btnRaiting.setForeground(Color.white);
 			btnRaiting.setFont(new Font("arial",0,12));
@@ -55,7 +49,7 @@ public class ViewAdminMenu extends JPanel{
 			add(btnRaiting);
 			
 			btnUsuarios = new JButton("Usuarios");
-			btnUsuarios.setBounds(300,7,100,24);
+			btnUsuarios.setBounds(200,7,100,24);
 			btnUsuarios.setBackground(new Color(204,0,0));
 			btnUsuarios.setForeground(Color.white);
 			btnUsuarios.setFont(new Font("arial",0,12));
@@ -71,13 +65,7 @@ public class ViewAdminMenu extends JPanel{
 		this.btnBuscarU = btnBuscarU;
 	}
 
-	public JButton getBtnGenerar() {
-		return btnGenerar;
-	}
 
-	public void setBtnGenerar(JButton btnGenerar) {
-		this.btnGenerar = btnGenerar;
-	}
 
 	public JButton getBtnRaiting() {
 		return btnRaiting;

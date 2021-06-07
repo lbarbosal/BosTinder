@@ -14,7 +14,7 @@ public class VentanaPrincipal extends JFrame {
 	private ViewAdminBuscar pABuscar;
 	private ViewAdminMenu pAMenu;
 	private ViewAdminEstadisticas pAEstadisticas;
-	private ViewAdminRaiting pARaiting;
+	private ViewAdminUsuarios pAUsuarios;
 	
 	public VentanaPrincipal() {
 		
@@ -74,11 +74,11 @@ public class VentanaPrincipal extends JFrame {
 		pAEstadisticas.setVisible(false);
 		getContentPane().add(pAEstadisticas);
 		
-		pARaiting = new ViewAdminRaiting();
-		pARaiting.setBounds(0,40,600,560);
-		pARaiting.setBackground(new Color(245,213,215));
-		pARaiting.setVisible(false);
-		getContentPane().add(pARaiting);
+		pAUsuarios = new ViewAdminUsuarios();
+		pAUsuarios.setBounds(0,40,600,560);
+		pAUsuarios.setBackground(new Color(245,213,215));
+		pAUsuarios.setVisible(false);
+		getContentPane().add(pAUsuarios);
 		
 		
 	}
@@ -139,12 +139,12 @@ public class VentanaPrincipal extends JFrame {
 		this.pAEstadisticas = pAEstadisticas;
 	}
 
-	public ViewAdminRaiting getpARaiting() {
-		return pARaiting;
+	public ViewAdminUsuarios getpAUsuarios() {
+		return pAUsuarios;
 	}
 
-	public void setpARaiting(ViewAdminRaiting pARaiting) {
-		this.pARaiting = pARaiting;
+	public void setpAUsuarios(ViewAdminUsuarios pARaiting) {
+		this.pAUsuarios = pARaiting;
 	}
 
 	

@@ -69,6 +69,7 @@ public class Controller implements ActionListener {
 		vista.getpAMenu().getBtnBuscarU().addActionListener(this);
 		vista.getpAMenu().getBtnUsuarios().addActionListener(this);
 		vista.getpAMenu().getBtnRaiting().addActionListener(this);
+		vista.getpAMenu().getBtnSalir().addActionListener(this);
 	}
 
 	@Override
@@ -191,23 +192,42 @@ public class Controller implements ActionListener {
 		}
 		if(e.getActionCommand().equals("Buscar Usuario")){
 			
-			vista.getpInicio().setVisible(false);
-			vista.getpARaiting().setVisible(false);
+			vista.getpAUsuarios().setVisible(false);
 			vista.getpAEstadisticas().setVisible(false);
-			vista.getpRegistro().setVisible(true);
+			vista.getpABuscar().setVisible(true);
+			vista.getpAMenu().getBtnRaiting().setEnabled(true);
+			vista.getpAMenu().getBtnBuscarU().setEnabled(false);
+			vista.getpAMenu().getBtnUsuarios().setEnabled(true);
 			
 		}
 		if(e.getActionCommand().equals("pRai")) {
 			vista.getpABuscar().setVisible(false);
-			vista.getpRegistro().setVisible(false);
-			vista.getpAEstadisticas().setVisible(false);
-			vista.getpARaiting().setVisible(true);
+			vista.getpAEstadisticas().setVisible(true);
+			vista.getpAUsuarios().setVisible(false);
+			vista.getpAMenu().getBtnRaiting().setEnabled(false);
+			vista.getpAMenu().getBtnBuscarU().setEnabled(true);
+			vista.getpAMenu().getBtnUsuarios().setEnabled(true);
 		}
 		if(e.getActionCommand().equals("Usuarios")) {
-			vista.getpRegistro().setVisible(false);
-			vista.getpARaiting().setVisible(false);
-			vista.getpAEstadisticas().setVisible(true);
+			vista.getpABuscar().setVisible(false);
+			vista.getpAUsuarios().setVisible(true);
+			vista.getpAEstadisticas().setVisible(false);
+			vista.getpAMenu().getBtnRaiting().setEnabled(true);
+			vista.getpAMenu().getBtnBuscarU().setEnabled(true);
+			vista.getpAMenu().getBtnUsuarios().setEnabled(false);
 		}
+		if(e.getActionCommand().equals("salir2")) {
+			vista.getpInicio().setVisible(true);
+			vista.getpAMenu().setVisible(false);
+			vista.getpABuscar().setVisible(false);
+			vista.getpAUsuarios().setVisible(false);
+			vista.getpAEstadisticas().setVisible(false);
+			vista.getpAMenu().getBtnRaiting().setEnabled(true);
+			vista.getpAMenu().getBtnBuscarU().setEnabled(false);
+			vista.getpAMenu().getBtnUsuarios().setEnabled(true);
+			
+		}
+		
 		
 	}
 	
