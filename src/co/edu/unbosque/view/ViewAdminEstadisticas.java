@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 import javax.swing.DefaultComboBoxModel;
@@ -17,7 +18,10 @@ import javax.swing.border.MatteBorder;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
+
+import co.edu.unbosque.model.Persona;
 
 public class ViewAdminEstadisticas extends JPanel{
 	
@@ -49,11 +53,13 @@ public class ViewAdminEstadisticas extends JPanel{
 		
 		cbxDatos = new JComboBox();
 		cbxDatos.setModel(new DefaultComboBoxModel(new String[] {"SELECCIONE","Número de likes", "Ingresos"}));
+		cbxDatos.setActionCommand("pLikes");
 		cbxDatos.setBounds(114, 130, 175, 27);
 		add(cbxDatos);
 		
 		cbxGenero = new JComboBox();
 		cbxGenero.setModel(new DefaultComboBoxModel(new String[] {"SELECCIONE","Masculino", "Femenino"}));
+		cbxGenero.setActionCommand("pGen");
 		cbxGenero.setBounds(317, 130, 152, 27);
 		add(cbxGenero);
 		
@@ -63,12 +69,16 @@ public class ViewAdminEstadisticas extends JPanel{
 		panel.setPreferredSize(new Dimension(100, 200));
 		add(panel);	
 	}
-	public void updateGraficaG(Hashtable<String, Integer> info) {
-		DefaultPieDataset datosG = new DefaultPieDataset();
-		datosG.setValue("Femenino", 4);
-		datosG.setValue("Masculino", 7);	
-		JFreeChart graficoPie = ChartFactory.createPieChart("INSCRIPCIONES VOTACIONES 2021", datosG, true, true, false);
-		int width;
+	public void updateGraficaG(ArrayList<Persona> info) {
+		DefaultCategoryDataset datosG = new DefaultCategoryDataset();
+		for (int i = 0; i < info.size(); i++) {
+			datosG.setValue(info.get(i).getNumLR(), info.get(i).getAlias() ,"18 a 25");
+		}
+		JFreeChart graficoPie = ChartFactory.createBarChart3D("TOP 10", "Likes", "Género", datosG, null, true, true, false);
+		setGraficoBarra(graficoBarra);
+		getPanel().setChart(graficoBarra);
+		getPanel().repaint();
+		updateUI();
 		
 	}
 	public JButton getBtnGenePDF() {

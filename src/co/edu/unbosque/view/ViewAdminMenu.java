@@ -51,6 +51,7 @@ public class ViewAdminMenu extends JPanel{
 			btnRaiting.setForeground(Color.white);
 			btnRaiting.setFont(new Font("arial",0,12));
 			btnRaiting.setBorder(new MatteBorder(0,0,0,2,Color.black));
+			btnRaiting.setActionCommand("pRai");
 			add(btnRaiting);
 			
 			btnUsuarios = new JButton("Usuarios");
@@ -61,5 +62,45 @@ public class ViewAdminMenu extends JPanel{
 			btnUsuarios.setBorder(new MatteBorder(0,0,0,2,Color.black));
 			add(btnUsuarios);
 	 }
+
+	public JButton getBtnBuscarU() {
+		return btnBuscarU;
+	}
+
+	public void setBtnBuscarU(JButton btnBuscarU) {
+		this.btnBuscarU = btnBuscarU;
+	}
+
+	public JButton getBtnGenerar() {
+		return btnGenerar;
+	}
+
+	public void setBtnGenerar(JButton btnGenerar) {
+		this.btnGenerar = btnGenerar;
+	}
+
+	public JButton getBtnRaiting() {
+		return btnRaiting;
+	}
+
+	public void setBtnRaiting(JButton btnRaiting) {
+		this.btnRaiting = btnRaiting;
+	}
+
+	public JButton getBtnUsuarios() {
+		return btnUsuarios;
+	}
+
+	public void setBtnUsuarios(JButton btnUsuarios) {
+		this.btnUsuarios = btnUsuarios;
+	}
+
+	public JButton getBtnSalir() {
+		return btnSalir;
+	}
+
+	public void setBtnSalir(JButton btnSalir) {
+		this.btnSalir = btnSalir;
+	}
 
 }

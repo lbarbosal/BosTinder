@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
 import java.util.regex.Matcher;
@@ -28,12 +29,13 @@ public class Controller implements ActionListener {
 	Properties propiedad;
 	MimeMessage mensaje;
 	AgenciaDTO agencia;
-	Persona logueada;
-	Persona aleatoria;
-	int edad = 0;
-	String salario = "-1.0", divorcios = "", genero = "", nombre = "", apellido = "", alias = "", contrasena = "", correo = "",
-			estatura = "", estado = "";
+	private Persona logueada;
+	private  Persona aleatoria;
+	private int edad = 0;
+	private  String salario = "-1.0", divorcios = "", genero = "", nombre = "", apellido = "", alias = "", contrasena = "", correo = "",
+			estatura = "", estado = "", gen = "",datos = "";
 	Date fNaci = null;
+	
 
 	public Controller() {
 		iniciarAplicacion();
@@ -64,6 +66,9 @@ public class Controller implements ActionListener {
 		vista.getpAEstadisticas().getBtnGenePDF().addActionListener(this);
 		vista.getpAEstadisticas().getCbxDatos().addActionListener(this);
 		vista.getpAEstadisticas().getCbxGenero().addActionListener(this);
+		vista.getpAMenu().getBtnBuscarU().addActionListener(this);
+		vista.getpAMenu().getBtnUsuarios().addActionListener(this);
+		vista.getpAMenu().getBtnRaiting().addActionListener(this);
 	}
 
 	@Override
@@ -77,7 +82,9 @@ public class Controller implements ActionListener {
 			alias = vista.getpInicio().getTxtAlias().getText();
 			contrasena = vista.getpInicio().getTxtContrasenia().getText();
 			if(alias.equals("admin-1234") && contrasena.equals("admin-1234")) {
-				// ACA VA LO DEL ADMIN
+				vista.getpInicio().setVisible(false);
+				vista.getpABuscar().setVisible(true);
+				vista.getpAMenu().setVisible(true);
 			} 
 			logueada = agencia.getPersonaDAO().iniSesion(alias, contrasena, agencia.getPersonas());
 			if(logueada != null) {
@@ -175,7 +182,31 @@ public class Controller implements ActionListener {
 			vista.getpConocer().setVisible(false); 
 		}
 		
-	
+		if(e.getActionCommand().equals("pLikes")||e.getActionCommand().equals("pGen")){
+			datos = vista.getpAEstadisticas().getCbxDatos().getSelectedItem().toString();
+			gen = vista.getpAEstadisticas().getCbxGenero().getSelectedItem().toString();
+			ArrayList<Persona> persona = new ArrayList<Persona>();
+			persona = agencia.getPersonaDAO().topUsuarios(agencia.getPersonas(), datos, gen);
+			vista.getpAEstadisticas().updateGraficaG(persona);
+		}
+		if(e.getActionCommand().equals("Buscar Usuario")){
+			vista.getpInicio().setVisible(false);
+			vista.getpARaiting().setVisible(false);
+			vista.getpAEstadisticas().setVisible(false);
+			vista.getpRegistro().setVisible(true);
+			System.out.println("Natalia mentirosa");
+		}
+		if(e.getActionCommand().equals("pRai")) {
+			vista.getpRegistro().setVisible(false);
+			vista.getpAEstadisticas().setVisible(false);
+			vista.getpARaiting().setVisible(true);
+		}
+		if(e.getActionCommand().equals("Usuarios")) {
+			vista.getpRegistro().setVisible(false);
+			vista.getpARaiting().setVisible(false);
+			vista.getpAEstadisticas().setVisible(true);
+		}
+		
 	}
 	
 	public void cambioAleatorio() {

@@ -24,6 +24,7 @@ public class VentanaPrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 	    setLocationRelativeTo(null);
+	    setResizable(false);
 		inicializar();
 	}
 	
@@ -33,7 +34,7 @@ public class VentanaPrincipal extends JFrame {
 		pInicio = new ViewInicio();
 		pInicio.setBounds(0,0,600,600);
 		pInicio.setBackground(new Color(245,213,215));
-		pInicio.setVisible(false);
+		pInicio.setVisible(true);
 		getContentPane().add(pInicio);
 		
 		pRegistro= new ViewRegistro();
@@ -57,7 +58,7 @@ public class VentanaPrincipal extends JFrame {
 		pAMenu= new ViewAdminMenu();
 		pAMenu.setBounds(0,0,600,40);
 		pAMenu.setBackground(new Color(204,0,0));
-		pAMenu.setVisible(true);
+		pAMenu.setVisible(false);
 		pAMenu.setBorder( new MatteBorder(0,0,3,3,Color.black));
 		getContentPane().add(pAMenu);
 		
@@ -76,7 +77,7 @@ public class VentanaPrincipal extends JFrame {
 		pARaiting = new ViewAdminRaiting();
 		pARaiting.setBounds(0,40,600,560);
 		pARaiting.setBackground(new Color(245,213,215));
-		pARaiting.setVisible(true);
+		pARaiting.setVisible(false);
 		getContentPane().add(pARaiting);
 		
 		
