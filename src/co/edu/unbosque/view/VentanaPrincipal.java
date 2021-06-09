@@ -15,6 +15,7 @@ public class VentanaPrincipal extends JFrame {
 	private ViewAdminMenu pAMenu;
 	private ViewAdminEstadisticas pAEstadisticas;
 	private ViewAdminUsuarios pAUsuarios;
+	private ViewModificar pModificar;
 	
 	public VentanaPrincipal() {
 		
@@ -80,7 +81,11 @@ public class VentanaPrincipal extends JFrame {
 		pAUsuarios.setVisible(false);
 		getContentPane().add(pAUsuarios);
 		
-		
+		pModificar = new ViewModificar();
+		pModificar.setBounds(0,0,600,600);
+		pModificar.setBackground(new Color(204,0,0));
+		pModificar.setVisible(false);
+		getContentPane().add(pModificar);
 	}
 
 	public ViewInicio getpInicio() {

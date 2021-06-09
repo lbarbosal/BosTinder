@@ -119,7 +119,7 @@ public class PersonaDAO {
 	}
 	
 	public Persona cambioAleatorio(ArrayList<Persona> personas) {
-		int indexAle = (int) Math.floor(Math.random()*personas.size());
+		int indexAle = (int) Math.floor(Math.random()*personas.size()-1);
 		return personas.get(indexAle);	
 	}
 	
@@ -128,15 +128,15 @@ public class PersonaDAO {
 		personas = ordenamientoIns(personas, tipoBus);
 		Persona p = null;
 		for (int i = 0; i < personas.size(); i++) {
-			if(listaTop.size() <= 10) {
+			if(listaTop.size() < 10) {
 				switch (genero) {
-				case "M":
-					if (personas.get(i).getGenero().equals("M")) {
+				case "Masculino":
+					if (personas.get(i).getGenero().equals("Masculino")) {
 						listaTop.add(personas.get(i));
 					}
 					break;
-				case "F":
-					if (personas.get(i).getGenero().equals("F")) {
+				case "Femenino":
+					if (personas.get(i).getGenero().equals("Femenino")) {
 						listaTop.add(personas.get(i));
 					}
 					break;

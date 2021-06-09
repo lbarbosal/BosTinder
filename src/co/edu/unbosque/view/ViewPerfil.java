@@ -41,6 +41,8 @@ public class ViewPerfil extends JPanel{
 		ImageIcon lbLikeR = new ImageIcon("graphics/corazonR.png");
 		ImageIcon lbSalir = new ImageIcon("graphics/salir.png");
 		ImageIcon lbPerfil = new ImageIcon("graphics/buscar.png");
+		ImageIcon hombre = new ImageIcon("graphics/hombre/man.png");
+		ImageIcon mujer = new ImageIcon("graphics/mujeres/women.png");
 		
 		bosstinder = new JLabel();
 		bosstinder.setBounds(192,51,232,44);
@@ -200,10 +202,14 @@ public class ViewPerfil extends JPanel{
 		add(fondo1);
 		
 		
-		
-		
-		
-		
+	}
+	public void fotoPerfil(String g){
+		ImageIcon hombre = new ImageIcon("graphics/hombre/man.png");
+		ImageIcon mujer = new ImageIcon("graphics/mujeres/women.png");
+		if(g.equals("Masculino"))
+		perfil.setIcon(new ImageIcon(hombre.getImage().getScaledInstance(perfil.getWidth(), perfil.getHeight(),Image.SCALE_SMOOTH)));
+		else
+		perfil.setIcon(new ImageIcon(mujer.getImage().getScaledInstance(perfil.getWidth(), perfil.getHeight(),Image.SCALE_SMOOTH)));
 	}
 
 	public JLabel getBosstinder() {

@@ -86,15 +86,17 @@ public class Controller implements ActionListener {
 				vista.getpInicio().setVisible(false);
 				vista.getpABuscar().setVisible(true);
 				vista.getpAMenu().setVisible(true);
-			} 
-			logueada = agencia.getPersonaDAO().iniSesion(alias, contrasena, agencia.getPersonas());
-			if(logueada != null) {
-				cambioAleatorio();
-				vista.getpInicio().setVisible(false);
-				vista.getpConocer().setVisible(true); 
 			} else {
-				JOptionPane.showMessageDialog(null, "ERROR: El alias o la contraseña son incorrectas");
+				logueada = agencia.getPersonaDAO().iniSesion(alias, contrasena, agencia.getPersonas());
+				if(logueada != null) {
+					cambioAleatorio();
+					vista.getpInicio().setVisible(false);
+					vista.getpConocer().setVisible(true); 
+				} else {
+					JOptionPane.showMessageDialog(null, "ERROR: El alias o la contraseña son incorrectas");
+				}
 			}
+			
 		}
 
 		if (e.getActionCommand().equals("Inicio")) {
@@ -240,7 +242,7 @@ public class Controller implements ActionListener {
 		
 		vista.getpConocer().getLbLOtorgados().setText(Integer.toString(aleatoria.getNumLO()));
 		vista.getpConocer().getLbLResividos().setText(Integer.toString(aleatoria.getNumLR()));
-		
+		vista.getpConocer().fotoPerfil(aleatoria.getGenero());
 		if(aleatoria.getGenero().equals("Femenino")) {
 			vista.getpConocer().getLbDepende().setText("Divorcios: ");
 			vista.getpConocer().getLbRespuesta().setText(aleatoria.getDivorcios());
@@ -261,8 +263,13 @@ public class Controller implements ActionListener {
 				JOptionPane.showMessageDialog(null, "ERROR: La estatura o el salario es requerido.");
 				return false;
 			}
-			if(contieneSoloNumeros(salario)) {
+			if(!contieneSoloNumeros(salario)) {
 				JOptionPane.showMessageDialog(null, "ERROR: El salario debe ser numérico.");
+				return false;
+			}
+			// validar que la estatura sea double
+			if(!contieneSoloNumeros(estatura)) {
+				JOptionPane.showMessageDialog(null, "ERROR: la estatura debe ser numérico.");
 				return false;
 			}
 		} else {
@@ -285,11 +292,7 @@ public class Controller implements ActionListener {
 			JOptionPane.showMessageDialog(null, "ERROR: Solo se pueden registrar personas disponibles.");
 			return false;
 		}
-		// validar que la estatura sea double
-		if(contieneSoloNumeros(estatura)) {
-			JOptionPane.showMessageDialog(null, "ERROR: El salario debe ser numérico.");
-			return false;
-		}
+		
 		// validar correo
 		Pattern pattern = Pattern
                 .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
