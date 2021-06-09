@@ -55,7 +55,7 @@ public class ViewPerfil extends JPanel{
 		perfil.setIcon(new ImageIcon(lbperfil.getImage().getScaledInstance(perfil.getWidth(), perfil.getHeight(),Image.SCALE_SMOOTH)));
 		add(perfil);
 		
-		btnEliminar = new JButton("Eliminar");
+		btnEliminar = new JButton("Eliminar Cuenta");
 		btnEliminar.setBounds(53,482,60,27);
 		btnEliminar.setBackground(Color.white);
 		btnEliminar.setFont(new Font("arial",0,11));
@@ -73,6 +73,7 @@ public class ViewPerfil extends JPanel{
 		btnSalir.setBounds(560,40,24,24);
 		btnSalir.setBackground(null);
 		btnSalir.setBorder(null);
+		btnSalir.setActionCommand("logout");
 		btnSalir.setIcon(new ImageIcon(lbSalir.getImage().getScaledInstance(btnSalir.getWidth(), btnSalir.getHeight(),Image.SCALE_SMOOTH)));
 		add(btnSalir);
 		
@@ -80,6 +81,7 @@ public class ViewPerfil extends JPanel{
 		btnConocer.setBounds(530,40,24,24);
 		btnConocer.setBackground(null);
 		btnConocer.setBorder(null);
+		btnConocer.setActionCommand("conocer");
 		btnConocer.setIcon(new ImageIcon(lbPerfil.getImage().getScaledInstance(btnConocer.getWidth(), btnConocer.getHeight(),Image.SCALE_SMOOTH)));
 		add(btnConocer);
 		
@@ -204,8 +206,8 @@ public class ViewPerfil extends JPanel{
 		
 	}
 	public void fotoPerfil(String g){
-		ImageIcon hombre = new ImageIcon("graphics/hombre/man.png");
-		ImageIcon mujer = new ImageIcon("graphics/mujeres/women.png");
+		ImageIcon hombre = new ImageIcon("graphics/hombres/man.png");
+		ImageIcon mujer = new ImageIcon("graphics/mujeres/woman.png");
 		if(g.equals("Masculino"))
 		perfil.setIcon(new ImageIcon(hombre.getImage().getScaledInstance(perfil.getWidth(), perfil.getHeight(),Image.SCALE_SMOOTH)));
 		else

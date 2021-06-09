@@ -27,15 +27,13 @@ public class ViewModificar extends JPanel{
 	private JTextField txtNombre;
 	private JTextField txtApellido;
 	private JTextField txtFNacimiento;
-	private JPasswordField txtContrasenia;
 	private JTextField txtEstatura;
 	private JTextField txtIngresos;
 	private JComboBox<?> cbxEstado;
 	private JComboBox<?> cbxGenero;
 	private ButtonGroup btnGDivorcios;
-	private JRadioButton si;
-	private JRadioButton no;
-	private JButton btnRegistrar;
+	
+	private JButton btnModificar;
 	private JButton btnInicio;
 	
 	
@@ -70,12 +68,7 @@ public class ViewModificar extends JPanel{
 		txtAlias.setEnabled(false);
 		add(txtAlias);
 		
-		JLabel lbContrasenia = new JLabel("Contraseña");
-		lbContrasenia.setBounds(322,212,69,21);
-		add(lbContrasenia);
-		txtContrasenia = new JPasswordField();
-		txtContrasenia.setBounds(322, 237, 177, 27);
-		add(txtContrasenia);
+	
 
 		JLabel lbCorreo = new JLabel("Correo Electronico");
 		lbCorreo.setBounds(102,284,111,21);
@@ -105,23 +98,9 @@ public class ViewModificar extends JPanel{
 		add(lbOpcional);
 		txtIngresos = new JTextField();
 		txtIngresos.setBounds(322, 445, 177, 27);
-		txtIngresos.setVisible(false);
 		add(txtIngresos);
 		
-		no = new JRadioButton("No",true);
-		no.setBounds(324,448,40,23);
-		no.setBackground(new Color(245,213,215));
-		no.setVisible(false);
-		add(no);
-		si = new JRadioButton("Si",false);
-		si.setBounds(411,448,40,23);
-		si.setBackground(new Color(245,213,215));
-		si.setVisible(false);
-		add(si);
 		
-		btnGDivorcios = new ButtonGroup();
-		btnGDivorcios.add(si);
-		btnGDivorcios.add(no);
 		
 		JLabel lbEstado = new JLabel("Estado");
 		lbEstado.setBounds(102, 357, 42, 21);
@@ -141,12 +120,12 @@ public class ViewModificar extends JPanel{
 		cbxGenero.setEnabled(false);
 		add(cbxGenero);
 		
-		btnRegistrar = new JButton("Actualizar Datos");
-		btnRegistrar.setBackground(Color.white);
-		btnRegistrar.setBounds(411,513,87,27);
-		btnRegistrar.setFont(new Font("arial",0,11));
-		btnRegistrar.setBorder( new MatteBorder(0,0,3,3,Color.black));
-		add(btnRegistrar);
+		btnModificar = new JButton("Actualizar Datos");
+		btnModificar.setBackground(Color.white);
+		btnModificar.setBounds(411,513,87,27);
+		btnModificar.setFont(new Font("arial",0,11));
+		btnModificar.setBorder( new MatteBorder(0,0,3,3,Color.black));
+		add(btnModificar);
 		
 		btnInicio = new JButton("Volver");
 		btnInicio.setBackground(Color.white);
@@ -230,16 +209,6 @@ public class ViewModificar extends JPanel{
 	}
 
 
-	public JPasswordField getTxtContrasenia() {
-		return txtContrasenia;
-	}
-
-
-	public void setTxtContrasenia(JPasswordField txtContrasenia) {
-		this.txtContrasenia = txtContrasenia;
-	}
-
-
 	public JTextField getTxtEstatura() {
 		return txtEstatura;
 	}
@@ -290,33 +259,17 @@ public class ViewModificar extends JPanel{
 	}
 
 
-	public JRadioButton getSi() {
-		return si;
+
+
+
+
+	public JButton getBtnModificar() {
+		return btnModificar;
 	}
 
 
-	public void setSi(JRadioButton si) {
-		this.si = si;
-	}
-
-
-	public JRadioButton getNo() {
-		return no;
-	}
-
-
-	public void setNo(JRadioButton no) {
-		this.no = no;
-	}
-
-
-	public JButton getBtnRegistrar() {
-		return btnRegistrar;
-	}
-
-
-	public void setBtnRegistrar(JButton btnRegistrar) {
-		this.btnRegistrar = btnRegistrar;
+	public void setBtnModificar(JButton btnRegistrar) {
+		this.btnModificar = btnRegistrar;
 	}
 
 

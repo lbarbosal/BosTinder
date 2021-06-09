@@ -70,6 +70,12 @@ public class Controller implements ActionListener {
 		vista.getpAMenu().getBtnUsuarios().addActionListener(this);
 		vista.getpAMenu().getBtnRaiting().addActionListener(this);
 		vista.getpAMenu().getBtnSalir().addActionListener(this);
+		vista.getpPerfil().getBtnSalir().addActionListener(this);
+		vista.getpPerfil().getBtnConocer().addActionListener(this);
+		vista.getpPerfil().getBtnEliminar().addActionListener(this);
+		vista.getpPerfil().getBtnEditar().addActionListener(this);
+		vista.getpModificar().getBtnInicio().addActionListener(this);
+		vista.getpModificar().getBtnModificar().addActionListener(this);
 	}
 
 	@Override
@@ -184,7 +190,57 @@ public class Controller implements ActionListener {
 			vista.getpPerfil().getLbEstatura().setText(logueada.getEstatura());
 			vista.getpPerfil().getLbFNacimiento().setText(logueada.getFecha());
 			vista.getpPerfil().getLbLOtorgados().setText(Integer.toString(logueada.getNumLO()));
+			vista.getpPerfil().getLbLResividos().setText(Integer.toString(logueada.getNumLR()));
+			vista.getpPerfil().getLbGenero().setText(logueada.getGenero());
+			if(logueada.getGenero().equals("Masculino")) {
+				vista.getpPerfil().getLbDepende().setText("Ingresos");
+				vista.getpPerfil().getLbRespuesta().setText(Double.toString(logueada.getIngresos()));
+			}else {
+				vista.getpPerfil().getLbDepende().setText("Divorsios");
+				vista.getpPerfil().getLbRespuesta().setText(logueada.getDivorcios());
+			}
+			vista.getpPerfil().fotoPerfil(logueada.getGenero());
+				
 		}
+		if (e.getActionCommand().equals("conocer")) {
+			vista.getpPerfil().setVisible(false);
+			vista.getpConocer().setVisible(true);
+			
+		}
+		
+		if (e.getActionCommand().equals("Eliminar Cuenta")) {
+			//Eliminar cuenta
+		}
+		
+		if (e.getActionCommand().equals("Editar")) {
+			vista.getpPerfil().setVisible(false);
+			vista.getpModificar().setVisible(true);
+			vista.getpConocer().setVisible(false);
+			vista.getpModificar().getTxtAlias().setText(logueada.getAlias());;
+			vista.getpModificar().getTxtNombre().setText(logueada.getNombre());;
+			vista.getpModificar().getTxtApellido().setText(logueada.getApellido());;
+			vista.getpModificar().getTxtCorreo().setText(logueada.getCorreo());
+			vista.getpModificar().getCbxEstado().setSelectedItem(logueada.getEstado());
+			vista.getpModificar().getTxtEstatura().setText(logueada.getEstatura());
+			vista.getpModificar().getTxtFNacimiento().setText(logueada.getFecha());
+			vista.getpModificar().getCbxGenero().setSelectedItem(logueada.getGenero());
+			if(logueada.getGenero().equals("Masculino")) {
+				vista.getpModificar().getLbOpcional().setText("Ingresos");
+				vista.getpModificar().getTxtIngresos().setText(Double.toString(logueada.getIngresos()));
+			}else {
+				vista.getpModificar().getLbOpcional().setText("Divorsios");
+				vista.getpModificar().getTxtIngresos().setText(logueada.getDivorcios());
+			}
+		}
+		if (e.getActionCommand().equals("Volver")) {
+			vista.getpModificar().setVisible(false);
+			vista.getpPerfil().setVisible(true);
+		}
+		
+		if (e.getActionCommand().equals("Actualizar Datos")) {
+			
+		}
+		
 		if (e.getActionCommand().equals("logout")) {
 			logueada = null;
 			alias = "";
@@ -193,6 +249,7 @@ public class Controller implements ActionListener {
 			vista.getpInicio().getTxtContrasenia().setText("");
 			vista.getpInicio().setVisible(true);
 			vista.getpConocer().setVisible(false); 
+			vista.getpPerfil().setVisible(false);
 		}
 		
 		if(e.getActionCommand().equals("pLikes")||e.getActionCommand().equals("pGen")){
