@@ -119,7 +119,7 @@ public class PersonaDAO {
 	}
 	
 	public Persona cambioAleatorio(ArrayList<Persona> personas) {
-		int indexAle = (int) Math.floor(Math.random()*personas.size());
+		int indexAle = (int) Math.floor(Math.random()*personas.size()-1);
 		return personas.get(indexAle);	
 	}
 	

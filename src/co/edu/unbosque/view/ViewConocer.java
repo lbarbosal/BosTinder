@@ -3,6 +3,7 @@ package co.edu.unbosque.view;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -30,11 +31,24 @@ public class ViewConocer extends JPanel{
 	private JButton btnPerfil;
 	private JButton btnLike;
 	private JButton btnDislike;
-	
+	private ArrayList<ImageIcon> hombres;
+	private ArrayList<ImageIcon> mujeres;
 	public ViewConocer() {
+		
 		setLayout(null);
+		hombres = new ArrayList<ImageIcon>();
+		mujeres = new ArrayList<ImageIcon>();
+		for(int i=1 ; i<26 ;i++){
+		ImageIcon image = new ImageIcon("graphics/hombres/man"+i+".png");
+		hombres.add(image);
+		}
+		for(int j=1 ; j<24 ;j++){
+			ImageIcon image2 = new ImageIcon("graphics/Mujeres/women"+j+".png");
+			mujeres.add(image2);
+			}
+		
 		ImageIcon titulo = new ImageIcon("graphics/titulo2.png");
-		ImageIcon lbperfil = new ImageIcon("graphics/perfil.png");
+		ImageIcon lbperfil = new ImageIcon("graphics/hombres/man2.png");
 		ImageIcon lbLikeR = new ImageIcon("graphics/corazonR.png");
 		ImageIcon lbLike = new ImageIcon("graphics/like.png");
 		ImageIcon lbDislike = new ImageIcon("graphics/dislike.png");
@@ -176,6 +190,16 @@ public class ViewConocer extends JPanel{
 		
 		
 	}
+	
+	public void fotoPerfil(String g){
+		if(g.equals("Masculino")) {
+			 int i = (int) Math.floor(Math.random()*hombres.size()-1);
+		perfil.setIcon(new ImageIcon(hombres.get(i).getImage().getScaledInstance(perfil.getWidth(), perfil.getHeight(),Image.SCALE_SMOOTH)));
+		}else {
+		int i = (int) Math.floor(Math.random()*hombres.size()-1);
+		perfil.setIcon(new ImageIcon(mujeres.get(i).getImage().getScaledInstance(perfil.getWidth(), perfil.getHeight(),Image.SCALE_SMOOTH)));
+		}
+	}
 
 	public JLabel getBosstinder() {
 		return bosstinder;
@@ -296,6 +320,8 @@ public class ViewConocer extends JPanel{
 	public void setBtnDislike(JButton btnDislike) {
 		this.btnDislike = btnDislike;
 	}
+
+	
 	
 
 }
