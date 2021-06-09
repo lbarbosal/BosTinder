@@ -173,7 +173,17 @@ public class Controller implements ActionListener {
 			cambioAleatorio();
 		}
 		if (e.getActionCommand().equals("miPerfil")) {
-			//agregar perfil
+			vista.getpPerfil().setVisible(true);
+			vista.getpConocer().setVisible(false);
+			vista.getpPerfil().getLbAlias().setText(logueada.getAlias());;
+			vista.getpPerfil().getLbNombre().setText(logueada.getNombre());;
+			vista.getpPerfil().getLbApellido().setText(logueada.getApellido());;
+			vista.getpPerfil().getLbCorreo().setText(logueada.getCorreo());
+			vista.getpPerfil().getLbEdad().setText(Integer.toString(logueada.getEdad()));
+			vista.getpPerfil().getLbEstado().setText(logueada.getEstado());
+			vista.getpPerfil().getLbEstatura().setText(logueada.getEstatura());
+			vista.getpPerfil().getLbFNacimiento().setText(logueada.getFecha());
+			vista.getpPerfil().getLbLOtorgados().setText(Integer.toString(logueada.getNumLO()));
 		}
 		if (e.getActionCommand().equals("logout")) {
 			logueada = null;

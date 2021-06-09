@@ -331,6 +331,48 @@ public class ViewPerfil extends JPanel{
 	public void setBtnDislike(JButton btnDislike) {
 		this.btnEliminar = btnDislike;
 	}
+	public JLabel getLbNombre() {
+		return lbNombre;
+	}
+	public void setLbNombre(JLabel lbNombre) {
+		this.lbNombre = lbNombre;
+	}
+	public JLabel getLbApellido() {
+		return lbApellido;
+	}
+	public void setLbApellido(JLabel lbApellido) {
+		this.lbApellido = lbApellido;
+	}
+	public JLabel getLbFNacimiento() {
+		return lbFNacimiento;
+	}
+	public void setLbFNacimiento(JLabel lbFNacimiento) {
+		this.lbFNacimiento = lbFNacimiento;
+	}
+	public JLabel getLbCorreo() {
+		return lbCorreo;
+	}
+	public void setLbCorreo(JLabel lbCorreo) {
+		this.lbCorreo = lbCorreo;
+	}
+	public JButton getBtnConocer() {
+		return btnConocer;
+	}
+	public void setBtnConocer(JButton btnConocer) {
+		this.btnConocer = btnConocer;
+	}
+	public JButton getBtnEditar() {
+		return btnEditar;
+	}
+	public void setBtnEditar(JButton btnEditar) {
+		this.btnEditar = btnEditar;
+	}
+	public JButton getBtnEliminar() {
+		return btnEliminar;
+	}
+	public void setBtnEliminar(JButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
 	
 
 }
