@@ -72,7 +72,7 @@ public class PersonaDAO {
 				personas.remove(e);
 				file.delete();
 				file.createNewFile();
-				//archivo.escribirEnArchivo(personas, file);
+				archivo.escribirEnArchivo(personas, file);
 				resp = true;
 			}
 			return resp;
@@ -159,9 +159,9 @@ public class PersonaDAO {
 			for(j =i; j>0;j--) {
 				boolean f = false;
 				
-				if(tipoBus.equals("numLR")) {
+				if(tipoBus.equals("Número de likes")) {
 					f = personas.get(j-1).getNumLR() < actual.getNumLR();
-				} else if(tipoBus.equals("ingresos")) {
+				} else if(tipoBus.equals("Ingresos")) {
 					f = personas.get(j-1).getIngresos() < actual.getIngresos();
 				} else {
 					f = false;
