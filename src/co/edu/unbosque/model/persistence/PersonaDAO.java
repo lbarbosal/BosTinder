@@ -177,6 +177,72 @@ public class PersonaDAO {
 		return personas;
 	}
 	
+	public double calcMEdia(ArrayList<Persona> personas, String tipoBus, String genero) {
+		double media = 0;
+		int suma = 0;
+		ArrayList<Persona> listaT = new ArrayList<Persona>();
+		listaT = topUsuarios(personas, tipoBus, genero);
+		for (int i = 0; i < listaT.size(); i++) {
+			if (tipoBus.equals("Número de likes")) {
+				suma += listaT.get(i).getNumLR();
+			}else {
+				suma += listaT.get(i).getIngresos();
+			}
+		}
+		media = (double) suma / listaT.size();
+		return media;
+	}
+
+	public double calcMediana(ArrayList<Persona> personas, String tipoBus, String genero) {
+		double mediana = 0;
+		ArrayList<Persona> listaT = new ArrayList<Persona>();
+		listaT = topUsuarios(personas, tipoBus, genero);
+		int numPersonas = listaT.size();
+
+		if (tipoBus.equals("Número de likes")) {
+			mediana = (listaT.get(4).getNumLR() + listaT.get(5).getNumLR()) / 2;
+		} else {
+			mediana = (listaT.get(4).getIngresos() + listaT.get(5).getIngresos()) / 2;
+		}
+		return mediana;
+	}
+	
+	public double calcModa(ArrayList<Persona> personas, String tipoBus, String genero) {
+		int maxNumRepeticiones = 0;
+		double moda = 0;
+		ArrayList<Persona> listaT = new ArrayList<Persona>();
+		listaT = topUsuarios(personas, tipoBus, genero);
+		for(int i=0; i<listaT.size(); i++)
+	    {
+	        int numRepeticiones= 0;
+	        for(int j=0; j<listaT.size(); j++)
+	        {
+	        	if (tipoBus.equals("Número de likes")) {
+		            if(listaT.get(i).getNumLR()==listaT.get(i).getNumLR())
+		            {
+		                numRepeticiones++;
+		            }   
+		            if(numRepeticiones>maxNumRepeticiones)
+		            {
+		                moda= listaT.get(i).getNumLR();
+		                maxNumRepeticiones= numRepeticiones;
+		            } 
+	        	}else {
+	        		if(listaT.get(i).getIngresos()==listaT.get(i).getIngresos())
+		            {
+		                numRepeticiones++;
+		            }   
+		            if(numRepeticiones>maxNumRepeticiones)
+		            {
+		                moda= listaT.get(i).getIngresos();
+		                maxNumRepeticiones= numRepeticiones;
+		            } 
+	        	}
+	        }
+	    }
+		return moda;
+	}
+	
 	public Archivo getArchivo() {
 		return archivo;
 	}
