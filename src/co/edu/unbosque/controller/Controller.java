@@ -188,10 +188,9 @@ public class Controller implements ActionListener {
 			gen = vista.getpAEstadisticas().getCbxGenero().getSelectedItem().toString();
 			ArrayList<Persona> persona = new ArrayList<Persona>();
 			persona = agencia.getPersonaDAO().topUsuarios(agencia.getPersonas(), datos, gen);
-			vista.getpAEstadisticas().updateGraficaG(persona);
+			vista.getpAEstadisticas().updateGraficaG(persona, datos);
 		}
 		if(e.getActionCommand().equals("Buscar Usuario")){
-			
 			vista.getpAUsuarios().setVisible(false);
 			vista.getpAEstadisticas().setVisible(false);
 			vista.getpABuscar().setVisible(true);
