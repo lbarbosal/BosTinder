@@ -35,7 +35,7 @@ public class VentanaPrincipal extends JFrame {
 		pInicio = new ViewInicio();
 		pInicio.setBounds(0,0,600,600);
 		pInicio.setBackground(new Color(245,213,215));
-		pInicio.setVisible(false);
+		pInicio.setVisible(true);
 		getContentPane().add(pInicio);
 		
 		pRegistro= new ViewRegistro();
@@ -47,7 +47,7 @@ public class VentanaPrincipal extends JFrame {
 		pConocer= new ViewConocer();
 		pConocer.setBounds(0,0,600,600);
 		pConocer.setBackground(new Color(204,0,0));
-		pConocer.setVisible(true);
+		pConocer.setVisible(false);
 		getContentPane().add(pConocer);
 		
 		pPerfil= new ViewPerfil();

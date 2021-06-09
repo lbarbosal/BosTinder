@@ -43,12 +43,12 @@ public class ViewConocer extends JPanel{
 		hombres.add(image);
 		}
 		for(int j=1 ; j<24 ;j++){
-			ImageIcon image2 = new ImageIcon("graphics/Mujeres/women"+j+".png");
+			ImageIcon image2 = new ImageIcon("graphics/mujeres/woman"+j+".png");
 			mujeres.add(image2);
 			}
 		
 		ImageIcon titulo = new ImageIcon("graphics/titulo2.png");
-		ImageIcon lbperfil = new ImageIcon("graphics/hombres/man2.png");
+		ImageIcon lbperfil = new ImageIcon("graphics/mujeres/woman2.png");
 		ImageIcon lbLikeR = new ImageIcon("graphics/corazonR.png");
 		ImageIcon lbLike = new ImageIcon("graphics/like.png");
 		ImageIcon lbDislike = new ImageIcon("graphics/dislike.png");
@@ -193,10 +193,10 @@ public class ViewConocer extends JPanel{
 	
 	public void fotoPerfil(String g){
 		if(g.equals("Masculino")) {
-			 int i = (int) Math.floor(Math.random()*hombres.size()-1);
+			 int i = (int) Math.floor(Math.random()*hombres.size());
 		perfil.setIcon(new ImageIcon(hombres.get(i).getImage().getScaledInstance(perfil.getWidth(), perfil.getHeight(),Image.SCALE_SMOOTH)));
 		}else {
-		int i = (int) Math.floor(Math.random()*hombres.size()-1);
+		int i = (int) Math.floor(Math.random()*mujeres.size());
 		perfil.setIcon(new ImageIcon(mujeres.get(i).getImage().getScaledInstance(perfil.getWidth(), perfil.getHeight(),Image.SCALE_SMOOTH)));
 		}
 	}

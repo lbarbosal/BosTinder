@@ -240,7 +240,7 @@ public class Controller implements ActionListener {
 		
 		vista.getpConocer().getLbLOtorgados().setText(Integer.toString(aleatoria.getNumLO()));
 		vista.getpConocer().getLbLResividos().setText(Integer.toString(aleatoria.getNumLR()));
-		
+		vista.getpConocer().fotoPerfil(aleatoria.getGenero());
 		if(aleatoria.getGenero().equals("Femenino")) {
 			vista.getpConocer().getLbDepende().setText("Divorcios: ");
 			vista.getpConocer().getLbRespuesta().setText(aleatoria.getDivorcios());
