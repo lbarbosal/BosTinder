@@ -152,6 +152,14 @@ public class VentanaPrincipal extends JFrame {
 		this.pAUsuarios = pARaiting;
 	}
 
+	public ViewModificar getpModificar() {
+		return pModificar;
+	}
+
+	public void setpModificar(ViewModificar pModificar) {
+		this.pModificar = pModificar;
+	}
+
 	
 
 	
