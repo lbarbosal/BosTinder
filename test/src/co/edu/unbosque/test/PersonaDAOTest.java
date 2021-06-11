@@ -36,7 +36,7 @@ public class PersonaDAOTest extends TestCase{
 		persona_1 = new Persona(1, 
 								"Nombre de prueba 1", 
 								"Apellido prueba 1", 
-								"F", 
+								"Masculino", 
 								"Alias1", 
 								"123", 
 								"alias1@gmail.com", 
@@ -53,7 +53,7 @@ public class PersonaDAOTest extends TestCase{
 		persona_2 = new Persona(2, 
 								"Nombre de prueba 2", 
 								"Apellido prueba 2", 
-								"M", 
+								"Femenino", 
 								"Alias2", 
 								"123", 
 								"alias2@gmail.com", 
@@ -70,7 +70,7 @@ public class PersonaDAOTest extends TestCase{
 		persona_3 = new Persona(3, 
 								"Nombre de prueba 3", 
 								"Apellido prueba 3", 
-								"M", 
+								"Masculino", 
 								"Alias3", 
 								"123", 
 								"alias3@gmail.com", 
@@ -87,7 +87,7 @@ public class PersonaDAOTest extends TestCase{
 		persona_4 = new Persona(4, 
 								"Nombre de prueba 4", 
 								"Apellido prueba 4", 
-								"M", 
+								"Femenino", 
 								"Alias2", 
 								"123", 
 								"alias4@gmail.com", 
@@ -171,6 +171,17 @@ public class PersonaDAOTest extends TestCase{
 		setupStage();
 		assertTrue("Se debió eliminar la persona", persona.eliminarPersona(persona_1.getAlias(), lista, file));
 		assertFalse("No se debió eliminar la persona", persona.eliminarPersona(persona_3.getAlias(), lista, file));
+	}
+	
+	public void testModificarPersona() {
+		setupStage();
+		assertTrue("Se debió modificar la persona", persona.modificarPersona("Masculino", "Nombre prueba 1!", "Apellido prueba 1!", "1,77", persona_1.getAlias(), "3400000", "Soltero", lista, file));
+		assertFalse("No se debió modificar la persona", persona.modificarPersona("Masculino", "Nombre prueba 3!", "Apellido prueba 3!", "1,60", persona_3.getAlias(), "2600000", "Soltero", lista, file));
+	}
+	
+	public void testAgregarLR() {
+		setupStage();
+		
 	}
 
 }

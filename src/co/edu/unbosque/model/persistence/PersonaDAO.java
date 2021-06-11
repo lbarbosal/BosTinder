@@ -106,6 +106,7 @@ public class PersonaDAO {
 		Persona p = buscarPersona(alias, personas);
 		if(p != null) {
 			p.setNumLR(p.getNumLR()+1);
+			return true;
 		}
 		return false;
 	}
