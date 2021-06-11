@@ -71,9 +71,16 @@ public class ViewAdminEstadisticas extends JPanel{
 	}
 	public void updateGraficaG(ArrayList<Persona> info, String tipoB) {
 		DefaultCategoryDataset datosG = new DefaultCategoryDataset();
-		for (int i = 0; i < info.size(); i++) {
-			datosG.setValue(info.get(i).getNumLR(), info.get(i).getAlias() ,"");
+		if(tipoB.equals("Ingresos")) {
+			for (int i = 0; i < info.size(); i++) {
+				datosG.setValue(info.get(i).getIngresos(), info.get(i).getAlias() ,"");
+			}
+		} else {
+			for (int i = 0; i < info.size(); i++) {
+				datosG.setValue(info.get(i).getNumLR(), info.get(i).getAlias() ,"");
+			}
 		}
+
 		JFreeChart graficoBarra = ChartFactory.createBarChart3D("TOP 10", "Tabla de convenciones", tipoB , datosG);
 		setGraficoBarra(graficoBarra);
 		getPanel().setChart(graficoBarra);

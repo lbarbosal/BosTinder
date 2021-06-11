@@ -126,7 +126,6 @@ public class PersonaDAO {
 	public ArrayList<Persona> topUsuarios(ArrayList<Persona> personas, String tipoBus, String genero) {
 		ArrayList<Persona> listaTop = new ArrayList<Persona>();
 		personas = ordenamientoIns(personas, tipoBus);
-		Persona p = null;
 		for (int i = 0; i < personas.size(); i++) {
 			if(listaTop.size() < 10) {
 				switch (genero) {

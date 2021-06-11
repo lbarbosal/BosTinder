@@ -70,6 +70,8 @@ public class Controller implements ActionListener {
 		vista.getpAMenu().getBtnUsuarios().addActionListener(this);
 		vista.getpAMenu().getBtnRaiting().addActionListener(this);
 		vista.getpAMenu().getBtnSalir().addActionListener(this);
+		vista.getpABuscar().getBtnBuscar().addActionListener(this);
+		vista.getpABuscar().getBtnEliminar().addActionListener(this);
 	}
 
 	@Override
@@ -144,6 +146,72 @@ public class Controller implements ActionListener {
 			}
 		}
 
+		if (e.getActionCommand().equals("btnBuscar")) {
+			String buscarP = vista.getpABuscar().getTxtBuscador().getText();
+			Persona per = agencia.getPersonaDAO().buscarPersona(buscarP, agencia.getPersonas());
+			if(per != null) {
+				vista.getpABuscar().getLbAlias().setText(per.getAlias());
+				vista.getpABuscar().getLbNombre().setText(per.getNombre());
+				vista.getpABuscar().getLbApellido().setText(per.getApellido());
+				vista.getpABuscar().getLbEstado().setText(per.getEstado());
+				vista.getpABuscar().getLbCorreo().setText(per.getCorreo());
+				vista.getpABuscar().getLbFNacimiento().setText(per.getFecha());
+				vista.getpABuscar().getLbEdad().setText(Integer.toString(per.getEdad()));
+				vista.getpABuscar().getLbGenero().setText(per.getGenero());
+				vista.getpABuscar().getLbEstatura().setText(per.getEstatura());
+				vista.getpABuscar().getLbLOtorgados().setText(Integer.toString(per.getNumLO()));
+				vista.getpABuscar().getLbLResividos().setText(Integer.toString(per.getNumLR()));
+				if(per.getEstatura() == null ) {
+					vista.getpABuscar().getLbEstatura().setText("N/A");
+				} else {
+					vista.getpABuscar().getLbEstatura().setText(per.getEstatura());
+				}
+				
+				if(per.getGenero().equals("Femenino")) {
+					vista.getpABuscar().getLbDepende().setText("Divorcios: ");
+					vista.getpABuscar().getLbRespuesta().setText(per.getDivorcios());
+				} else {
+					vista.getpABuscar().getLbDepende().setText("Salario: ");
+					if(per.getIngresos() == -1.0) {
+						vista.getpABuscar().getLbRespuesta().setText("N/A");
+					} else {
+						vista.getpABuscar().getLbRespuesta().setText(Double.toString(per.getIngresos()));
+					}
+				}
+			} else {
+				JOptionPane.showMessageDialog(null, "ERROR: El alias no existe.");
+			}
+			
+		}
+		
+		if (e.getActionCommand().equals("btnEliminar")) {
+			System.out.println("Elimanar");
+			String buscarP = vista.getpABuscar().getTxtBuscador().getText();
+			int i = JOptionPane.showConfirmDialog(null, "¿Está seguro de querer eliminarlo?", "Eliminar",
+					JOptionPane.YES_NO_CANCEL_OPTION);
+			if (i == 0) {
+				boolean res = agencia.getPersonaDAO().eliminarPersona(buscarP, agencia.getPersonas(), agencia.getFile());
+				if (res) {
+					JOptionPane.showMessageDialog(null, "El usuario se elimino correctamente");
+					vista.getpABuscar().getLbAlias().setText("--");
+					vista.getpABuscar().getLbNombre().setText("--");
+					vista.getpABuscar().getLbApellido().setText("--");
+					vista.getpABuscar().getLbEstado().setText("--");
+					vista.getpABuscar().getLbCorreo().setText("--");
+					vista.getpABuscar().getLbFNacimiento().setText("--");
+					vista.getpABuscar().getLbEdad().setText("--");
+					vista.getpABuscar().getLbGenero().setText("--");
+					vista.getpABuscar().getLbEstatura().setText("--");
+					vista.getpABuscar().getLbLOtorgados().setText("--");
+					vista.getpABuscar().getLbLResividos().setText("--");
+					vista.getpABuscar().getLbRespuesta().setText("--");
+					vista.getpABuscar().getLbRespuesta().setText("--");
+				} else {
+					JOptionPane.showMessageDialog(null, "Error al emiminar el usuario");
+				}
+			}
+		}
+		
 		if (e.getActionCommand().equals("pRegistroGenero")) {
 			String genero = vista.getpRegistro().getCbxGenero().getSelectedItem().toString();
 			if (genero.equals("Femenino")) {
@@ -190,7 +258,12 @@ public class Controller implements ActionListener {
 			gen = vista.getpAEstadisticas().getCbxGenero().getSelectedItem().toString();
 			ArrayList<Persona> persona = new ArrayList<Persona>();
 			persona = agencia.getPersonaDAO().topUsuarios(agencia.getPersonas(), datos, gen);
-			vista.getpAEstadisticas().updateGraficaG(persona, datos);
+			if(datos.equals("Ingresos") && gen.equals("Femenino")) {
+				vista.getpAEstadisticas().getCbxGenero().setSelectedItem("Seleccione");
+				JOptionPane.showMessageDialog(null, "INFO: El filtro de ingresos no aplica para el género femenino");
+			} else {
+				vista.getpAEstadisticas().updateGraficaG(persona, datos);
+			}
 		}
 		if(e.getActionCommand().equals("Buscar Usuario")){
 			vista.getpAUsuarios().setVisible(false);
