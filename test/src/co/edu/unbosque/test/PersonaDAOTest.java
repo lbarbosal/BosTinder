@@ -44,8 +44,8 @@ public class PersonaDAOTest extends TestCase{
 								23,
 								1000000,
 								"0", 
-								0,
-								0,
+								5,
+								5,
 								0,
 								"Soltero",
 								"1,73");
@@ -61,8 +61,8 @@ public class PersonaDAOTest extends TestCase{
 								25,
 								2000000,
 								"0", 
-								0,
-								0,
+								9,
+								9,
 								0,
 								"Soltero",
 								"1,60");
@@ -181,7 +181,45 @@ public class PersonaDAOTest extends TestCase{
 	
 	public void testAgregarLR() {
 		setupStage();
-		
+		assertTrue("Se debió dar like", persona.agregarLR(persona_1.getAlias(), lista, file));
+		assertFalse("No se debió dar like", persona.agregarLR(persona_3.getAlias(), lista, file));
+	}
+	
+	public void testAgregarLO() {
+		setupStage();
+		assertTrue("Se debió dar like", persona.agregarLO(persona_1.getAlias(), lista, file));
+		assertFalse("No se debió dar like", persona.agregarLO(persona_3.getAlias(), lista, file));
 	}
 
+	public void testCambioAleatorio() {
+		setupStage();
+		assertNotNull("Se debió obtener una persona", persona.cambioAleatorio(lista));
+	}
+	
+//	public void testOrdenamientoIns() {
+//		setupStage();
+//	}
+//	
+//	public void testTopUsuarios() {
+//		setupStage();
+//	}
+//	
+//	public void testOrdenamientoSel() {
+//		setupStage();
+//	}
+	
+	public void testCalcMEdia() {
+		setupStage();
+		assertEquals("La media debe ser 7", 7,persona.calcMEdia(lista, "Número de likes", "Femenino"));
+	}
+	
+//	public void testCalcMediana() {
+//		setupStage();
+//	}
+	
+//	public void testCalcModa() {
+//		setupStage();
+//	}
+	
+	
 }

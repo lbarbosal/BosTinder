@@ -118,6 +118,7 @@ public class PersonaDAO {
 			p.setNumLR(p.getNumLR()+1);
 			personas.remove(p2);
 			personas.add(p);
+			return true;
 		}
 		
 		return false;
