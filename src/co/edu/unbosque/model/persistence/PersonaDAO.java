@@ -7,6 +7,7 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import co.edu.unbosque.model.Persona;
+import model.Empresa;
 
 
 
@@ -82,7 +83,7 @@ public class PersonaDAO {
 		return resp;
 	}
 	
-	public boolean modificarPersona(int id, String nombre, String apellido, String genero, String alias, String contrasena, String correo, String fecha, int edad, double ingresos, String divorcios, String estado, ArrayList<Persona> personas, File file) {
+	public boolean modificarPersona( String genero, String nombre, String apellido,String estatura, String alias,String opcional, String estado, ArrayList<Persona> personas, File file) {
 
 		Persona p = buscarPersona(alias, personas);
 		Persona p2 = p;
@@ -91,7 +92,11 @@ public class PersonaDAO {
 		}
 		p2.setNombre(nombre);
 		p2.setApellido(apellido);
-		p2.setGenero(genero);
+		p2.setEstatura(estatura);
+		if(genero.equals("Masculino"))
+			p2.setIngresos(Double.parseDouble(opcional));
+		else
+			p2.setDivorcios(opcional);
 		personas.remove(p);
 		personas.add(p2);
 		archivo.escribirEnArchivo(personas, file);
@@ -175,6 +180,67 @@ public class PersonaDAO {
 		}
 		return personas;
 	}
+	public ArrayList<Persona> ordenamientoSel(ArrayList<Persona> personas, String tipoBus,String sentido){ // agargar tipo de busqueda
+		int iteracion = 0;
+		boolean permutacion = true;
+		int actual;
+		
+		while (permutacion){
+			permutacion=false;
+			iteracion++;
+			boolean f=false;
+			for(actual=0; actual <personas.size()-iteracion; actual++) {
+				if(sentido.equals("Ascendente"))
+					switch (tipoBus) {
+					  case "Numero De Likes":
+						  f = personas.get(actual).getNumLR()>personas.get(actual+1).getNumLR();
+					    break;
+					  case "Apellido":
+						  int n= personas.get(actual).getApellido().compareTo(personas.get(actual+1).getApellido());
+						  f = n>0;
+						    break;
+					  case "Edad":
+						  f = personas.get(actual).getEdad()>personas.get(actual+1).getEdad();
+					    break;
+					  case "Alias":
+						  int h= personas.get(actual).getAlias().compareTo(personas.get(actual+1).getAlias());
+						  f = h>0;
+						    break;
+					  default:
+					    break;
+					}
+					
+					else	
+						switch (tipoBus) {
+						case "Numero De Likes":
+							  f = personas.get(actual).getNumLR()<personas.get(actual+1).getNumLR();
+						    break;
+						  case "Apellido":
+							  int n= personas.get(actual).getApellido().compareTo(personas.get(actual+1).getApellido());
+							  f = n<0;
+							    break;
+						  case "Edad":
+							  f = personas.get(actual).getEdad()<personas.get(actual+1).getEdad();
+						    break;
+						  case "Alias":
+							  int h= personas.get(actual).getAlias().compareTo(personas.get(actual+1).getAlias());
+							  f = h<0;
+							    break;
+						  default:
+						    break;
+						}
+				if(f) {
+					permutacion= true;
+					Persona temp = personas.get(actual);
+					personas.set(actual, personas.get(actual+1));
+					personas.set(actual+1, temp);
+				}
+			}
+		}
+		return personas;
+	}
+	
+	
 	
 	public double calcMEdia(ArrayList<Persona> personas, String tipoBus, String genero) {
 		double media = 0;
