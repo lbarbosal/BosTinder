@@ -6,6 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry kind="src" path="test/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/BosTinder/lib/activation.jar"/>
@@ -14,5 +15,14 @@
 	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/BosTinder/lib/jfreechart-1.0.19.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/BosTinder/lib/mail.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/BosTinder/lib/orsonpdf-1.7.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/proyectoC2/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/proyectoC2/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/orsonpdf-1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/pdfbox-app-3.0.0-RC1.jar"/>
+>>>>>>> 211fe32ca3add9ce786afd43458ae0c2d895d57c
 	<classpathentry kind="output" path="bin"/>
 </classpath>

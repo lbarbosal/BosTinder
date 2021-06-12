@@ -2,6 +2,8 @@ package co.edu.unbosque.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,6 +21,8 @@ import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 import co.edu.unbosque.model.AgenciaDTO;
 import co.edu.unbosque.model.Persona;
+import co.edu.unbosque.model.persistence.Archivo;
+import co.edu.unbosque.model.persistence.PersonaDAO;
 import co.edu.unbosque.view.VentanaPrincipal;
 
 public class Controller implements ActionListener {
@@ -164,7 +168,7 @@ public class Controller implements ActionListener {
 				vista.getpABuscar().getLbGenero().setText(per.getGenero());
 				vista.getpABuscar().getLbEstatura().setText(per.getEstatura());
 				vista.getpABuscar().getLbLOtorgados().setText(Integer.toString(per.getNumLO()));
-				vista.getpABuscar().getLbLResividos().setText(Integer.toString(per.getNumLR()));
+				vista.getpABuscar().getLbLResibidos().setText(Integer.toString(per.getNumLR()));
 				if(per.getEstatura() == null ) {
 					vista.getpABuscar().getLbEstatura().setText("N/A");
 				} else {
@@ -207,7 +211,7 @@ public class Controller implements ActionListener {
 					vista.getpABuscar().getLbGenero().setText("--");
 					vista.getpABuscar().getLbEstatura().setText("--");
 					vista.getpABuscar().getLbLOtorgados().setText("--");
-					vista.getpABuscar().getLbLResividos().setText("--");
+					vista.getpABuscar().getLbLResibidos().setText("--");
 					vista.getpABuscar().getLbRespuesta().setText("--");
 					vista.getpABuscar().getLbRespuesta().setText("--");
 				} else {
@@ -256,7 +260,7 @@ public class Controller implements ActionListener {
 			vista.getpPerfil().getLbEstatura().setText(logueada.getEstatura());
 			vista.getpPerfil().getLbFNacimiento().setText(logueada.getFecha());
 			vista.getpPerfil().getLbLOtorgados().setText(Integer.toString(logueada.getNumLO()));
-			vista.getpPerfil().getLbLResividos().setText(Integer.toString(logueada.getNumLR()));
+			vista.getpPerfil().getLbLResibidos().setText(Integer.toString(logueada.getNumLR()));
 			vista.getpPerfil().getLbGenero().setText(logueada.getGenero());
 			if(logueada.getGenero().equals("Masculino")) {
 				vista.getpPerfil().getLbDepende().setText("Ingresos");
@@ -275,7 +279,19 @@ public class Controller implements ActionListener {
 		}
 		
 		if (e.getActionCommand().equals("Eliminar Cuenta")) {
-			//Eliminar cuenta
+			String buscarP = logueada.getAlias();
+			int i = JOptionPane.showConfirmDialog(null, "¿Está seguro de querer eliminarlo?", "Eliminar",
+					JOptionPane.YES_NO_CANCEL_OPTION);
+			if (i == 0) {
+				boolean res = agencia.getPersonaDAO().eliminarPersona(buscarP, agencia.getPersonas(), agencia.getFile());
+				if (res) {
+					JOptionPane.showMessageDialog(null, "El usuario se elimino correctamente");
+					vista.getpInicio().setVisible(true);
+					vista.getpPerfil().setVisible(false);
+				} else {
+					JOptionPane.showMessageDialog(null, "Error al emiminar el usuario");
+				}
+			}
 		}
 		
 		if (e.getActionCommand().equals("Editar")) {
@@ -297,6 +313,7 @@ public class Controller implements ActionListener {
 				vista.getpModificar().getLbOpcional().setText("Divorsios");
 				vista.getpModificar().getTxtIngresos().setText(logueada.getDivorcios());
 			}
+			
 		}
 		if (e.getActionCommand().equals("Volver")) {
 			vista.getpModificar().setVisible(false);
@@ -310,7 +327,7 @@ public class Controller implements ActionListener {
 			vista.getpPerfil().getLbEstatura().setText(logueada.getEstatura());
 			vista.getpPerfil().getLbFNacimiento().setText(logueada.getFecha());
 			vista.getpPerfil().getLbLOtorgados().setText(Integer.toString(logueada.getNumLO()));
-			vista.getpPerfil().getLbLResividos().setText(Integer.toString(logueada.getNumLR()));
+			vista.getpPerfil().getLbLResibidos().setText(Integer.toString(logueada.getNumLR()));
 			vista.getpPerfil().getLbGenero().setText(logueada.getGenero());
 			if(logueada.getGenero().equals("Masculino")) {
 				vista.getpPerfil().getLbDepende().setText("Ingresos");
@@ -328,6 +345,7 @@ public class Controller implements ActionListener {
 			String o = vista.getpModificar().getTxtIngresos().getText();
 			String est = vista.getpModificar().getCbxEstado().getSelectedItem().toString();
 			agencia.getPersonaDAO().modificarPersona(logueada.getGenero(), n, a, es, logueada.getAlias(), o,est,agencia.getPersonas(),agencia.getFile());
+			JOptionPane.showMessageDialog(null, "Información corregida correctamente");
 		}
 		
 		if (e.getActionCommand().equals("logout")) {
@@ -388,13 +406,32 @@ public class Controller implements ActionListener {
 			vista.getpAMenu().getBtnBuscarU().setEnabled(false);
 			vista.getpAMenu().getBtnUsuarios().setEnabled(true);
 			
+		} 
+
+		if(e.getActionCommand().equals("Crear PDF actual")){
+			Date fecha = new Date();
+			String nombre = "/Estadisticas" + fecha.getDay() + fecha.getMonth() + fecha.getYear() + fecha.getHours() + fecha.getMinutes() + fecha.getSeconds() + ".jpg";
+			String nombreArch = "/Estadisticas" + fecha.getDay() + fecha.getMonth() + fecha.getYear() + fecha.getHours() + fecha.getMinutes() + fecha.getSeconds() + ".pdf";
+			datos = vista.getpAEstadisticas().getCbxDatos().getSelectedItem().toString();
+			gen = vista.getpAEstadisticas().getCbxGenero().getSelectedItem().toString();
+			double media = agencia.getPersonaDAO().calcMedia(agencia.getPersonas(), datos, gen);
+			double moda = agencia.getPersonaDAO().calcModa(agencia.getPersonas(), datos, gen);
+			double mediana = agencia.getPersonaDAO().calcMediana(agencia.getPersonas(), datos, gen);
+			try {
+				vista.getpAEstadisticas().saveChartAsPNG(new File("graphics/Estadisticas"),nombre, vista.getpAEstadisticas().getGraficoBarra(), 500, 500);
+				agencia.getArchivo().escribirPDF("graphics/Estadisticas/",nombre, nombreArch, media , moda, mediana);
+			} catch (IOException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
 		}
+		
 		
 		if(e.getActionCommand().equals("btnOrden")) {
 			String tipo = vista.getpAUsuarios().getCbxDato().getSelectedItem().toString();
 			String sentido = vista.getpAUsuarios().getCbxSentido().getSelectedItem().toString();
 			ArrayList<Persona> personas = new ArrayList<Persona>();
-			personas = agencia.getPersonaDAO().ordenamientoSel(agencia.getPersonas(), tipo, sentido);
+			personas = agencia.getPersonaDAO().ordenamientoBur(agencia.getPersonas(), tipo, sentido);
 			String listaP[] = new String[8];
 			vista.getpAUsuarios().getModelo().setRowCount(0);
 			vista.getpAUsuarios().getModelo().isCellEditable(personas.size(), 8);
@@ -410,6 +447,7 @@ public class Controller implements ActionListener {
 				vista.getpAUsuarios().getModelo().addRow(listaP);
 			}
 		}
+
 	}
 	
 	public void cambioAleatorio() {
@@ -421,7 +459,7 @@ public class Controller implements ActionListener {
 		vista.getpConocer().getLbEstatura().setText(aleatoria.getEstatura());
 		
 		vista.getpConocer().getLbLOtorgados().setText(Integer.toString(aleatoria.getNumLO()));
-		vista.getpConocer().getLbLResividos().setText(Integer.toString(aleatoria.getNumLR()));
+		vista.getpConocer().getLbLResibidos().setText(Integer.toString(aleatoria.getNumLR()));
 		vista.getpConocer().fotoPerfil(aleatoria.getGenero());
 		if(aleatoria.getGenero().equals("Femenino")) {
 			vista.getpConocer().getLbDepende().setText("Divorcios: ");
