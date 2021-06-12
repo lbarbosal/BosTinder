@@ -200,11 +200,9 @@ public class PersonaDAO {
 		int numPersonas = listaT.size();
 
 		if (tipoBus.equals("Número de likes")) {
-			mediana = (double)((listaT.get(4).getNumLR() + listaT.get(5).getNumLR()) / 2);
-			System.out.println(listaT.get(4).getNumLR());
-			System.out.println(listaT.get(5).getNumLR());
+			mediana = (listaT.get(4).getNumLR() + listaT.get(5).getNumLR()) / 2;
 		} else {
-			mediana = (double)(listaT.get(4).getIngresos() + listaT.get(5).getIngresos()) / 2;
+			mediana = (listaT.get(4).getIngresos() + listaT.get(5).getIngresos()) / 2;
 		}
 		return mediana;
 	}

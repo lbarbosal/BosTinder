@@ -44,7 +44,7 @@ public class ViewModificar extends JPanel{
 		bosstinder = new JLabel();
 		bosstinder.setBounds(188,73,232,44);
 		bosstinder.setIcon(new ImageIcon(titulo.getImage().getScaledInstance(bosstinder.getWidth(), bosstinder.getHeight(),Image.SCALE_SMOOTH)));
-		add(bosstinder);
+		add(bosstinder); 
 		
 		JLabel lbNombre = new JLabel("Nombre");
 		lbNombre.setBounds(102,137,51,21);
