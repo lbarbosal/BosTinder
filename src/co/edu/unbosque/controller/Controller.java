@@ -32,18 +32,17 @@ public class Controller implements ActionListener {
 	private Persona logueada;
 	private  Persona aleatoria;
 	private int edad = 0;
-	private  String salario = "-1.0", divorcios = "", genero = "", nombre = "", apellido = "", alias = "", contrasena = "", correo = "",
+	private String salario = "-1.0", divorcios = "", genero = "", nombre = "", apellido = "", alias = "", contrasena = "", correo = "",
 			estatura = "", estado = "", gen = "",datos = "";
 	Date fNaci = null;
 	
 
 	public Controller() {
 		iniciarAplicacion();
-		//sendEmail("anatalia1287@gmail.com", "anatalia", "1234");
 		agencia = new AgenciaDTO();
 		try {
-			agencia.setPersonas(agencia.getA().cargarArchivo());
-			System.out.print("Cantidad " + agencia.getPersonas().size());
+			//agencia.setPersonas(agencia.getA().cargarArchivo());
+			//System.out.print("Cantidad " + agencia.getPersonas().size());
 
 		} catch (Exception e) {
 			System.out.println(e);

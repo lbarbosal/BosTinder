@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -19,8 +18,6 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.general.DefaultPieDataset;
-
 import co.edu.unbosque.model.Persona;
 
 public class ViewAdminEstadisticas extends JPanel{
@@ -86,6 +83,16 @@ public class ViewAdminEstadisticas extends JPanel{
 		getPanel().setChart(graficoBarra);
 		getPanel().repaint();
 		updateUI();
+		
+		/* PDFDocument pdfDoc = new PDFDocument();
+        pdfDoc.setTitle("Estadísticas");
+        pdfDoc.setAuthor("Natalia");
+        
+        Page page = pdfDoc.createPage(new Rectangle(612, 468));    
+        PDFGraphics2D g2 = page.getGraphics2D();
+
+        graficoBarra.draw(g2, new Rectangle(0, 0, 612, 468));       
+        pdfDoc.writeToFile(new File("demo.pdf")); */
 		
 	}
 	public JButton getBtnGenePDF() {
