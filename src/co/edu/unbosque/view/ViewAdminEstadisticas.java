@@ -22,7 +22,13 @@ import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
 import co.edu.unbosque.model.Persona;
-
+/**
+ * Clase estadisticas del administrador
+ * Depende de un JPanel
+ * 
+ * @author Grupo 3
+ * @version 12/06/2021
+ */
 public class ViewAdminEstadisticas extends JPanel{
 	
 	private JButton btnGenePDF;
@@ -32,7 +38,9 @@ public class ViewAdminEstadisticas extends JPanel{
 	private JComboBox<?> cbxGenero;
 	private JLabel bostinder;
 	
-	
+	/**
+	 * Método constructor
+	 */
 	public ViewAdminEstadisticas() {
 		setLayout(null);
 		ImageIcon titulo = new ImageIcon("graphics/tituloAdmin.png");
@@ -69,6 +77,12 @@ public class ViewAdminEstadisticas extends JPanel{
 		panel.setPreferredSize(new Dimension(100, 200));
 		add(panel);	
 	}
+	
+	/**
+	 * Método que crea la grafica
+	 * @param info ArrayList<Persona> Información de usuario
+	 * @param tipoB String Es el tipo de busqueda
+	 */
 	public void updateGraficaG(ArrayList<Persona> info, String tipoB) {
 		DefaultCategoryDataset datosG = new DefaultCategoryDataset();
 		if(tipoB.equals("Ingresos")) {
@@ -87,56 +101,72 @@ public class ViewAdminEstadisticas extends JPanel{
 		getPanel().repaint();
 		updateUI();
 		
-		/* PDFDocument pdfDoc = new PDFDocument();
-        pdfDoc.setTitle("Estadísticas");
-        pdfDoc.setAuthor("Natalia");
-        
-        Page page = pdfDoc.createPage(new Rectangle(612, 468));    
-        PDFGraphics2D g2 = page.getGraphics2D();
-
-        graficoBarra.draw(g2, new Rectangle(0, 0, 612, 468));       
-        pdfDoc.writeToFile(new File("demo.pdf")); */
-		
 	}
 	
-	public void saveChartAsPNG(File file,String nombre, JFreeChart graficoBarra,
-		    int width, int height) throws IOException {
-		  ChartUtilities.saveChartAsJPEG(new File(file + nombre), 1, graficoBarra, 500, 300);
+	/**
+	 * Método que guarda la estadística como imagen
+	 * <b>pre</b> Se requiere tener un gráfico de barras de likes recibidos e ingresos
+	 * <b>pos</b> Se guarda la imagen
+	 * @param file File Es el archivo que guarda
+	 * @param nombre String nombre de la grafica
+	 * @param graficoBarra JFreechart Es el grafico de barras
+	 * @param width	int Es el ancho de la imagen
+	 * @param height int Es el alto de la imagen
+	 * @throws IOException Excepciones para el programa
+	 */
+	public void saveChartAsPNG(File file, String nombre, JFreeChart graficoBarra, int width, int height)
+			throws IOException {
+		ChartUtilities.saveChartAsJPEG(new File(file + nombre), 1, graficoBarra, 500, 300);
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public JButton getBtnGenePDF() {
 		return btnGenePDF;
 	}
+
 	public void setBtnGenePDF(JButton btnGenePDF) {
 		this.btnGenePDF = btnGenePDF;
 	}
+
 	public ChartPanel getPanel() {
 		return panel;
 	}
+
 	public void setPanel(ChartPanel panel) {
 		this.panel = panel;
 	}
+
 	public JFreeChart getGraficoBarra() {
 		return graficoBarra;
 	}
+
 	public void setGraficoBarra(JFreeChart graficoBarra) {
 		this.graficoBarra = graficoBarra;
 	}
+
 	public JComboBox<?> getCbxDatos() {
 		return cbxDatos;
 	}
+
 	public void setCbxDatos(JComboBox<?> cbxDatos) {
 		this.cbxDatos = cbxDatos;
 	}
+
 	public JComboBox<?> getCbxGenero() {
 		return cbxGenero;
 	}
+
 	public void setCbxGenero(JComboBox<?> cbxGenero) {
 		this.cbxGenero = cbxGenero;
 	}
+
 	public JLabel getBostinder() {
 		return bostinder;
 	}
+
 	public void setBostinder(JLabel bostinder) {
 		this.bostinder = bostinder;
 	}

@@ -4,7 +4,13 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.border.MatteBorder;
-
+/**
+ * Clase de la Ventana principal
+ * Depende de un JFrame
+ * 
+ * @author Grupo 3
+ * @version 12/06/2021
+ */
 public class VentanaPrincipal extends JFrame {
 	
 	private ViewInicio pInicio;
@@ -17,6 +23,9 @@ public class VentanaPrincipal extends JFrame {
 	private ViewAdminUsuarios pAUsuarios;
 	private ViewModificar pModificar;
 	
+	/**
+	 * Método Constructor
+	 */	
 	public VentanaPrincipal() {
 		
 		setTitle("Bostinder");
@@ -29,8 +38,12 @@ public class VentanaPrincipal extends JFrame {
 		inicializar();
 	}
 	
+	/**
+	 * Método para inicializar los componentes de cada JPanel
+	 * <b>pre</b> Tener hecho los JPanel<br>
+	 * <b>pos</b> Inicializa la interfaz grafica<br>
+	 */
 	public void inicializar(){
-		
 		
 		pInicio = new ViewInicio();
 		pInicio.setBounds(0,0,600,600);
@@ -87,81 +100,149 @@ public class VentanaPrincipal extends JFrame {
 		pModificar.setVisible(false);
 		getContentPane().add(pModificar);
 	}
-
+	
+	/**
+	 * Devuelve el panel de la pantalla de inicio inicio
+	 * @return pInicio
+	 */
 	public ViewInicio getpInicio() {
 		return pInicio;
 	}
-
+	
+	/**
+	 * Modifica el panel de la pantalla de inicio
+	 * @param pInicio
+	 */
 	public void setpInicio(ViewInicio pInicio) {
 		this.pInicio = pInicio;
 	}
-
+	
+	/**
+	 * Devuelve el panel del registro
+	 * @return pRegistro
+	 */
 	public ViewRegistro getpRegistro() {
 		return pRegistro;
 	}
-
+	
+	/**
+	 * Modifica el panel del registro
+	 * @param pRegistro
+	 */
 	public void setpRegistro(ViewRegistro pRegistro) {
 		this.pRegistro = pRegistro;
 	}
-
+	
+	/**
+	 * Devuelve el panel de conocer otros usuarios
+	 * @return pConocer
+	 */
 	public ViewConocer getpConocer() {
 		return pConocer;
 	}
-
+	
+	/**
+	 * Modifica el panel de conocer otros usuarios
+	 * @param pConocer
+	 */
 	public void setpConocer(ViewConocer pConocer) {
 		this.pConocer = pConocer;
 	}
-
+	
+	/**
+	 * Devuelve el panel del perfil del usuario
+	 * @return pPerfil
+	 */
 	public ViewPerfil getpPerfil() {
 		return pPerfil;
 	}
-
+	
+	/**
+	 * Modifica el panel del perfil de usurario
+	 * @param pPerfil
+	 */
 	public void setpPerfil(ViewPerfil pPerfil) {
 		this.pPerfil = pPerfil;
 	}
-
+	
+	/**
+	 * Devuelve el panel de buscar usuarios
+	 * @return pABuscar
+	 */
 	public ViewAdminBuscar getpABuscar() {
 		return pABuscar;
 	}
-
+	
+	/**
+	 * Modifica el panel de buscar usuarios
+	 * @param pABuscar
+	 */
 	public void setpABuscar(ViewAdminBuscar pABuscar) {
 		this.pABuscar = pABuscar;
 	}
-
+	
+	/**
+	 * Devuelve el panel del menú del administrador
+	 * @return pAMenu
+	 */
 	public ViewAdminMenu getpAMenu() {
 		return pAMenu;
 	}
-
+		
+	/**
+	 * Modifica el panel del menú del administrador
+	 * @param pAMenu
+	 */
 	public void setpAMenu(ViewAdminMenu pAMenu) {
 		this.pAMenu = pAMenu;
 	}
-
+	
+	/**
+	 * Devuelve el panel de las estadísticas
+	 * @return pAEstadisticas
+	 */
 	public ViewAdminEstadisticas getpAEstadisticas() {
 		return pAEstadisticas;
 	}
-
+	
+	/**
+	 * Modifica el panel de las estadísticas
+	 * @param pAEstadisticas
+	 */
 	public void setpAEstadisticas(ViewAdminEstadisticas pAEstadisticas) {
 		this.pAEstadisticas = pAEstadisticas;
 	}
-
+	
+	/**
+	 * Devuelve el panel de buscar usuarios para el administrador
+	 * @return pAUsuarios
+	 */
 	public ViewAdminUsuarios getpAUsuarios() {
 		return pAUsuarios;
 	}
-
+	
+	/**
+	 * Modifica el panel de buscar usuarios d¿para el administrador
+	 * @param pARaiting
+	 */
 	public void setpAUsuarios(ViewAdminUsuarios pARaiting) {
 		this.pAUsuarios = pARaiting;
 	}
-
+	
+	/**
+	 * Devuelve el panel de modificar usuarios
+	 * @return pModificar
+	 */
 	public ViewModificar getpModificar() {
 		return pModificar;
 	}
-
+	
+	/**
+	 * Modifica el panel de modificar usuarios
+	 * @param pModificar
+	 */
 	public void setpModificar(ViewModificar pModificar) {
 		this.pModificar = pModificar;
 	}
 
-	
-
-	
-	
 }

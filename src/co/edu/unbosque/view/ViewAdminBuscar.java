@@ -11,14 +11,17 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
-
+/**
+ * Clase del panel para buscar usuarios en el perfil administrador
+ * Depende de un JPanel
+ * 
+ * @author Grupo 3
+ * @version 12/06/2021
+ */
 public class ViewAdminBuscar extends JPanel{
 	
-	
-	 
 	 private JTextField txtBuscador;
 	 private JButton btnBuscar;
-	 
 	 private JLabel bosstinder;
 	 private JLabel lbEstado;
 	 private JLabel lbNombre;
@@ -35,6 +38,9 @@ public class ViewAdminBuscar extends JPanel{
 	 private JLabel lbLOtorgados;
 	 private JButton btnEliminar;
 	 
+	 /**
+	  * Método constructor
+	  */
 	 public ViewAdminBuscar() {
 	 ImageIcon titulo = new ImageIcon("graphics/tituloAdmin.png");
 	 ImageIcon lbLikeR = new ImageIcon("graphics/corazonR.png");
@@ -185,140 +191,276 @@ public class ViewAdminBuscar extends JPanel{
 		fondo1.setBounds(59,235,482,184);
 		add(fondo1);
 	
-	 }
-
+	}
+	 
+	/**
+	 * Devuelve el txt donde se escribe la búsqueda del ususario
+	 * @return txtBuscador
+	 */
 	public JTextField getTxtBuscador() {
 		return txtBuscador;
 	}
-
+	
+	/**
+	 * Modifica el txt donde se escribe la búsqueda del ususario
+	 * @param txtBuscador
+	 */
 	public void setTxtBuscador(JTextField txtBuscador) {
 		this.txtBuscador = txtBuscador;
 	}
-
+	
+	/**
+	 * Devuelve el botón para buscar usuarios
+	 * @return btnBuscar
+	 */
 	public JButton getBtnBuscar() {
 		return btnBuscar;
 	}
-
+	
+	/**
+	 * Modifica el botón para buscar usuarios
+	 * @param btnBuscar
+	 */
 	public void setBtnBuscar(JButton btnBuscar) {
 		this.btnBuscar = btnBuscar;
 	}
-
+	
+	/**
+	 * Devuelve el título de Bosstinder
+	 * @return bosstinder
+	 */
 	public JLabel getBosstinder() {
 		return bosstinder;
 	}
-
+	
+	/**
+	 * Modifica el título de Bosstinder
+	 * @param bosstinder
+	 */
 	public void setBosstinder(JLabel bosstinder) {
 		this.bosstinder = bosstinder;
 	}
-
+	
+	/**
+	 * Devuelve el título de estado
+	 * @return lbEstado
+	 */
 	public JLabel getLbEstado() {
 		return lbEstado;
 	}
-
+	
+	/**
+	 * Modifica el título de estado
+	 * @param lbEstado
+	 */
 	public void setLbEstado(JLabel lbEstado) {
 		this.lbEstado = lbEstado;
 	}
-
+	
+	/**
+	 * Devuelve el título de nombre
+	 * @return lbNombre
+	 */
 	public JLabel getLbNombre() {
 		return lbNombre;
 	}
-
+	
+	/**
+	 * Modifica el título de nombre
+	 * @param lbNombre
+	 */
 	public void setLbNombre(JLabel lbNombre) {
 		this.lbNombre = lbNombre;
 	}
-
+	
+	/**
+	 * Devuelve el título de apellido
+	 * @return lbApellido
+	 */
 	public JLabel getLbApellido() {
 		return lbApellido;
 	}
-
+	
+	/**
+	 * Modifica el título de apellido
+	 * @param lbApellido
+	 */
 	public void setLbApellido(JLabel lbApellido) {
 		this.lbApellido = lbApellido;
 	}
-
+	
+	/**
+	 * Devuelve el título de nacimiento
+	 * @return lbFNacimiento
+	 */
 	public JLabel getLbFNacimiento() {
 		return lbFNacimiento;
 	}
-
+	
+	/**
+	 * Modifica el título de nacimiento
+	 * @param lbFNacimiento
+	 */
 	public void setLbFNacimiento(JLabel lbFNacimiento) {
 		this.lbFNacimiento = lbFNacimiento;
 	}
-
+	
+	/**
+	 * Devuelve el título de edad
+	 * @return lbEdad
+	 */
 	public JLabel getLbEdad() {
 		return lbEdad;
 	}
-
+	
+	/**
+	 * Modifica el título de 
+	 * @param lbEdad
+	 */
 	public void setLbEdad(JLabel lbEdad) {
 		this.lbEdad = lbEdad;
 	}
-
+	
+	/**
+	 * Devuelve el título del alias
+	 * @return lbAlias
+	 */
 	public JLabel getLbAlias() {
 		return lbAlias;
 	}
-
+	
+	/**
+	 * Modifica el título del alias
+	 * @param lbAlias
+	 */
 	public void setLbAlias(JLabel lbAlias) {
 		this.lbAlias = lbAlias;
 	}
-
+	
+	/**
+	 * Devuelve el título de correo
+	 * @return lbCorreo
+	 */
 	public JLabel getLbCorreo() {
 		return lbCorreo;
 	}
-
+	
+	/**
+	 * Modifica el título de correo
+	 * @param lbCorreo
+	 */
 	public void setLbCorreo(JLabel lbCorreo) {
 		this.lbCorreo = lbCorreo;
 	}
-
+	
+	/**
+	 * Devuelve el título de genero
+	 * @return lbGenero
+	 */
 	public JLabel getLbGenero() {
 		return lbGenero;
 	}
-
+	
+	/**
+	 * Modifica el título de genero
+	 * @param lbGenero
+	 */
 	public void setLbGenero(JLabel lbGenero) {
 		this.lbGenero = lbGenero;
 	}
-
+	
+	/**
+	 * Devuelve el título de la estatura
+	 * @return lbEstatura
+	 */
 	public JLabel getLbEstatura() {
 		return lbEstatura;
 	}
-
+	
+	/**
+	 * Modifica el título de la estatura
+	 * @param lbEstatura
+	 */
 	public void setLbEstatura(JLabel lbEstatura) {
 		this.lbEstatura = lbEstatura;
 	}
-
+	
+	/**
+	 * Devuelve el título de depende
+	 * @return lbDepende
+	 */
 	public JLabel getLbDepende() {
 		return lbDepende;
 	}
-
+	
+	/**
+	 * Modifica el título de depende
+	 * @param lbDepende
+	 */
 	public void setLbDepende(JLabel lbDepende) {
 		this.lbDepende = lbDepende;
 	}
-
+	
+	/**
+	 * Devuelve el título de respuestas
+	 * @return lbRespuesta
+	 */
 	public JLabel getLbRespuesta() {
 		return lbRespuesta;
 	}
-
+	
+	/**
+	 * Modifica el título de respuestas
+	 * @param lbRespuesta
+	 */
 	public void setLbRespuesta(JLabel lbRespuesta) {
 		this.lbRespuesta = lbRespuesta;
 	}
-
+	
+	/**
+	 * Devuelve el título de registros
+	 * @return lbLResividos
+	 */
 	public JLabel getLbLResividos() {
 		return lbLResividos;
 	}
-
+	
+	/**
+	 * Modifica el título de registros
+	 * @param lbLResividos
+	 */
 	public void setLbLResividos(JLabel lbLResividos) {
 		this.lbLResividos = lbLResividos;
 	}
-
+	
+	/**
+	 * Devuelve el título de likes otrogados
+	 * @return lbLOtorgados
+	 */
 	public JLabel getLbLOtorgados() {
 		return lbLOtorgados;
 	}
-
+	
+	/**
+	 * Modifica el título de likes otrogados
+	 * @param lbLOtorgados
+	 */
 	public void setLbLOtorgados(JLabel lbLOtorgados) {
 		this.lbLOtorgados = lbLOtorgados;
 	}
-
+	
+	/**
+	 * Devuelve el botón de eliminar usuario
+	 * @return btnEliminar
+	 */
 	public JButton getBtnEliminar() {
 		return btnEliminar;
 	}
-
+	
+	/**
+	 * Modifica el botón de eliminar usuario
+	 * @param btnEliminar
+	 */
 	public void setBtnEliminar(JButton btnEliminar) {
 		this.btnEliminar = btnEliminar;
 	}

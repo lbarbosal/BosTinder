@@ -47,7 +47,7 @@ public class Controller implements ActionListener {
 		try {
 			agencia.setPersonas(agencia.getA().cargarArchivo());
 			agencia.getArchivo().escribirEnArchivo(agencia.getPersonas(), agencia.getFile());
-
+			System.out.println(agencia.getPersonas().size());
 		} catch (Exception e) {
 			System.out.println(e);
 			System.out.println("No se pudo cargar el archivo.");
