@@ -21,12 +21,13 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import co.edu.unbosque.model.Persona;
 
 public class Archivo {
-	
+
 	public ObjectInputStream entrada;
 	public ObjectOutputStream salida;
 
 	/**
 	 * Metodo Constructor
+	 * 
 	 * @param archivo Archivo plano
 	 */
 	public Archivo(File archivo) {
@@ -42,12 +43,12 @@ public class Archivo {
 	}
 
 	/**
-	 * Método el cual escribe en el archivo
-	 * <b>pre</b> Se necesita un archivo txt y la lista de personas<br>
+	 * Método el cual escribe en el archivo <b>pre</b> Se necesita un archivo txt y
+	 * la lista de personas<br>
 	 * <b>pos</b> Escribe dentro del archivo<br>
 	 * 
 	 * @param personas Lista de personas
-	 * @param archivo Archivo plano
+	 * @param archivo  Archivo plano
 	 */
 	public void escribirEnArchivo(ArrayList<Persona> personas, File archivo) {
 		try {
@@ -61,9 +62,10 @@ public class Archivo {
 			e.printStackTrace();
 		}
 	}
+
 	/**
-	 * Método de ArrayList el cual lee el archivo 
-	 * <b>pre</b> Se necesita un archivo txt y la lista de personas<br>
+	 * Método de ArrayList el cual lee el archivo <b>pre</b> Se necesita un archivo
+	 * txt y la lista de personas<br>
 	 * <b>pos</b> Lee directamente el archivo<br>
 	 * 
 	 * @param archivo Archivo plano
@@ -85,80 +87,106 @@ public class Archivo {
 		}
 		return personas;
 	}
-	
+
 	/**
 	 * Método que escribe en un PDF las estadísticas
 	 * 
-	 * @param ruta          				Es la ruta para guardar el pdf. ruta != null, ruta != " "
-	 * @param nombre        				Es el nombre de la persona. nombre != null, nombre != " "
-	 * @param nombreArch    				Es el nombre con el que se va a guardar el archivo PDF. nombreArch != null, nombreArch != " "
-	 * @param media         				Es la media del top 10 de usuarios por like o ingresos. media != null, media != " " 
-	 * @param moda          				Es la moda del top de usuarios por like o ingresos. moda != null, moda != " "
-	 * @param mediana       				Es la mediana del top de usuarios por like o ingresos. mediana != null, media != " "
-	 * @throws IOException  Excepction 		Se genera una excepción por si ya existe el archivo. 
+	 * @param ruta       Es la ruta para guardar el pdf. ruta != null, ruta != " "
+	 * @param nombre     Es el nombre de la persona. nombre != null, nombre != " "
+	 * @param nombreArch Es el nombre con el que se va a guardar el archivo PDF.
+	 *                   nombreArch != null, nombreArch != " "
+	 * @param media      Es la media del top 10 de usuarios por like o ingresos.
+	 *                   media != null, media != " "
+	 * @param moda       Es la moda del top de usuarios por like o ingresos. moda !=
+	 *                   null, moda != " "
+	 * @param mediana    Es la mediana del top de usuarios por like o ingresos.
+	 *                   mediana != null, media != " "
+	 * @throws IOException Excepction Se genera una excepción por si ya existe el
+	 *                     archivo.
 	 */
-	public void escribirPDF(String ruta, String nombre, String nombreArch, double media, double moda, double mediana) throws IOException {
+	public void escribirPDF(String ruta, String nombre, String nombreArch, double media, double moda, double mediana)
+			throws IOException {
 		Date fecha = new Date();
 		LocalDate ahoraActual = LocalDate.now();
 		try (PDDocument document = new PDDocument()) {
-            PDPage page = new PDPage(PDRectangle.A6);
-            document.addPage(page);
+			PDPage page = new PDPage(PDRectangle.A6);
+			document.addPage(page);
 
-            PDPageContentStream contentStream = new PDPageContentStream(document, page);
+			PDPageContentStream contentStream = new PDPageContentStream(document, page);
 
-            // Text
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.TIMES_BOLD, 32);
-            contentStream.newLineAtOffset( 20, page.getMediaBox().getHeight() - 52);
-            contentStream.showText("Estadísticas");
-            contentStream.endText();
-            
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.TIMES_BOLD, 20);
-            contentStream.newLineAtOffset( 20, page.getMediaBox().getHeight() - 90);
-            contentStream.showText("Media: " + media);
-            contentStream.endText();
-            
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.TIMES_BOLD, 20);
-            contentStream.newLineAtOffset( 20, page.getMediaBox().getHeight() - 110);
-            contentStream.showText("Moda: " + moda);
-            contentStream.endText();
-            
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.TIMES_BOLD, 20);
-            contentStream.newLineAtOffset( 20, page.getMediaBox().getHeight() - 130);
-            contentStream.showText("Mediana: " + mediana);
-            contentStream.endText();
-            
-            contentStream.beginText();
-            contentStream.setFont(PDType1Font.TIMES_BOLD, 14);
-            contentStream.newLineAtOffset( 140, page.getMediaBox().getHeight() - 150);
-            contentStream.showText("Fecha actual: " +  ahoraActual); 
-            contentStream.endText();
+			// Text
+			contentStream.beginText();
+			contentStream.setFont(PDType1Font.TIMES_BOLD, 32);
+			contentStream.newLineAtOffset(20, page.getMediaBox().getHeight() - 52);
+			contentStream.showText("Estadísticas");
+			contentStream.endText();
 
-            // Image
-            PDImageXObject image = PDImageXObject.createFromFile(ruta + nombre,document );
-            contentStream.drawImage(image, 25,90, image.getWidth() / 2, image.getHeight() / 2); 
+			contentStream.beginText();
+			contentStream.setFont(PDType1Font.TIMES_BOLD, 20);
+			contentStream.newLineAtOffset(20, page.getMediaBox().getHeight() - 90);
+			contentStream.showText("Media: " + media);
+			contentStream.endText();
 
-            contentStream.close();
+			contentStream.beginText();
+			contentStream.setFont(PDType1Font.TIMES_BOLD, 20);
+			contentStream.newLineAtOffset(20, page.getMediaBox().getHeight() - 110);
+			contentStream.showText("Moda: " + moda);
+			contentStream.endText();
 
-            document.save("data/" + nombreArch);
-        }
+			contentStream.beginText();
+			contentStream.setFont(PDType1Font.TIMES_BOLD, 20);
+			contentStream.newLineAtOffset(20, page.getMediaBox().getHeight() - 130);
+			contentStream.showText("Mediana: " + mediana);
+			contentStream.endText();
+
+			contentStream.beginText();
+			contentStream.setFont(PDType1Font.TIMES_BOLD, 14);
+			contentStream.newLineAtOffset(140, page.getMediaBox().getHeight() - 150);
+			contentStream.showText("Fecha actual: " + ahoraActual);
+			contentStream.endText();
+
+			// Image
+			PDImageXObject image = PDImageXObject.createFromFile(ruta + nombre, document);
+			contentStream.drawImage(image, 25, 90, image.getWidth() / 2, image.getHeight() / 2);
+
+			contentStream.close();
+
+			document.save("data/" + nombreArch);
+		}
 	}
-	
+
+	/**
+	 * Devuelve la entrada del archivo
+	 * 
+	 * @return entrada
+	 */
 	public ObjectInputStream getEntrada() {
 		return entrada;
 	}
 
+	/**
+	 * Modifica la entrada del archivo
+	 * 
+	 * @param entrada
+	 */
 	public void setEntrada(ObjectInputStream entrada) {
 		this.entrada = entrada;
 	}
 
+	/**
+	 * Devuelve la salida del archivo
+	 * 
+	 * @return salida
+	 */
 	public ObjectOutputStream getSalida() {
 		return salida;
 	}
 
+	/**
+	 * Modifica la salida del archivo
+	 * 
+	 * @param salida
+	 */
 	public void setSalida(ObjectOutputStream salida) {
 		this.salida = salida;
 	}

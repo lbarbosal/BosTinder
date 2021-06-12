@@ -33,43 +33,83 @@ public class AgenciaDTO {
 		personas = archivo.leerArchivo(file);
 		a = new ArchivoCSV();
 	}
-
+	
+	/**
+	 * Devuelve la lista de personas
+	 * @return personas
+	 */
 	public ArrayList<Persona> getPersonas() {
 		return personas;
 	}
-
+	
+	/**
+	 * Modifica la lista de personas
+	 * @param personas
+	 */
 	public void setPersonas(ArrayList<Persona> personas) {
 		this.personas = personas;
 	}
-
+	
+	/**
+	 * Devuelve la personas de PersonaDAO
+	 * @return personaDAO
+	 */
 	public PersonaDAO getPersonaDAO() {
 		return personaDAO;
 	}
 
+	/**
+	 * Modifica la personas de PersonaDAO
+	 * @param personaDAO
+	 */
 	public void setPersonaDAO(PersonaDAO personaDAO) {
 		this.personaDAO = personaDAO;
 	}
 
+	/**
+	 * Devuelve el archivo donde se guardan la información
+	 * @return file
+	 */
 	public File getFile() {
 		return file;
 	}
 
+	/**
+	 * Modifica el archivo donde se guardan la información
+	 * @param file
+	 */
 	public void setFile(File file) {
 		this.file = file;
 	}
 
+	/**
+	 * Devuelve el archivo donde se guarda la información
+	 * @return archivo
+	 */
 	public Archivo getArchivo() {
 		return archivo;
 	}
 
+	/**
+	 * Modifica el archivo donde se guarda la información
+	 * @param archivo
+	 */
 	public void setArchivo(Archivo archivo) {
 		this.archivo = archivo;
 	}
 
+	/**
+	 * Devuelve el archivo CSV con la información
+	 * @return a
+	 */
 	public ArchivoCSV getA() {
 		return a;
 	}
 
+	/**
+	 * Modifica el archivo CSV con la información
+	 * @param a
+	 */
 	public void setA(ArchivoCSV a) {
 		this.a = a;
 	}
