@@ -147,7 +147,6 @@ public class PersonaDAO {
 			} else {
 				break;
 			}
-			System.out.println(personas.get(i).getNumLR());
 		}
 		return listaTop;
 	}
@@ -201,9 +200,11 @@ public class PersonaDAO {
 		int numPersonas = listaT.size();
 
 		if (tipoBus.equals("Número de likes")) {
-			mediana = (listaT.get(4).getNumLR() + listaT.get(5).getNumLR()) / 2;
+			mediana = (double)((listaT.get(4).getNumLR() + listaT.get(5).getNumLR()) / 2);
+			System.out.println(listaT.get(4).getNumLR());
+			System.out.println(listaT.get(5).getNumLR());
 		} else {
-			mediana = (listaT.get(4).getIngresos() + listaT.get(5).getIngresos()) / 2;
+			mediana = (double)(listaT.get(4).getIngresos() + listaT.get(5).getIngresos()) / 2;
 		}
 		return mediana;
 	}
