@@ -196,30 +196,25 @@ public class PersonaDAOTest extends TestCase{
 		assertNotNull("Se debió obtener una persona", persona.cambioAleatorio(lista));
 	}
 	
-//	public void testOrdenamientoIns() {
-//		setupStage();
-//	}
-//	
-//	public void testTopUsuarios() {
-//		setupStage();
-//	}
-//	
-//	public void testOrdenamientoSel() {
-//		setupStage();
-//	}
+	public void testOrdenamientoIns() {
+		setupStage();
+		assertEquals("El total de personas deber ser 2", 2, persona.ordenamientoIns(lista, "Número de likes"));
+	}
+	
+	public void testTopUsuarios() {
+		setupStage();
+		assertEquals("El total de personas debe ser 2", 2, persona.topUsuarios(lista, "Número de likes", "Masculino"));
+	}
+	
+	public void testOrdenamientoSel() {
+		setupStage();
+		assertEquals("El total de personas deber ser 2", 2, persona.ordenamientoSel(lista, "Número de likes", "Ascendente"));
+	}
 	
 	public void testCalcMEdia() {
 		setupStage();
 		assertEquals("La media debe ser 7", 7,persona.calcMEdia(lista, "Número de likes", "Femenino"));
 	}
-	
-//	public void testCalcMediana() {
-//		setupStage();
-//	}
-	
-//	public void testCalcModa() {
-//		setupStage();
-//	}
 	
 	
 }
