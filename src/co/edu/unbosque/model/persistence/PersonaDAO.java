@@ -129,7 +129,8 @@ public class PersonaDAO {
 	}
 	
 	public Persona cambioAleatorio(ArrayList<Persona> personas) {
-		int indexAle = (int) Math.floor(Math.random()*personas.size()-1);
+		System.out.print(personas.size());
+		int indexAle = (int) Math.floor(Math.random()*personas.size());
 		return personas.get(indexAle);	
 	}
 	
@@ -167,7 +168,6 @@ public class PersonaDAO {
 			actual = personas.get(i);
 			for(j =i; j>0;j--) {
 				boolean f = false;
-				
 				if(tipoBus.equals("Número de likes")) {
 					f = personas.get(j-1).getNumLR() < actual.getNumLR();
 				} else if(tipoBus.equals("Ingresos")) {
@@ -175,7 +175,6 @@ public class PersonaDAO {
 				} else {
 					f = false;
 				}
-				
 				if(f)
 				personas.set(j, personas.get(j-1));
 				else

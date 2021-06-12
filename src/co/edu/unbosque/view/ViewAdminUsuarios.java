@@ -36,6 +36,7 @@ public class ViewAdminUsuarios extends JPanel{
 			btnBuscar.setBounds(537,170,24,24);
 			btnBuscar.setBackground(null);
 			btnBuscar.setBorder(null);
+			btnBuscar.setActionCommand("btnOrden");
 			btnBuscar.setIcon(new ImageIcon(lbBuscar.getImage().getScaledInstance(btnBuscar.getWidth(), btnBuscar.getHeight(),Image.SCALE_SMOOTH)));
 			add(btnBuscar);
 			
@@ -54,12 +55,12 @@ public class ViewAdminUsuarios extends JPanel{
 			tabla.setBounds(35, 226, 529, 231);
 			modelo.addColumn("Nombre");
 			modelo.addColumn("Apellido");
-			modelo.addColumn("Cédula");
-			modelo.addColumn("Fecha de Expedición");
-			modelo.addColumn("Lugar de Expedición");
+			modelo.addColumn("Fecha de nacimiento");
 			modelo.addColumn("Edad");
+			modelo.addColumn("Alias");
+			modelo.addColumn("# likes");
+			modelo.addColumn("# otorgados");
 			modelo.addColumn("Género");
-			modelo.addColumn("Mesa");
 			tabla.setModel(modelo);
 			add(tabla);
 			
@@ -68,4 +69,52 @@ public class ViewAdminUsuarios extends JPanel{
 			add(scrollPane);
 	 }
 
+	public JLabel getBosstinder() {
+		return bosstinder;
+	}
+
+	public void setBosstinder(JLabel bosstinder) {
+		this.bosstinder = bosstinder;
+	}
+
+	public JButton getBtnBuscar() {
+		return btnBuscar;
+	}
+
+	public void setBtnBuscar(JButton btnBuscar) {
+		this.btnBuscar = btnBuscar;
+	}
+
+	public JComboBox<?> getCbxSentido() {
+		return cbxSentido;
+	}
+
+	public void setCbxSentido(JComboBox<?> cbxSentido) {
+		this.cbxSentido = cbxSentido;
+	}
+
+	public JComboBox<?> getCbxDato() {
+		return cbxDato;
+	}
+
+	public void setCbxDato(JComboBox<?> cbxDato) {
+		this.cbxDato = cbxDato;
+	}
+
+	public JTable getTabla() {
+		return tabla;
+	}
+
+	public void setTabla(JTable tabla) {
+		this.tabla = tabla;
+	}
+
+	public DefaultTableModel getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(DefaultTableModel modelo) {
+		this.modelo = modelo;
+	}
+	
 }

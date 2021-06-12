@@ -41,8 +41,8 @@ public class Controller implements ActionListener {
 		iniciarAplicacion();
 		agencia = new AgenciaDTO();
 		try {
-			//agencia.setPersonas(agencia.getA().cargarArchivo());
-			//System.out.print("Cantidad " + agencia.getPersonas().size());
+			agencia.setPersonas(agencia.getA().cargarArchivo());
+			agencia.getArchivo().escribirEnArchivo(agencia.getPersonas(), agencia.getFile());
 
 		} catch (Exception e) {
 			System.out.println(e);
@@ -77,7 +77,7 @@ public class Controller implements ActionListener {
 		vista.getpPerfil().getBtnEditar().addActionListener(this);
 		vista.getpModificar().getBtnInicio().addActionListener(this);
 		vista.getpModificar().getBtnModificar().addActionListener(this);
-		
+		vista.getpAUsuarios().getBtnBuscar().addActionListener(this);
 	}
 
 	@Override
@@ -343,7 +343,7 @@ public class Controller implements ActionListener {
 			vista.getpPerfil().setVisible(false);
 		}
 		
-		if(e.getActionCommand().equals("pLikes")||e.getActionCommand().equals("pGen")){
+		if(e.getActionCommand().equals("pLikes")|| e.getActionCommand().equals("pGen")){
 			datos = vista.getpAEstadisticas().getCbxDatos().getSelectedItem().toString();
 			gen = vista.getpAEstadisticas().getCbxGenero().getSelectedItem().toString();
 			ArrayList<Persona> persona = new ArrayList<Persona>();
@@ -392,7 +392,26 @@ public class Controller implements ActionListener {
 			
 		}
 		
-		
+		if(e.getActionCommand().equals("btnOrden")) {
+			String tipo = vista.getpAUsuarios().getCbxDato().getSelectedItem().toString();
+			String sentido = vista.getpAUsuarios().getCbxSentido().getSelectedItem().toString();
+			ArrayList<Persona> personas = new ArrayList<Persona>();
+			personas = agencia.getPersonaDAO().ordenamientoSel(agencia.getPersonas(), tipo, sentido);
+			String listaP[] = new String[8];
+			vista.getpAUsuarios().getModelo().setRowCount(0);
+			vista.getpAUsuarios().getModelo().isCellEditable(personas.size(), 8);
+			for (int i = 0; i < personas.size(); i++) {
+				listaP[0] = personas.get(i).getNombre();
+				listaP[1] = personas.get(i).getApellido();
+				listaP[2] = personas.get(i).getFecha();
+				listaP[3] = Integer.toString(personas.get(i).getEdad());
+				listaP[4] = personas.get(i).getAlias();
+				listaP[5] = Integer.toString(personas.get(i).getNumLR());
+				listaP[6] = Integer.toString(personas.get(i).getNumLO());
+				listaP[7] = personas.get(i).getGenero();
+				vista.getpAUsuarios().getModelo().addRow(listaP);
+			}
+		}
 	}
 	
 	public void cambioAleatorio() {
