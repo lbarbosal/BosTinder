@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
@@ -16,6 +18,7 @@ import javax.swing.border.MatteBorder;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
+import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
 import co.edu.unbosque.model.Persona;
@@ -95,6 +98,12 @@ public class ViewAdminEstadisticas extends JPanel{
         pdfDoc.writeToFile(new File("demo.pdf")); */
 		
 	}
+	
+	public void saveChartAsPNG(File file,String nombre, JFreeChart graficoBarra,
+		    int width, int height) throws IOException {
+		  ChartUtilities.saveChartAsJPEG(new File(file + nombre), 1, graficoBarra, 500, 300);
+	}
+	
 	public JButton getBtnGenePDF() {
 		return btnGenePDF;
 	}

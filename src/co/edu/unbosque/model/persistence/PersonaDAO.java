@@ -184,7 +184,7 @@ public class PersonaDAO {
 		}
 		return personas;
 	}
-	public ArrayList<Persona> ordenamientoSel(ArrayList<Persona> personas, String tipoBus,String sentido){ // agargar tipo de busqueda
+	public ArrayList<Persona> ordenamientoBur(ArrayList<Persona> personas, String tipoBus,String sentido){ // agargar tipo de busqueda
 		int iteracion = 0;
 		boolean permutacion = true;
 		int actual;
@@ -196,7 +196,7 @@ public class PersonaDAO {
 			for(actual=0; actual <personas.size()-iteracion; actual++) {
 				if(sentido.equals("Ascendente"))
 					switch (tipoBus) {
-					  case "Numero De Likes":
+					  case "Número De Likes":
 						  f = personas.get(actual).getNumLR()>personas.get(actual+1).getNumLR();
 					    break;
 					  case "Apellido":
@@ -246,7 +246,7 @@ public class PersonaDAO {
 	
 	
 	
-	public double calcMEdia(ArrayList<Persona> personas, String tipoBus, String genero) {
+	public double calcMedia(ArrayList<Persona> personas, String tipoBus, String genero) {
 		double media = 0;
 		int suma = 0;
 		ArrayList<Persona> listaT = new ArrayList<Persona>();
@@ -287,7 +287,7 @@ public class PersonaDAO {
 	        for(int j=0; j<listaT.size(); j++)
 	        {
 	        	if (tipoBus.equals("Número de likes")) {
-		            if(listaT.get(i).getNumLR()==listaT.get(i).getNumLR())
+		            if(listaT.get(i).getNumLR()==listaT.get(j).getNumLR())
 		            {
 		                numRepeticiones++;
 		            }   
