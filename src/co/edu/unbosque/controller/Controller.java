@@ -394,8 +394,8 @@ public class Controller implements ActionListener {
 			vista.getpAMenu().getBtnBuscarU().setEnabled(false);
 			vista.getpAMenu().getBtnUsuarios().setEnabled(true);
 			
-		}
-<<<<<<< HEAD
+		} 
+
 		if(e.getActionCommand().equals("Crear PDF actual")){
 			Date fecha = new Date();
 			String nombre = "/Estadisticas" + fecha.getDay() + fecha.getMonth() + fecha.getYear() + fecha.getHours() + fecha.getMinutes() + fecha.getSeconds() + ".jpg";
@@ -414,7 +414,6 @@ public class Controller implements ActionListener {
 			}
 		}
 		
-=======
 		
 		if(e.getActionCommand().equals("btnOrden")) {
 			String tipo = vista.getpAUsuarios().getCbxDato().getSelectedItem().toString();
@@ -436,7 +435,7 @@ public class Controller implements ActionListener {
 				vista.getpAUsuarios().getModelo().addRow(listaP);
 			}
 		}
->>>>>>> e0b9ece5c30eeb90465cc86d95cbb06f6785fd94
+
 	}
 	
 	public void cambioAleatorio() {
