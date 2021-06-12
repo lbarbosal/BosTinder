@@ -63,36 +63,68 @@ public class ViewAdminMenu extends JPanel{
 			btnUsuarios.setFont(new Font("arial",0,12));
 			btnUsuarios.setBorder(new MatteBorder(0,0,0,2,Color.black));
 			add(btnUsuarios);
-	 }
+	}
 
+	/**
+	 * Devuelve el botón de buscar usuarios
+	 * @return btnBuscarU
+	 */
 	public JButton getBtnBuscarU() {
 		return btnBuscarU;
 	}
 
+	/**
+	 * Modifica el botón de buscar usuarios
+	 * @param btnBuscarU
+	 */
 	public void setBtnBuscarU(JButton btnBuscarU) {
 		this.btnBuscarU = btnBuscarU;
 	}
 
+	/**
+	 * Devuelve el botón para ir al panel de estadisticas
+	 * @return btnRaiting
+	 */
 	public JButton getBtnRaiting() {
 		return btnRaiting;
 	}
 
+	/**
+	 * Modifica el botón para ir al panel de estadisticas
+	 * @param btnRaiting
+	 */
 	public void setBtnRaiting(JButton btnRaiting) {
 		this.btnRaiting = btnRaiting;
 	}
 
+	/**
+	 * Devuelve el botón de ver la lista de usuarios
+	 * @return btnUsuarios
+	 */
 	public JButton getBtnUsuarios() {
 		return btnUsuarios;
 	}
 
+	/**
+	 * Modifica el botón de ver la lista de usuarios
+	 * @param btnUsuarios
+	 */
 	public void setBtnUsuarios(JButton btnUsuarios) {
 		this.btnUsuarios = btnUsuarios;
 	}
 
+	/**
+	 * Devuelve el botón de salir 
+	 * @return btnSalir
+	 */
 	public JButton getBtnSalir() {
 		return btnSalir;
 	}
 
+	/**
+	 * Modifica el botón de salir
+	 * @param btnSalir
+	 */
 	public void setBtnSalir(JButton btnSalir) {
 		this.btnSalir = btnSalir;
 	}

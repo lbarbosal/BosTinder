@@ -71,42 +71,82 @@ public class ViewInicio extends JPanel {
 		add(btnIngresar);
 	}
 
+	/**
+	 * Devuelve el título de Bosstinder
+	 * @return bosstinder
+	 */	
 	public JLabel getBosstinder() {
 		return bosstinder;
 	}
-
+	
+	/**
+	 * Modifica el título de Bosstinder
+	 * @return perfil
+	 */
 	public void setBosstinder(JLabel bosstinder) {
 		this.bosstinder = bosstinder;
 	}
 
+	/**
+	 * Devuelve el texto  en el alias
+	 * @return txtAlias
+	 */
 	public JTextField getTxtAlias() {
 		return txtAlias;
 	}
 
+	/**
+	 * Modifica el texto  en el alias
+	 * @param txtAlias
+	 */
 	public void setTxtAlias(JTextField txtAlias) {
 		this.txtAlias = txtAlias;
 	}
 
+	/**
+	 * Devuelve el texto de la contraseña
+	 * @return txtContrasenia
+	 */
 	public JPasswordField getTxtContrasenia() {
 		return txtContrasenia;
 	}
 
+	/**
+	 * Modificar el texto de la contraseña
+	 * @param txtContrasenia
+	 */
 	public void setTxtContrasenia(JPasswordField txtContrasenia) {
 		this.txtContrasenia = txtContrasenia;
 	}
 
+	/**
+	 * Devuelve el botón de registro
+	 * @return btnRegistro
+	 */
 	public JButton getBtnRegistro() {
 		return btnRegistro;
 	}
 
+	/**
+	 * Modificar el botón de registro
+	 * @param btnRegistro
+	 */
 	public void setBtnRegistro(JButton btnRegistro) {
 		this.btnRegistro = btnRegistro;
 	}
 
+	/**
+	 * Devuelve el botón de ingresar
+	 * @return btnIngresar
+	 */
 	public JButton getBtnIngresar() {
 		return btnIngresar;
 	}
 
+	/**
+	 * Modifica el botón de ingresar
+	 * @param btnIngresar
+	 */
 	public void setBtnIngresar(JButton btnIngresar) {
 		this.btnIngresar = btnIngresar;
 	}

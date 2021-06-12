@@ -165,172 +165,274 @@ public class ViewRegistro extends JPanel{
 		
 	}
 
-
+	/**
+	 * Devuelve el título de BossTinder
+	 * @return bosstinder
+	 */
 	public JLabel getBosstinder() {
 		return bosstinder;
 	}
 
-
+	/**
+	 * Modifica el título de Bosstinder
+	 * @param bosstinder
+	 */
 	public void setBosstinder(JLabel bosstinder) {
 		this.bosstinder = bosstinder;
 	}
 
-
+	/**
+	 * Devuelve el título de opcional
+	 * @return lbOpcional
+	 */
 	public JLabel getLbOpcional() {
 		return lbOpcional;
 	}
 
-
+	/**
+	 * Modifica el título de opcianal
+	 * @param lbOpcional
+	 */
 	public void setLbOpcional(JLabel lbOpcional) {
 		this.lbOpcional = lbOpcional;
 	}
 
-
+	/**
+	 * Devuelve el texto de alias
+	 * @return txtAlias
+	 */
 	public JTextField getTxtAlias() {
 		return txtAlias;
 	}
 
-
+	/**
+	 * Modifica el texto de alias
+	 * @param txtAlias
+	 */
 	public void setTxtAlias(JTextField txtAlias) {
 		this.txtAlias = txtAlias;
 	}
 
-
+	/**
+	 * Devuelve el texto de correo
+	 * @return txtCorreo
+	 */
 	public JTextField getTxtCorreo() {
 		return txtCorreo;
 	}
 
-
+	/**
+	 * Modifica el texto del correo
+	 * @param txtCorreo
+	 */
 	public void setTxtCorreo(JTextField txtCorreo) {
 		this.txtCorreo = txtCorreo;
 	}
 
-
+	/**
+	 * Devuelve el texto de nombre
+	 * @return
+	 */
 	public JTextField getTxtNombre() {
 		return txtNombre;
 	}
 
-
+	/**
+	 * Modifica el texto del nombre
+	 * @param txtNombre
+	 */
 	public void setTxtNombre(JTextField txtNombre) {
 		this.txtNombre = txtNombre;
 	}
 
-
+	/**
+	 * Devuelve el texto de apellido
+	 * @return txtApellido
+	 */
 	public JTextField getTxtApellido() {
 		return txtApellido;
 	}
 
-
+	/**
+	 * Modifica el texto del apellido
+	 * @param txtApellido
+	 */
 	public void setTxtApellido(JTextField txtApellido) {
 		this.txtApellido = txtApellido;
 	}
 
-
+	/**
+	 * Devuelve la fecha de nacimiento
+	 * @return txtFNacimiento
+	 */
 	public JDateChooser getTxtFNacimiento() {
 		return txtFNacimiento;
 	}
 
-
+	/**
+	 * Modifica la fecha de nacimiento
+	 * @param txtFNacimiento
+	 */
 	public void setTxtFNacimiento(JDateChooser txtFNacimiento) {
 		this.txtFNacimiento = txtFNacimiento;
 	}
 
-
+	/**
+	 * Devuelve el texto de contraseña
+	 * @return txtContrasenia
+	 */
 	public JPasswordField getTxtContrasenia() {
 		return txtContrasenia;
 	}
 
-
+	/**
+	 * Modifica el texto de contraseña
+	 * @param txtContrasenia
+	 */
 	public void setTxtContrasenia(JPasswordField txtContrasenia) {
 		this.txtContrasenia = txtContrasenia;
 	}
 
-
+	/**
+	 * Devuelve el texto de estatura
+	 * @return txtEstatura
+	 */
 	public JTextField getTxtEstatura() {
 		return txtEstatura;
 	}
 
-
+	/**
+	 * Modifica el texto de estatura
+	 * @param txtEstatura
+	 */
 	public void setTxtEstatura(JTextField txtEstatura) {
 		this.txtEstatura = txtEstatura;
 	}
 
-
+	/**
+	 * Devuelve el texto de ingresos
+	 * @return txtIngresos
+	 */
 	public JTextField getTxtIngresos() {
 		return txtIngresos;
 	}
 
-
+	/**
+	 * Modifica el texto de estado
+	 * @param txtIngresos
+	 */
 	public void setTxtIngresos(JTextField txtIngresos) {
 		this.txtIngresos = txtIngresos;
 	}
 
-
+	/**
+	 * Devuelve el combo box de estado
+	 * @return cbxEstado
+	 */
 	public JComboBox<?> getCbxEstado() {
 		return cbxEstado;
 	}
 
-
+	/**
+	 * Modifica el combo box de estado
+	 * @param cbxEstado
+	 */
 	public void setCbxEstado(JComboBox<?> cbxEstado) {
 		this.cbxEstado = cbxEstado;
 	}
 
-
+	/**
+	 * Devuelve el combo box de genero
+	 * @return cbxGenero
+	 */
 	public JComboBox<?> getCbxGenero() {
 		return cbxGenero;
 	}
 
-
+	/**
+	 * Modifica el combo box de genero
+	 * @param cbxGenero
+	 */
 	public void setCbxGenero(JComboBox<?> cbxGenero) {
 		this.cbxGenero = cbxGenero;
 	}
 
-
+	/**
+	 * Devuelve el botón de divorcios
+	 * @return btnGDivorcios
+	 */
 	public ButtonGroup getBtnGDivorcios() {
 		return btnGDivorcios;
 	}
 
-
+	/**
+	 * Modifica el botón de divorcios
+	 * @param btnGDivorcios
+	 */
 	public void setBtnGDivorcios(ButtonGroup btnGDivorcios) {
 		this.btnGDivorcios = btnGDivorcios;
 	}
 
-
+	/**
+	 * Devuelve la respuesta a divorciados
+	 * @return si
+	 */
 	public JRadioButton getSi() {
 		return si;
 	}
 
-
+	/**
+	 * Modifica la respuesta a divorciados
+	 * @param si
+	 */
 	public void setSi(JRadioButton si) {
 		this.si = si;
 	}
 
-
+	/**
+	 * Devuelve la respuesta a divorciados
+	 * @return
+	 */
 	public JRadioButton getNo() {
 		return no;
 	}
 
-
+	/**
+	 * Modifica la respuesta a divorciados
+	 * @param no
+	 */
 	public void setNo(JRadioButton no) {
 		this.no = no;
 	}
 
-
+	/**
+	 * Devuelve el botón de registrar
+	 * @return btnRegistrar
+	 */
 	public JButton getBtnRegistrar() {
 		return btnRegistrar;
 	}
 
-
+	/**
+	 * Modifica el botón de registrar
+	 * @param btnRegistrar
+	 */
 	public void setBtnRegistrar(JButton btnRegistrar) {
 		this.btnRegistrar = btnRegistrar;
 	}
 
-
+	/**
+	 * Devuelve el botón de inicio
+	 * @return
+	 */
 	public JButton getBtnInicio() {
 		return btnInicio;
 	}
 
-
+	/**
+	 * Modifica el botón de inicio
+	 * @param btnInicio
+	 */
 	public void setBtnInicio(JButton btnInicio) {
 		this.btnInicio = btnInicio;
 	}

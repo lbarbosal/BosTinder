@@ -80,50 +80,98 @@ public class ViewAdminUsuarios extends JPanel{
 		add(scrollPane);
 	}
 
+	/**
+	 * Devuelve el título de Bosstinder
+	 * @return bosstinder
+	 */
 	public JLabel getBosstinder() {
 		return bosstinder;
 	}
 
+	/**
+	 * Modificar el título de Bosstinder
+	 * @param bosstinder
+	 */
 	public void setBosstinder(JLabel bosstinder) {
 		this.bosstinder = bosstinder;
 	}
 
+	/**
+	 * Devuelve el botón de buscar usuarios
+	 * @return btnBuscar
+	 */
 	public JButton getBtnBuscar() {
 		return btnBuscar;
 	}
 
+	/**
+	 * Modifica el botón de buscar usuarios
+	 * @param btnBuscar
+	 */
 	public void setBtnBuscar(JButton btnBuscar) {
 		this.btnBuscar = btnBuscar;
 	}
 
+	/**
+	 * Devuelve el contenido del combo box por sentido escogido
+	 * @return cbxSentido
+	 */
 	public JComboBox<?> getCbxSentido() {
 		return cbxSentido;
 	}
 
+	/**
+	 * Modifica el contenido del combo box por sentido escogido
+	 * @param cbxSentido
+	 */
 	public void setCbxSentido(JComboBox<?> cbxSentido) {
 		this.cbxSentido = cbxSentido;
 	}
 
+	/**
+	 * Devuelve el contenido del combo box por dato escogido
+	 * @return cbxDato
+	 */
 	public JComboBox<?> getCbxDato() {
 		return cbxDato;
 	}
 
+	/**
+	 * Modifica el contenido del combo box por dato escogido
+	 * @param cbxDato
+	 */
 	public void setCbxDato(JComboBox<?> cbxDato) {
 		this.cbxDato = cbxDato;
 	}
 
+	/**
+	 * Devuelve el contenido de la tabla
+	 * @return tabla
+	 */
 	public JTable getTabla() {
 		return tabla;
 	}
 
+	/**
+	 * Modifica el contenido de la tabla
+	 * @param tabla
+	 */
 	public void setTabla(JTable tabla) {
 		this.tabla = tabla;
 	}
 
+	/**
+	 * Devuelve el contenido de modelo de la tabla 
+	 * @return modelo
+	 */
 	public DefaultTableModel getModelo() {
 		return modelo;
 	}
 
+	/**
+	 * Modifica el contenido de modelo de la tabla
+	 * @param modelo
+	 */
 	public void setModelo(DefaultTableModel modelo) {
 		this.modelo = modelo;
 	}

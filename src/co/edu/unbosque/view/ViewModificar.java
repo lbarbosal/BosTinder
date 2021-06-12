@@ -144,114 +144,226 @@ public class ViewModificar extends JPanel {
 
 	}
 
+	/**
+	 * Devuelve el título de Boostinder
+	 * @return
+	 */
 	public JLabel getBosstinder() {
 		return bosstinder;
 	}
 
+	/**
+	 * Modifica el título de Bosstinder
+	 * @param bosstinder
+	 */
 	public void setBosstinder(JLabel bosstinder) {
 		this.bosstinder = bosstinder;
 	}
 
+	/**
+	 * Devuelve el título de opcional
+	 * @return
+	 */
 	public JLabel getLbOpcional() {
 		return lbOpcional;
 	}
-
+	
+	/**
+	 * Modifica  el título de opcional
+	 * @param lbOpcional
+	 */
 	public void setLbOpcional(JLabel lbOpcional) {
 		this.lbOpcional = lbOpcional;
 	}
 
+	/**
+	 * Devuelve el texto de alias
+	 * @return txtAlias
+	 */
 	public JTextField getTxtAlias() {
 		return txtAlias;
 	}
 
+	/**
+	 * Modifica el texto de alias
+	 * @param txtAlias
+	 */
 	public void setTxtAlias(JTextField txtAlias) {
 		this.txtAlias = txtAlias;
 	}
 
+	/**
+	 * Devuelve el texto cel correo
+	 * @return txtCorreo
+	 */
 	public JTextField getTxtCorreo() {
 		return txtCorreo;
 	}
 
+	/**
+	 * Modifica el texto cel correo
+	 * @param txtCorreo
+	 */
 	public void setTxtCorreo(JTextField txtCorreo) {
 		this.txtCorreo = txtCorreo;
 	}
 
+	/**
+	 * Devuelve el texto de nombre
+	 * @return txtNombre
+	 */
 	public JTextField getTxtNombre() {
 		return txtNombre;
 	}
 
+	/**
+	 * Modifica el texto de nombre
+	 * @param txtNombre
+	 */
 	public void setTxtNombre(JTextField txtNombre) {
 		this.txtNombre = txtNombre;
 	}
 
+	/**
+	 * Devuelve el texto de apellido
+	 * @return txtApellido
+	 */
 	public JTextField getTxtApellido() {
 		return txtApellido;
 	}
 
+	/**
+	 * Modifica el texto de apellido
+	 * @param txtApellido
+	 */
 	public void setTxtApellido(JTextField txtApellido) {
 		this.txtApellido = txtApellido;
 	}
 
+	/**
+	 * Devuelve el texto de nacimiento
+	 * @return txtFNacimiento
+	 */
 	public JTextField getTxtFNacimiento() {
 		return txtFNacimiento;
 	}
 
+	/**
+	 * Modifica el texto de nacimiento
+	 * @param txtFNacimiento
+	 */
 	public void setTxtFNacimiento(JTextField txtFNacimiento) {
 		this.txtFNacimiento = txtFNacimiento;
 	}
 
+	/**
+	 * Devuelve el texto de estatura
+	 * @return txtEstatura
+	 */
 	public JTextField getTxtEstatura() {
 		return txtEstatura;
 	}
 
+	/**
+	 * Modifica el texto de estatura
+	 * @param txtEstatura
+	 */
 	public void setTxtEstatura(JTextField txtEstatura) {
 		this.txtEstatura = txtEstatura;
 	}
 
+	/**
+	 * Devuelve el texto de Ingresos
+	 * @return txtIngresos
+	 */
 	public JTextField getTxtIngresos() {
 		return txtIngresos;
 	}
 
+	/**
+	 * Modifica el texto de Ingresos
+	 * @param txtIngresos
+	 */
 	public void setTxtIngresos(JTextField txtIngresos) {
 		this.txtIngresos = txtIngresos;
 	}
 
+	/**
+	 * Devuelve el como box de estado
+	 * @return cbxEstado
+	 */
 	public JComboBox<?> getCbxEstado() {
 		return cbxEstado;
 	}
 
+	/**
+	 * Modifica el combo box de estado
+	 * @param cbxEstado
+	 */
 	public void setCbxEstado(JComboBox<?> cbxEstado) {
 		this.cbxEstado = cbxEstado;
 	}
 
+	/**
+	 * Devuelve el combo box de genero
+	 * @return cbxGenero
+	 */
 	public JComboBox<?> getCbxGenero() {
 		return cbxGenero;
 	}
 
+	/**
+	 * Modifica Devuelve el combo box de genero
+	 * @param cbxGenero
+	 */
 	public void setCbxGenero(JComboBox<?> cbxGenero) {
 		this.cbxGenero = cbxGenero;
 	}
 
+	/**
+	 * Devuelve el botón de divorcios
+	 * @return btnGDivorcios
+	 */
 	public ButtonGroup getBtnGDivorcios() {
 		return btnGDivorcios;
 	}
 
+	/**
+	 * Modifica el botón de divorcios
+	 * @param btnGDivorcios
+	 */
 	public void setBtnGDivorcios(ButtonGroup btnGDivorcios) {
 		this.btnGDivorcios = btnGDivorcios;
 	}
 
+	/**
+	 * Devuelve el botón de modificar
+	 * @return btnModificar
+	 */
 	public JButton getBtnModificar() {
 		return btnModificar;
 	}
 
+	/**
+	 * Modifica el botón de modificar
+	 * @param btnRegistrar
+	 */
 	public void setBtnModificar(JButton btnRegistrar) {
 		this.btnModificar = btnRegistrar;
 	}
 
+	/**
+	 * Devuelve el botón de inicio
+	 * @return btnInicio
+	 */
 	public JButton getBtnInicio() {
 		return btnInicio;
 	}
 
+	/**
+	 * Modifica el botón de inicio
+	 * @param btnInicio
+	 */
 	public void setBtnInicio(JButton btnInicio) {
 		this.btnInicio = btnInicio;
 	}

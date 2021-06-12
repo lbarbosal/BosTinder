@@ -199,7 +199,12 @@ public class ViewConocer extends JPanel {
 		add(fondo1);
 
 	}
-
+	
+	/**
+	 * Método que agrega unna foto aleatoria a cada perfil
+	 * 
+	 * @param g
+	 */
 	public void fotoPerfil(String g) {
 		if (g.equals("Masculino")) {
 			int i = (int) Math.floor(Math.random() * hombres.size());
@@ -212,122 +217,242 @@ public class ViewConocer extends JPanel {
 		}
 	}
 
+	/**
+	 * Devuelve el título de Bosstinder
+	 * @return bosstinder
+	 */
 	public JLabel getBosstinder() {
 		return bosstinder;
 	}
 
+	/**
+	 * Modificar el título de Bosstinder
+	 * @param bosstinder
+	 */
 	public void setBosstinder(JLabel bosstinder) {
 		this.bosstinder = bosstinder;
 	}
 
+	/**
+	 * Devuelve el título de perfil
+	 * @return perfil
+	 */
 	public JLabel getPerfil() {
 		return perfil;
 	}
 
+	/**
+	 * Modifca el título de perfil
+	 * @param perfil
+	 */
 	public void setPerfil(JLabel perfil) {
 		this.perfil = perfil;
 	}
 
+	/**
+	 * Devuelve el título de estado
+	 * @return lbEstado
+	 */
 	public JLabel getLbEstado() {
 		return lbEstado;
 	}
 
+	/**
+	 * Modifica el título de estado
+	 * @param lbEstado
+	 */
 	public void setLbEstado(JLabel lbEstado) {
 		this.lbEstado = lbEstado;
 	}
 
+	/**
+	 * Devuelve el título de edad
+	 * @return lbEdad
+	 */
 	public JLabel getLbEdad() {
 		return lbEdad;
 	}
 
+	/**
+	 * Modificar el título de edad
+	 * @param lbEdad
+	 */
 	public void setLbEdad(JLabel lbEdad) {
 		this.lbEdad = lbEdad;
 	}
 
+	/**
+	 * Devuelve el título de alias
+	 * @return lbAlias
+	 */
 	public JLabel getLbAlias() {
 		return lbAlias;
 	}
 
+	/**
+	 * Modifica el título de alias
+	 * @param lbAlias
+	 */
 	public void setLbAlias(JLabel lbAlias) {
 		this.lbAlias = lbAlias;
 	}
 
+	/**
+	 * Devuelve el título de genero
+	 * @return lbGenero
+	 */
 	public JLabel getLbGenero() {
 		return lbGenero;
 	}
 
+	/**
+	 * Modifica el título de genero
+	 * @param lbGenero
+	 */
 	public void setLbGenero(JLabel lbGenero) {
 		this.lbGenero = lbGenero;
 	}
 
+	/**
+	 * Devuelve el título de estatura
+	 * @return lbEstatura
+	 */
 	public JLabel getLbEstatura() {
 		return lbEstatura;
 	}
 
+	/**
+	 * Modifica el título de estatura
+	 * @param lbEstatura
+	 */
 	public void setLbEstatura(JLabel lbEstatura) {
 		this.lbEstatura = lbEstatura;
 	}
 
+	/**
+	 * Devuelve el título de depende
+	 * @return lbDepende
+	 */
 	public JLabel getLbDepende() {
 		return lbDepende;
 	}
 
+	/**
+	 * Modifica el título de depende
+	 * @param lbDepende
+	 */
 	public void setLbDepende(JLabel lbDepende) {
 		this.lbDepende = lbDepende;
 	}
 
+	/**
+	 * Devuelve el título de respuesta
+	 * @return lbRespuesta
+	 */
 	public JLabel getLbRespuesta() {
 		return lbRespuesta;
 	}
 
+	/**
+	 * Modifica el título de respuesta
+	 * @param lbRespuesta
+	 */
 	public void setLbRespuesta(JLabel lbRespuesta) {
 		this.lbRespuesta = lbRespuesta;
 	}
 
+	/**
+	 * Devuelve el título de recibidos
+	 * @return lbLRecibidos
+	 */
 	public JLabel getLbLRecibidos() {
 		return lbLRecibidos;
 	}
 
+	/**
+	 * Modifica el título de recibidos
+	 * @param lbLResividos
+	 */
 	public void setLbLRecibidos(JLabel lbLResividos) {
 		this.lbLRecibidos = lbLResividos;
 	}
 
+	/**
+	 * Devuelve el título de likes otorgados
+	 * @return lbLOtorgados
+	 */
 	public JLabel getLbLOtorgados() {
 		return lbLOtorgados;
 	}
 
+	/**
+	 * Modifica el título de likes otorgados
+	 * @param lbLOtorgados
+	 */
 	public void setLbLOtorgados(JLabel lbLOtorgados) {
 		this.lbLOtorgados = lbLOtorgados;
 	}
 
+	/**
+	 * Devuelve el botón de salir
+	 * @return btnSalir
+	 */
 	public JButton getBtnSalir() {
 		return btnSalir;
 	}
 
+	/**
+	 * Modifica el botón de salir
+	 * @param btnSalir
+	 */
 	public void setBtnSalir(JButton btnSalir) {
 		this.btnSalir = btnSalir;
 	}
 
+	/**
+	 * Devuelve el botón  de perfil
+	 * @return btnPerfil
+	 */
 	public JButton getBtnPerfil() {
 		return btnPerfil;
 	}
 
+	/**
+	 * Modifica el botón  de perfil
+	 * @param btnPerfil
+	 */
 	public void setBtnPerfil(JButton btnPerfil) {
 		this.btnPerfil = btnPerfil;
 	}
 
+	/**
+	 * Devuelve el botón de like
+	 * @return btnLike
+	 */
 	public JButton getBtnLike() {
 		return btnLike;
 	}
 
+	/**
+	 * Modifica el botón de like
+	 * @param btnLike
+	 */
 	public void setBtnLike(JButton btnLike) {
 		this.btnLike = btnLike;
 	}
 
+	/**
+	 * Devuelve el botón de dislike
+	 * @return btnDislike
+	 */
 	public JButton getBtnDislike() {
 		return btnDislike;
 	}
 
+	/**
+	 * Modifica el botón de dislike
+	 * @param btnDislike
+	 */
 	public void setBtnDislike(JButton btnDislike) {
 		this.btnDislike = btnDislike;
 	}
