@@ -6,10 +6,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/activation.jar"/>
-	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/mail.jar"/>
-	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/jcalendar-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/saave/Desktop/proyectoC2/jcommon-1.0.23.jar"/>
-	<classpathentry kind="lib" path="C:/Users/saave/Desktop/proyectoC2/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="src" path="test/src"/>
+	<classpathentry kind="lib" path="C:/Users/COLROSARIO 9/Documents/Universidad El Bosque/BosTinder/lib/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COLROSARIO 9/Documents/Universidad El Bosque/BosTinder/lib/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COLROSARIO 9/Documents/Universidad El Bosque/BosTinder/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COLROSARIO 9/Documents/Universidad El Bosque/BosTinder/lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COLROSARIO 9/Documents/Universidad El Bosque/BosTinder/lib/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
