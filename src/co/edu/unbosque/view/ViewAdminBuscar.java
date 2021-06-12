@@ -55,6 +55,7 @@ public class ViewAdminBuscar extends JPanel{
 		btnBuscar.setBounds(503,176,24,24);
 		btnBuscar.setBackground(null);
 		btnBuscar.setBorder(null);
+		btnBuscar.setActionCommand("btnBuscar");
 		btnBuscar.setIcon(new ImageIcon(lbBuscar.getImage().getScaledInstance(btnBuscar.getWidth(), btnBuscar.getHeight(),Image.SCALE_SMOOTH)));
 		add(btnBuscar);
 		
@@ -63,6 +64,7 @@ public class ViewAdminBuscar extends JPanel{
 		btnEliminar.setBackground(Color.white);
 		btnEliminar.setFont(new Font("arial",0,11));
 		btnEliminar.setBorder( new MatteBorder(0,0,3,3,Color.black));
+		btnEliminar.setActionCommand("btnEliminar");
 		add(btnEliminar);
 		
 		JLabel lbnombre = new JLabel("Nombre");
@@ -145,7 +147,7 @@ public class ViewAdminBuscar extends JPanel{
 		lbRespuesta.setBounds(403,341,116,21);
 		add(lbRespuesta);
 		
-		JLabel lblResividos = new JLabel("Like Resividos");
+		JLabel lblResividos = new JLabel("Like recibidos");
 		lblResividos.setBounds(120,387,105,21);
 		add(lblResividos);
 		lbLResividos = new JLabel("-");
@@ -182,8 +184,142 @@ public class ViewAdminBuscar extends JPanel{
 		fondo1.setBorder(new LineBorder(Color.black,5));
 		fondo1.setBounds(59,235,482,184);
 		add(fondo1);
-		
-
+	
 	 }
 
+	public JTextField getTxtBuscador() {
+		return txtBuscador;
+	}
+
+	public void setTxtBuscador(JTextField txtBuscador) {
+		this.txtBuscador = txtBuscador;
+	}
+
+	public JButton getBtnBuscar() {
+		return btnBuscar;
+	}
+
+	public void setBtnBuscar(JButton btnBuscar) {
+		this.btnBuscar = btnBuscar;
+	}
+
+	public JLabel getBosstinder() {
+		return bosstinder;
+	}
+
+	public void setBosstinder(JLabel bosstinder) {
+		this.bosstinder = bosstinder;
+	}
+
+	public JLabel getLbEstado() {
+		return lbEstado;
+	}
+
+	public void setLbEstado(JLabel lbEstado) {
+		this.lbEstado = lbEstado;
+	}
+
+	public JLabel getLbNombre() {
+		return lbNombre;
+	}
+
+	public void setLbNombre(JLabel lbNombre) {
+		this.lbNombre = lbNombre;
+	}
+
+	public JLabel getLbApellido() {
+		return lbApellido;
+	}
+
+	public void setLbApellido(JLabel lbApellido) {
+		this.lbApellido = lbApellido;
+	}
+
+	public JLabel getLbFNacimiento() {
+		return lbFNacimiento;
+	}
+
+	public void setLbFNacimiento(JLabel lbFNacimiento) {
+		this.lbFNacimiento = lbFNacimiento;
+	}
+
+	public JLabel getLbEdad() {
+		return lbEdad;
+	}
+
+	public void setLbEdad(JLabel lbEdad) {
+		this.lbEdad = lbEdad;
+	}
+
+	public JLabel getLbAlias() {
+		return lbAlias;
+	}
+
+	public void setLbAlias(JLabel lbAlias) {
+		this.lbAlias = lbAlias;
+	}
+
+	public JLabel getLbCorreo() {
+		return lbCorreo;
+	}
+
+	public void setLbCorreo(JLabel lbCorreo) {
+		this.lbCorreo = lbCorreo;
+	}
+
+	public JLabel getLbGenero() {
+		return lbGenero;
+	}
+
+	public void setLbGenero(JLabel lbGenero) {
+		this.lbGenero = lbGenero;
+	}
+
+	public JLabel getLbEstatura() {
+		return lbEstatura;
+	}
+
+	public void setLbEstatura(JLabel lbEstatura) {
+		this.lbEstatura = lbEstatura;
+	}
+
+	public JLabel getLbDepende() {
+		return lbDepende;
+	}
+
+	public void setLbDepende(JLabel lbDepende) {
+		this.lbDepende = lbDepende;
+	}
+
+	public JLabel getLbRespuesta() {
+		return lbRespuesta;
+	}
+
+	public void setLbRespuesta(JLabel lbRespuesta) {
+		this.lbRespuesta = lbRespuesta;
+	}
+
+	public JLabel getLbLResividos() {
+		return lbLResividos;
+	}
+
+	public void setLbLResividos(JLabel lbLResividos) {
+		this.lbLResividos = lbLResividos;
+	}
+
+	public JLabel getLbLOtorgados() {
+		return lbLOtorgados;
+	}
+
+	public void setLbLOtorgados(JLabel lbLOtorgados) {
+		this.lbLOtorgados = lbLOtorgados;
+	}
+
+	public JButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(JButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
 }

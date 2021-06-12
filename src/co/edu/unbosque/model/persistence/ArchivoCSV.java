@@ -21,27 +21,21 @@ public class ArchivoCSV {
 			boolean esPrimeraLinea = true;
 			while (linea != null) {
 				String[] campos = linea.split(SEPARADOR);
-				if(campos[4].equals("M")) {
+				if (campos[4].equals("M")) {
 					genero = "Femenino";
 				} else {
 					genero = "Masculino";
 				}
-				personas.add(new Persona(Integer.parseInt(campos[0]),
-						 				campos[1].toString(),
-						 				campos[2].toString() + " " + campos[3].toString(),
-						 				genero,
-						 				campos[5].toString(),
-						 				campos[6].toString(),
-						 				campos[7].toString(),
-						 				campos[8].toString(),
-						 				Integer.parseInt(campos[9]),
-						 				(!campos[10].isEmpty()) ? Double.parseDouble(campos[10]):-1,
-						 				campos[11],
-						 				Integer.parseInt(campos[12]),
-						 				Integer.parseInt(campos[13]),
-						 				Integer.parseInt(campos[14]),
-						 				campos[15]));
+				if (campos[15].equals("Disponible")) {
+					personas.add(new Persona(Integer.parseInt(campos[0]), campos[1].toString(),
+							campos[2].toString() + " " + campos[3].toString(), genero, campos[5].toString(),
+							campos[6].toString(), campos[7].toString(), campos[8].toString(),
+							Integer.parseInt(campos[9]), (!campos[10].isEmpty()) ? Double.parseDouble(campos[10]) : -1,
+							campos[11], Integer.parseInt(campos[12]), Integer.parseInt(campos[13]),
+							Integer.parseInt(campos[14]), campos[15]));
+				}
 				linea = bufferLectura.readLine();
+
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

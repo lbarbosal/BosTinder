@@ -7,7 +7,6 @@ import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -22,8 +21,6 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.general.DefaultPieDataset;
-
 import co.edu.unbosque.model.Persona;
 
 public class ViewAdminEstadisticas extends JPanel{
@@ -74,14 +71,31 @@ public class ViewAdminEstadisticas extends JPanel{
 	}
 	public void updateGraficaG(ArrayList<Persona> info, String tipoB) {
 		DefaultCategoryDataset datosG = new DefaultCategoryDataset();
-		for (int i = 0; i < info.size(); i++) {
-			datosG.setValue(info.get(i).getNumLR(), info.get(i).getAlias() ,"");
+		if(tipoB.equals("Ingresos")) {
+			for (int i = 0; i < info.size(); i++) {
+				datosG.setValue(info.get(i).getIngresos(), info.get(i).getAlias() ,"");
+			}
+		} else {
+			for (int i = 0; i < info.size(); i++) {
+				datosG.setValue(info.get(i).getNumLR(), info.get(i).getAlias() ,"");
+			}
 		}
+
 		JFreeChart graficoBarra = ChartFactory.createBarChart3D("TOP 10", "Tabla de convenciones", tipoB , datosG);
 		setGraficoBarra(graficoBarra);
 		getPanel().setChart(graficoBarra);
 		getPanel().repaint();
 		updateUI();
+		
+		/* PDFDocument pdfDoc = new PDFDocument();
+        pdfDoc.setTitle("Estadísticas");
+        pdfDoc.setAuthor("Natalia");
+        
+        Page page = pdfDoc.createPage(new Rectangle(612, 468));    
+        PDFGraphics2D g2 = page.getGraphics2D();
+
+        graficoBarra.draw(g2, new Rectangle(0, 0, 612, 468));       
+        pdfDoc.writeToFile(new File("demo.pdf")); */
 		
 	}
 	
