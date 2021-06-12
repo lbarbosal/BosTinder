@@ -25,7 +25,7 @@ public class ViewConocer extends JPanel{
 	private JLabel lbEstatura;
 	private JLabel lbDepende;
 	private JLabel lbRespuesta;
-	private JLabel lbLResividos;
+	private JLabel lbLResibidos;
 	private JLabel lbLOtorgados;
 	private JButton btnSalir;
 	private JButton btnPerfil;
@@ -122,7 +122,7 @@ public class ViewConocer extends JPanel{
 		lbEstado.setBounds(184,339,105,21);
 		add(lbEstado);
 		
-		JLabel lbgenero = new JLabel("Genero");
+		JLabel lbgenero = new JLabel("Género");
 		lbgenero.setBounds(277,339,116,21);
 		lbgenero.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbgenero);
@@ -146,17 +146,17 @@ public class ViewConocer extends JPanel{
 		lbRespuesta.setBounds(400,361,105,21);
 		add(lbRespuesta);
 		
-		JLabel lblResividos = new JLabel("Like Recibidos");
-		lblResividos.setBounds(114,423,105,21);
-		add(lblResividos);
-		lbLResividos = new JLabel("-");
-		lbLResividos.setBounds(83,420,24,24);
-		lbLResividos.setHorizontalAlignment(JLabel.CENTER);
-		add(lbLResividos);
-		JLabel LResividos = new JLabel();
-		LResividos.setBounds(83,420,24,24);
-		LResividos.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(lbLResividos.getWidth(), lbLResividos.getHeight(),Image.SCALE_SMOOTH)));
-		add(LResividos);
+		JLabel lblResibidos = new JLabel("Like Recibidos");
+		lblResibidos.setBounds(114,423,105,21);
+		add(lblResibidos);
+		lbLResibidos = new JLabel("-");
+		lbLResibidos.setBounds(83,420,24,24);
+		lbLResibidos.setHorizontalAlignment(JLabel.CENTER);
+		add(lbLResibidos);
+		JLabel LResibidos = new JLabel();
+		LResibidos.setBounds(83,420,24,24);
+		LResibidos.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(lbLResibidos.getWidth(), lbLResibidos.getHeight(),Image.SCALE_SMOOTH)));
+		add(LResibidos);
 		
 		JLabel lblOtorgados = new JLabel("Like Otorgados");
 		lblOtorgados.setBounds(399,423,105,21);
@@ -273,12 +273,12 @@ public class ViewConocer extends JPanel{
 		this.lbRespuesta = lbRespuesta;
 	}
 
-	public JLabel getLbLResividos() {
-		return lbLResividos;
+	public JLabel getLbLResibidos() {
+		return lbLResibidos;
 	}
 
-	public void setLbLResividos(JLabel lbLResividos) {
-		this.lbLResividos = lbLResividos;
+	public void setLbLResibidos(JLabel lbLResividos) {
+		this.lbLResibidos = lbLResividos;
 	}
 
 	public JLabel getLbLOtorgados() {

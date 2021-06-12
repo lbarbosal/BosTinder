@@ -11,5 +11,7 @@
 	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/jcalendar-1.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/saave/Desktop/proyectoC2/jcommon-1.0.23.jar"/>
 	<classpathentry kind="lib" path="C:/Users/saave/Desktop/proyectoC2/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/orsonpdf-1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saave/Desktop/c3/lib/pdfbox-app-3.0.0-RC1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

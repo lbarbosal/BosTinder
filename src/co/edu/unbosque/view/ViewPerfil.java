@@ -27,7 +27,7 @@ public class ViewPerfil extends JPanel{
 	private JLabel lbEstatura;
 	private JLabel lbDepende;
 	private JLabel lbRespuesta;
-	private JLabel lbLResividos;
+	private JLabel lbLResibidos;
 	private JLabel lbLOtorgados;
 	private JButton btnSalir;
 	private JButton btnConocer;
@@ -56,7 +56,7 @@ public class ViewPerfil extends JPanel{
 		add(perfil);
 		
 		btnEliminar = new JButton("Eliminar Cuenta");
-		btnEliminar.setBounds(53,482,60,27);
+		btnEliminar.setBounds(53,482,100,27);
 		btnEliminar.setBackground(Color.white);
 		btnEliminar.setFont(new Font("arial",0,11));
 		btnEliminar.setBorder( new MatteBorder(0,0,3,3,Color.black));
@@ -86,106 +86,106 @@ public class ViewPerfil extends JPanel{
 		add(btnConocer);
 		
 		JLabel lbnombre = new JLabel("Nombre");
-		lbnombre.setBounds(90,289,105,21);
+		lbnombre.setBounds(74,289,105,21);
 		lbnombre.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbnombre);
 		lbNombre = new JLabel("--");
-		lbNombre.setBounds(202,289,105,21);
+		lbNombre.setBounds(186,289,105,21);
 		add(lbNombre);
 		
 		JLabel lbapellido = new JLabel("Apellido");
-		lbapellido.setBounds(290,289,116,21);
+		lbapellido.setBounds(274,289,116,21);
 		lbapellido.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbapellido);
 		lbApellido = new JLabel("--");
-		lbApellido.setBounds(413,289,116,21);
+		lbApellido.setBounds(397,289,116,21);
 		add(lbApellido);
 		
 		JLabel lbnacimiento = new JLabel("Fecha De Nacimiento");
-		lbnacimiento.setBounds(90,316,105,21);
+		lbnacimiento.setBounds(74,316,105,21);
 		lbnacimiento.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbnacimiento);
 		lbFNacimiento = new JLabel("--");
-		lbFNacimiento.setBounds(202,316,67,21);
+		lbFNacimiento.setBounds(186,316,67,21);
 		add(lbFNacimiento);
 		
 		JLabel lbUsuario = new JLabel("Alias");
-		lbUsuario.setBounds(90,339,105,21);
+		lbUsuario.setBounds(74,339,105,21);
 		lbUsuario.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbUsuario);
 		lbAlias = new JLabel("--");
-		lbAlias.setBounds(202,339,105,21);
+		lbAlias.setBounds(186,339,105,21);
 		add(lbAlias);
 		
 		JLabel lbcorreo = new JLabel("E-Mail");
-		lbcorreo.setBounds(290,339,116,21);
+		lbcorreo.setBounds(274,339,116,21);
 		lbcorreo.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbcorreo);
 		lbCorreo = new JLabel("--");
-		lbCorreo.setBounds(414,339,116,21);
+		lbCorreo.setBounds(198,339,116,21);
 		add(lbCorreo);
 		
 		JLabel lbedad = new JLabel("Edad");
-		lbedad.setBounds(290,316,116,21);
+		lbedad.setBounds(275,316,116,21);
 		lbedad.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbedad);
 		lbEdad = new JLabel("--");
-		lbEdad.setBounds(413,316,105,21);	
+		lbEdad.setBounds(397,316,105,21);	
 		add(lbEdad);
 		
 		JLabel lbestado = new JLabel("Estado");
-		lbestado.setBounds(90 ,361,105,21);
+		lbestado.setBounds(74 ,361,105,21);
 		lbestado.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbestado);
 		lbEstado = new JLabel("--");
-		lbEstado.setBounds(202,361,105,21);
+		lbEstado.setBounds(186,361,105,21);
 		add(lbEstado);
 		
-		JLabel lbgenero = new JLabel("Genero");
-		lbgenero.setBounds(290,362,116,21);
+		JLabel lbgenero = new JLabel("Género");
+		lbgenero.setBounds(274,362,116,21);
 		lbgenero.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbgenero);
 		lbGenero = new JLabel("--");
-		lbGenero.setBounds(413,362,116,21);
+		lbGenero.setBounds(397,362,116,21);
 		add(lbGenero);
 		
 		JLabel lbestatura = new JLabel("Estatura");
-		lbestatura.setBounds(90,384,105,21);
+		lbestatura.setBounds(74,384,105,21);
 		lbestatura.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbestatura);
 		lbEstatura = new JLabel("--");
-		lbEstatura.setBounds(202,384,105,21);
+		lbEstatura.setBounds(168,384,105,21);
 		add(lbEstatura);
 		
 		lbDepende = new JLabel("--");
-		lbDepende.setBounds(290,384,116,21);
+		lbDepende.setBounds(274,384,116,21);
 		lbDepende.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbDepende);
 		lbRespuesta = new JLabel("--");
-		lbRespuesta.setBounds(413,384,116,21);
+		lbRespuesta.setBounds(397,384,116,21);
 		add(lbRespuesta);
 		
-		JLabel lblResividos = new JLabel("Like Resividos");
-		lblResividos.setBounds(130,430,105,21);
-		add(lblResividos);
-		lbLResividos = new JLabel("-");
-		lbLResividos.setBounds(99,427,24,24);
-		lbLResividos.setHorizontalAlignment(JLabel.CENTER);
-		add(lbLResividos);
-		JLabel LResividos = new JLabel();
-		LResividos.setBounds(99,427,24,24);
-		LResividos.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(lbLResividos.getWidth(), lbLResividos.getHeight(),Image.SCALE_SMOOTH)));
-		add(LResividos);
+		JLabel lblResibidos = new JLabel("Like Resividos");
+		lblResibidos.setBounds(130,430,105,21);
+		add(lblResibidos);
+		lbLResibidos = new JLabel("-");
+		lbLResibidos.setBounds(83,427,24,24);
+		lbLResibidos.setHorizontalAlignment(JLabel.CENTER);
+		add(lbLResibidos);
+		JLabel LResibidos = new JLabel();
+		LResibidos.setBounds(83,427,24,24);
+		LResibidos.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(lbLResibidos.getWidth(), lbLResibidos.getHeight(),Image.SCALE_SMOOTH)));
+		add(LResibidos);
 		
 		JLabel lblOtorgados = new JLabel("Like Otorgados");
-		lblOtorgados.setBounds(415,430,105,21);
+		lblOtorgados.setBounds(399,430,105,21);
 		add(lblOtorgados);
 		lbLOtorgados = new JLabel("-");
-		lbLOtorgados.setBounds(384,427,24,24);
+		lbLOtorgados.setBounds(368,427,24,24);
 		lbLOtorgados.setHorizontalAlignment(JLabel.CENTER);
 		add(lbLOtorgados);
 		JLabel LOtorgados = new JLabel();
-		LOtorgados.setBounds(384,427,24,24);
+		LOtorgados.setBounds(368,427,24,24);
 		LOtorgados.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(LOtorgados.getWidth(), LOtorgados.getHeight(),Image.SCALE_SMOOTH)));
 		add(LOtorgados);
 				
@@ -193,14 +193,14 @@ public class ViewPerfil extends JPanel{
 		fondo2.setOpaque(true);
 		fondo2.setBackground(Color.white);
 		fondo2.setBorder(new LineBorder(Color.black,5));
-		fondo2.setBounds(69,416,482,46);
+		fondo2.setBounds(53,416,482,46);
 		add(fondo2);
 		
 		JLabel fondo1 = new JLabel();
 		fondo1.setOpaque(true);
 		fondo1.setBackground(Color.white);
 		fondo1.setBorder(new LineBorder(Color.black,5));
-		fondo1.setBounds(69,278,482,184);
+		fondo1.setBounds(53,278,482,184);
 		add(fondo1);
 		
 		
@@ -286,12 +286,12 @@ public class ViewPerfil extends JPanel{
 		this.lbRespuesta = lbRespuesta;
 	}
 
-	public JLabel getLbLResividos() {
-		return lbLResividos;
+	public JLabel getLbLResibidos() {
+		return lbLResibidos;
 	}
 
-	public void setLbLResividos(JLabel lbLResividos) {
-		this.lbLResividos = lbLResividos;
+	public void setLbLResibidos(JLabel lbLResividos) {
+		this.lbLResibidos = lbLResividos;
 	}
 
 	public JLabel getLbLOtorgados() {

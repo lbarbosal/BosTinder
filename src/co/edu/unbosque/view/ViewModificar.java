@@ -68,7 +68,7 @@ public class ViewModificar extends JPanel {
 		txtAlias.setEnabled(false);
 		add(txtAlias);
 
-		JLabel lbCorreo = new JLabel("Correo Electronico");
+		JLabel lbCorreo = new JLabel("Correo Electrónico");
 		lbCorreo.setBounds(102, 284, 111, 21);
 		add(lbCorreo);
 		txtCorreo = new JTextField();
@@ -108,7 +108,7 @@ public class ViewModificar extends JPanel {
 
 		add(cbxEstado);
 
-		JLabel lbGenero = new JLabel("Genero");
+		JLabel lbGenero = new JLabel("Género");
 		lbGenero.setBounds(322, 357, 45, 21);
 		add(lbGenero);
 		cbxGenero = new JComboBox();

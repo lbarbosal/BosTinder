@@ -184,7 +184,7 @@ public class PersonaDAO {
 		}
 		return personas;
 	}
-	public ArrayList<Persona> ordenamientoSel(ArrayList<Persona> personas, String tipoBus,String sentido){ // agargar tipo de busqueda
+	public ArrayList<Persona> ordenamientoBur(ArrayList<Persona> personas, String tipoBus,String sentido){ // agargar tipo de busqueda
 		int iteracion = 0;
 		boolean permutacion = true;
 		int actual;
@@ -196,7 +196,7 @@ public class PersonaDAO {
 			for(actual=0; actual <personas.size()-iteracion; actual++) {
 				if(sentido.equals("Ascendente"))
 					switch (tipoBus) {
-					  case "Numero De Likes":
+					  case "Número De Likes":
 						  f = personas.get(actual).getNumLR()>personas.get(actual+1).getNumLR();
 					    break;
 					  case "Apellido":
