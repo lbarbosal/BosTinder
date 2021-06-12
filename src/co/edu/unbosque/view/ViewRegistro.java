@@ -17,7 +17,13 @@ import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
 
 import com.toedter.calendar.JDateChooser;
-
+/**
+ * Clase en la que se ve toda la información de las personas que ingresaron a la plataforma
+ * Depende de un JPanel
+ * 
+ * @author Grupo 3
+ * @version 12/06/2021
+ */
 public class ViewRegistro extends JPanel{
 	
 	private JLabel bosstinder;
@@ -38,7 +44,9 @@ public class ViewRegistro extends JPanel{
 	private JButton btnRegistrar;
 	private JButton btnInicio;
 	
-	
+	/**
+	 * Método constructor
+	 */
 	public ViewRegistro() {
 		setLayout(null);
 		

@@ -17,7 +17,13 @@ import javax.swing.JTextField;
 import javax.swing.border.MatteBorder;
 
 import com.toedter.calendar.JDateChooser;
-
+/**
+ * Clase para modificar los usuarios registrados
+ * Depende de un JPanel
+ * 
+ * @author Grupo 3
+ * @version 12/06/2021
+ */
 public class ViewModificar extends JPanel {
 
 	private JLabel bosstinder;
@@ -32,10 +38,12 @@ public class ViewModificar extends JPanel {
 	private JComboBox<?> cbxEstado;
 	private JComboBox<?> cbxGenero;
 	private ButtonGroup btnGDivorcios;
-
 	private JButton btnModificar;
 	private JButton btnInicio;
-
+	
+	/**
+	 * Método constructor
+	 */
 	public ViewModificar() {
 		setLayout(null);
 

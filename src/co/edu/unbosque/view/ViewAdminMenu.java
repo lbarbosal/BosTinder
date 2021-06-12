@@ -8,15 +8,23 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
-
+/**
+ * Clase del menú del administrador
+ * Depende de un JPanel
+ * 
+ * @author Grupo 3
+ * @version 12/06/2021
+ */
 public class ViewAdminMenu extends JPanel{
 	
 	 private JButton btnBuscarU;
-
 	 private JButton btnRaiting;
 	 private JButton btnUsuarios;
 	 private JButton btnSalir;
 	 
+	 /**
+	  * Método constructor
+	  */
 	 public ViewAdminMenu() {
 		 setLayout(null);
 		 ImageIcon lbSalir = new ImageIcon("graphics/salir.png");
@@ -64,8 +72,6 @@ public class ViewAdminMenu extends JPanel{
 	public void setBtnBuscarU(JButton btnBuscarU) {
 		this.btnBuscarU = btnBuscarU;
 	}
-
-
 
 	public JButton getBtnRaiting() {
 		return btnRaiting;

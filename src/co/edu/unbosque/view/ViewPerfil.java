@@ -11,7 +11,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
-
+/**
+ * Clase para ver el perfil personal
+ * Depende de un JPanel
+ * 
+ * @author Grupo 3
+ * @version 12/06/2021
+ */
 public class ViewPerfil extends JPanel{
 	
 	private JLabel bosstinder;
@@ -34,6 +40,9 @@ public class ViewPerfil extends JPanel{
 	private JButton btnEditar;
 	private JButton btnEliminar;
 	
+	/**
+	 * Método constructor
+	 */
 	public ViewPerfil() {
 		setLayout(null);
 		ImageIcon titulo = new ImageIcon("graphics/titulo2.png");
