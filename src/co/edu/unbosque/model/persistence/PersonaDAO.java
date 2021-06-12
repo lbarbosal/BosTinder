@@ -8,20 +8,41 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import co.edu.unbosque.model.Persona;
 
-
+/**
+ * Clase PersonaDAO Se implementa el serializable
+ * 
+ * @author Grupo 3
+ * @version 12/06/2021
+ */
 public class PersonaDAO {
 	
 	public Archivo archivo;
 	
+	/**
+	 * Método constructor
+	 */
 	public PersonaDAO() {
 	
 	}
 	
+	/**
+	 * Método para el archivo
+	 * 
+	 * @param archivo Archivo Archivo plano
+	 */
 	public PersonaDAO(Archivo archivo) {
 		super();
 		this.archivo = archivo;
 	}
 	
+	/**
+	 * Método para validar el usuario y la contraseña de usuarios
+	 * 
+	 * @param alias			Es el alias de la persona para el inicio de sesión, debe ser único. alias != null, alias != ""
+	 * @param contrasena    Es la contraseña de la persona para el inicio de sesión. alias != null, alias != "" 
+	 * @param personas		Son los usuarios. personas != null, personas != " "
+	 * @return null
+	 */
 	public Persona iniSesion(String alias, String contrasena,  ArrayList<Persona> personas) {
 		Persona p = buscarPersona(alias, personas);
 		if(p != null) {
@@ -32,6 +53,13 @@ public class PersonaDAO {
 		 return null;
 	}
 	
+	/**
+	 * Método para buscar personas
+	 * 
+	 * @param alias			Es el alias de la persona para el inicio de sesión, debe ser único. alias != null, alias != ""
+	 * @param personas  	Son los usuarios. personas != null, personas != " "
+	 * @return encontrado
+	 */
 	public Persona buscarPersona(String alias, ArrayList<Persona> personas) {
 		Persona encontrado = null;
 
@@ -45,6 +73,25 @@ public class PersonaDAO {
 		return encontrado;
 	}
 	
+	/**
+	 * 
+	 * @param id			Es el identificador de registro de la persona.
+	 * @param nombre        Es el nombre de la persona. nombre != null, nombre != " "
+	 * @param apellido      Es el apellido de la persona. apellido != null, apellido != " "
+	 * @param genero		Es el género de la persona, los posibles valores son: Femenino, masculino. genero != null, genero != " "
+	 * @param alias			Es el alias de la persona para el inicio de sesión, debe ser único. alias != null, alias != ""
+	 * @param contrasena	Es la contraseña de la persona para el inicio de sesión. alias != null, alias != ""
+	 * @param correo		Es el correo del usuario. correo != null, correo != ""
+	 * @param fecha			Es la fecha de nacimiento de la persona, debe tener un formato dd-MM-yyyy. fecha != null, fecha != " "
+	 * @param edad			Es la edad de la persona, se calcula a partir de la fecha de nacimiento, debe ser numérico.
+	 * @param ingresos		Son los ingresos de la persona, es obligatorio cuando el género es masculino, debe ser en decimales, el valor por defecto es -1.0.
+	 * @param divorcios		Indica si la persona tiene divorcios, es obligatorio cuando el género femenino, los posibles valores son en SI, NO. Para en género masculino el valor por defecto es: No Aplica.
+	 * @param estado		Es el estado de la persona, los posibles valores son: disponibles, no disponibles. Si la persona selecciona no disponible, no se puede registrar en BosTinder.
+	 * @param estatura		Es la estatura de cada persona . estatura != null, estatura != " "
+	 * @param personas		Son los usuarios. personas != null, personas != " "
+	 * @param file			Es donde se van a agregar las personas
+	 * @return
+	 */
 	public boolean agregarPersona(int id, String nombre, String apellido, String genero, String alias, String contrasena, String correo, String fecha, int edad, double ingresos, String divorcios, String estado, String estatura ,ArrayList<Persona> personas, File file) {
 		Persona p = new Persona(id, nombre, apellido, genero, alias, contrasena, correo, fecha, edad ,ingresos, divorcios, 0, 0, 0, estado);		
 		if (buscarPersona(alias, personas) == null) {
@@ -55,6 +102,13 @@ public class PersonaDAO {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * Método para calcular la edad desde la fecha de nacimiento
+	 * 
+	 * @param date String Es la fecha de nacimiento del ususario. date != null, date != " "
+	 * @return edad.getYears()
+	 */
 	public int calcularEdad(String date) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		LocalDate fechaNacimiento = LocalDate.parse(date, formatter);
@@ -63,6 +117,14 @@ public class PersonaDAO {
 		return edad.getYears();
 	}
 	
+	/**
+	 * Método para eliminar personas
+	 * 
+	 * @param alias     Es el alias de la persona para el inicio de sesión, debe ser único. alias != null, alias != ""
+	 * @param personas  Son los usuarios. personas != null, personas != " "
+	 * @param file		Es donde se van a eliminar las personas
+	 * @return
+	 */
 	public boolean eliminarPersona(String alias, ArrayList<Persona> personas, File file) {
 		boolean resp = false;
 		try {
@@ -81,6 +143,20 @@ public class PersonaDAO {
 		return resp;
 	}
 	
+	/**
+	 * Método que modifica los usuarios
+	 * 
+	 * @param genero    Es el género de la persona, los posibles valores son: Femenino, maculino. genero != null, genero != " "
+	 * @param nombre	Es el nombre de la persona. nombre != null, nombre != " "
+	 * @param apellido	Es el apellido de la persona. apellido != null, apellido != " "
+	 * @param estatura  Es la estatura de cada persona . estatura != null, estatura != " "
+	 * @param alias		Es el alias de la persona para el inicio de sesión, debe ser único. alias != null, alias != ""
+	 * @param opcional  Es una variable que 
+	 * @param estado	Es el estado de la persona, los posibles valores son: disponibles, no disponibles. Si la persona selecciona no disponible, no se puede registrar en BosTinder.
+	 * @param personas	Son los usuarios. personas != null, personas != " "
+	 * @param file		Es donde se van a eliminar las personas
+	 * @return true
+	 */
 	public boolean modificarPersona( String genero, String nombre, String apellido,String estatura, String alias,String opcional, String estado, ArrayList<Persona> personas, File file) {
 
 		Persona p = buscarPersona(alias, personas);
@@ -100,7 +176,15 @@ public class PersonaDAO {
 		archivo.escribirEnArchivo(personas, file);
 		return true;
 	}
-
+	
+	/**
+	 * Método que agrega los likes recibidos por otros usuarios
+	 * 
+	 * @param alias     Es el alias de la persona para el inicio de sesión, debe ser único. alias != null, alias != ""
+	 * @param personas  Son los usuarios. personas != null, personas != " "
+	 * @param file		Es donde se van a eliminar las personas
+	 * @return false
+	 */
 	public boolean agregarLR(String alias, ArrayList<Persona> personas, File file){ // Dar like a una persona x
 		Persona p = buscarPersona(alias, personas);
 		if(p != null) {
@@ -114,6 +198,14 @@ public class PersonaDAO {
 		return false;
 	}
 	
+	/**
+	 * Método que agrega los likes que se dan a otros usuarios por otros usuarios
+	 * 
+	 * @param alias     Es el alias de la persona para el inicio de sesión, debe ser único. alias != null, alias != ""
+	 * @param personas  Son los usuarios. personas != null, personas != " "
+	 * @param file		Es donde se van a eliminar las personas
+	 * @return false
+	 */
 	public boolean agregarLO(String alias, ArrayList<Persona> personas, File file) {  // información de persona logueada, hace referencia a los like que da la persona logueada
 		Persona p = buscarPersona(alias, personas);
 		Persona p2 = p;
@@ -128,12 +220,26 @@ public class PersonaDAO {
 		return false;
 	}
 	
+	/**
+	 * Método que cambia las personas a la en la vista
+	 * 
+	 * @param personas Son los usuarios. personas != null, personas != " "
+	 * @return personas.get(indexAle)
+	 */
 	public Persona cambioAleatorio(ArrayList<Persona> personas) {
 		System.out.print(personas.size());
 		int indexAle = (int) Math.floor(Math.random()*personas.size());
 		return personas.get(indexAle);	
 	}
 	
+	/**
+	 * Método para obtener el top de usuarios
+	 * 
+	 * @param personas	Personas Son los usuarios. personas != null, personas != " "
+	 * @param tipoBus	Es el tipo de busqueda para las estadisticas. tipobus != null , tipoBus != " "
+	 * @param genero	Es el género de la persona, los posibles valores son: Femenino, maculino. genero != null, genero != " "
+	 * @return listaTop
+	 */
 	public ArrayList<Persona> topUsuarios(ArrayList<Persona> personas, String tipoBus, String genero) {
 		ArrayList<Persona> listaTop = new ArrayList<Persona>();
 		personas = ordenamientoIns(personas, tipoBus);
@@ -161,6 +267,13 @@ public class PersonaDAO {
 		return listaTop;
 	}
 	
+	/**
+	 * Método para ordenar el top
+	 * 
+	 * @param personas  Personas Son los usuarios. personas != null, personas != " "
+	 * @param tipoBus	Es el tipo de busqueda para las estadisticas. tipobus != null , tipoBus != " "
+	 * @return personas
+	 */
 	public ArrayList<Persona> ordenamientoIns(ArrayList<Persona> personas, String tipoBus){ // agargar tipo de busqueda
 		int i,j;
 		Persona actual;
@@ -184,6 +297,15 @@ public class PersonaDAO {
 		}
 		return personas;
 	}
+	
+	/**
+	 * Método para ordenar el top 
+	 * 
+	 * @param personas  Personas Son los usuarios. personas != null, personas != " "
+	 * @param tipoBus	Es el tipo de busqueda para las estadisticas. tipobus != null , tipoBus != " "
+	 * @param sentido	Es el sentido en el que se debe ordenar el top.
+	 * @return personas
+	 */
 	public ArrayList<Persona> ordenamientoBur(ArrayList<Persona> personas, String tipoBus,String sentido){ // agargar tipo de busqueda
 		int iteracion = 0;
 		boolean permutacion = true;
@@ -244,8 +366,14 @@ public class PersonaDAO {
 		return personas;
 	}
 	
-	
-	
+	/**
+	 * Método para calcular la media
+	 * 
+	 * @param personas  Personas Son los usuarios. personas != null, personas != " "
+	 * @param tipoBus	Es el tipo de busqueda para las estadisticas. tipobus != null , tipoBus != " "
+	 * @param genero    Es el género de la persona, los posibles valores son: Femenino, maculino. genero != null, genero != " "
+	 * @return media
+	 */
 	public double calcMedia(ArrayList<Persona> personas, String tipoBus, String genero) {
 		double media = 0;
 		int suma = 0;
@@ -261,7 +389,15 @@ public class PersonaDAO {
 		media = (double) suma / listaT.size();
 		return media;
 	}
-
+	
+	/**
+	 * Método para calcular la mediana
+	 * 
+	 * @param personas  Personas Son los usuarios. personas != null, personas != " "
+	 * @param tipoBus	Es el tipo de busqueda para las estadisticas. tipobus != null , tipoBus != " "
+	 * @param genero    Es el género de la persona, los posibles valores son: Femenino, maculino. genero != null, genero != " "
+	 * @return mediana
+	 */
 	public double calcMediana(ArrayList<Persona> personas, String tipoBus, String genero) {
 		double mediana = 0;
 		ArrayList<Persona> listaT = new ArrayList<Persona>();
@@ -276,6 +412,14 @@ public class PersonaDAO {
 		return mediana;
 	}
 	
+	/**
+	 * Método para calcular la moda
+	 * 
+	 * @param personas  Personas Son los usuarios. personas != null, personas != " "
+	 * @param tipoBus	Es el tipo de busqueda para las estadisticas. tipobus != null , tipoBus != " "
+	 * @param genero    Es el género de la persona, los posibles valores son: Femenino, maculino. genero != null, genero != " "
+	 * @return moda
+	 */
 	public double calcModa(ArrayList<Persona> personas, String tipoBus, String genero) {
 		int maxNumRepeticiones = 0;
 		double moda = 0;

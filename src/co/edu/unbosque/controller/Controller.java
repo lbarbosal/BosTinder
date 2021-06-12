@@ -24,7 +24,13 @@ import co.edu.unbosque.model.Persona;
 import co.edu.unbosque.model.persistence.Archivo;
 import co.edu.unbosque.model.persistence.PersonaDAO;
 import co.edu.unbosque.view.VentanaPrincipal;
-
+/**
+ * Clase que conecata el modelo con la vista
+ * depende de un ActionListener
+ * 
+ * @author Grupo 3
+ * @version 12/06/2021
+ */
 public class Controller implements ActionListener {
 	private VentanaPrincipal vista;
 	final String username = "anatalia1287@gmail.com";
@@ -40,7 +46,9 @@ public class Controller implements ActionListener {
 			estatura = "", estado = "", gen = "",datos = "";
 	Date fNaci = null;
 	
-
+	/**
+	 * Método constructor
+	 */
 	public Controller() {
 		iniciarAplicacion();
 		agencia = new AgenciaDTO();
@@ -52,7 +60,10 @@ public class Controller implements ActionListener {
 			System.out.println("No se pudo cargar el archivo.");
 		}
 	}
-
+	
+	/**
+	 * Metodo para iniciar los componentes de la aplicacion
+	 */
 	public void iniciarAplicacion() {
 		vista = new VentanaPrincipal();
 		vista.setVisible(true);
@@ -82,7 +93,10 @@ public class Controller implements ActionListener {
 		vista.getpModificar().getBtnModificar().addActionListener(this);
 		vista.getpAUsuarios().getBtnBuscar().addActionListener(this);
 	}
-
+	
+	/**
+	 * Método que implementa un ActionPerformed 
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("Registrar")) {
@@ -451,6 +465,9 @@ public class Controller implements ActionListener {
 
 	}
 	
+	/**
+	 * Método para que los usuarios cambien aleatoriamente
+	 */
 	public void cambioAleatorio() {
 		aleatoria = agencia.getPersonaDAO().cambioAleatorio(agencia.getPersonas());
 		vista.getpConocer().getLbAlias().setText(aleatoria.getAlias());
@@ -474,7 +491,11 @@ public class Controller implements ActionListener {
 			}
 		}
 	}
-
+	
+	/**
+	 * Método para validar datos del usuario
+	 * @return true
+	 */
 	public boolean validarDatos() {
 		// validaciones por género
 		if (genero.equals("Masculino")) {
@@ -524,7 +545,13 @@ public class Controller implements ActionListener {
 		
 		return true;
 	}
-
+	
+	/**
+	 * Este método verifica que parámetro cadena sea un numero
+	 * 
+	 * @param cadena String Puede ser letras y números <b>pre</b> Es un String<br> <b>pos</b> Solo devuelve números<br>
+	 * @return true or false
+	 */
 	private static boolean contieneSoloNumeros(String cadena){
 		try {
 			Double.parseDouble(cadena);
@@ -534,6 +561,10 @@ public class Controller implements ActionListener {
 		}
 	}
 	
+	/**
+	 * Método para limpiar la información de la aplicación
+	 * <b>pos</b> Da espacio a nueva informacion<br>
+	 */
 	public void limpiar() {
 		vista.getpRegistro().getTxtAlias().setText("");
 		vista.getpRegistro().getTxtContrasenia().setText("");
@@ -547,7 +578,14 @@ public class Controller implements ActionListener {
 		vista.getpRegistro().getTxtFNacimiento().setDate(null);
 		vista.getpRegistro().getBtnGDivorcios().clearSelection();
 	}
-
+	
+	/**
+	 * Método que envía correo con información del usuario
+	 * 
+	 * @param correo String      Es el correo del usuario. correo != null, correo != ""
+	 * @param alias String       Es el alias de la persona para el inicio de sesión, debe ser único. alias != null, alias != ""
+	 * @param contrasena String  Es la contraseña de la persona para el inicio de sesión. alias != null, alias != "" 
+	 */
 	public void sendEmail(String correo, String alias, String contrasena) {
 
 		Properties propiedad = new Properties();

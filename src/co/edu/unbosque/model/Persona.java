@@ -32,15 +32,11 @@ public class Persona implements Serializable {
 	
 	/**
 	 * Constructor 1 de la clase persona asigna valores a los atributos de la persona a excepción de atributo de estaruta.
-	 * 
+	 *
 	 * @param id              Es el identificador de registro de la persona.
-	 * 
 	 * @param alias           Es el alias de la persona para el inicio de sesión, debe ser único. alias != null, alias != ""
-	 * 
-	 * @param contrasena      Es la contraseña de la persona para el inicio de sesión. alias != null, alias != ""
-	 *                        
-	 * @param nombre          Es el nombre de la persona. nombre != null, nombre != "
-	 *                        "
+	 * @param contrasena      Es la contraseña de la persona para el inicio de sesión. alias != null, alias != ""                     
+	 * @param nombre          Es el nombre de la persona. nombre != null, nombre != " "
 	 * @param apellido        Es el apellido de la persona. apellido != null,
 	 *                        apellido != " "
 	 * @param genero          Es el género de la persona, los posibles valores son: Femenino, maculino. genero != null,
@@ -48,21 +44,13 @@ public class Persona implements Serializable {
 	 * @param fecha 		  Es la fecha de nacimiento de la persona, debe tener un formato dd-MM-yyyy.
 	 *                        fecha != null, fecha != " "
 	 * @param edad        	  Es la edad de la persona, se cálcula a partir de la fecha de nacimiento, debe ser numérico.
-	 *
-	 * @param correo          Es el correo del usuario. correo != null, correo != "
-	 *                        "
+	 * @param correo          Es el correo del usuario. correo != null, correo != ""
 	 * @param divorcios       Indica si la persona tiene divorcios, es obligatorio cuando el género femenino, los posibles valores son en SI, NO. Para en género masculino el valor por defecto es: No Aplica.
-	 * 
 	 * @param ingresos     	  Son los ingresos de la persona, es obligatorio cuando el género es masculino, debe ser en decimales, el valor por defecto es -1.0.
-	 * 
 	 * @param numLR     	  Es el número de me gusta recibidos, debe ser un valor numérico.
-	 * 
 	 * @param numLO     	  Es el número de me gusta que ha otorgado a otras personas, debe ser un valor numérico.
-	 * 
 	 * @param numM     	   	  Es el número de match que ha tenido una persona, debe ser un valor numérico.
-	 * 
 	 * @param estado     	  Es el estado de la persona, los posibles valores son: disponibles, no disponibles. Si la persona selecciona no disponible, no se puede registrar en BosTinder.
-	 * 
 	 */
 	
 	// Sin estatura, el archivo no tiene el campo
@@ -90,13 +78,9 @@ public class Persona implements Serializable {
 	 * Constructor 2 de la clase persona asigna valores a los atributos de la persona a incluyendo el atributo de estaruta.
 	 * 
 	 * @param id              Es el identificador de registro de la persona. id != id, alias != ""
-	 * 
 	 * @param alias           Es el alias de la persona para el inicio de sesión, debe ser único. alias != null, alias != ""
-	 * 
-	 * @param contrasena      Es la contraseña de la persona para el inicio de sesión. contrasena != null, contrasena != ""
-	 *                        
+	 * @param contrasena      Es la contraseña de la persona para el inicio de sesión. contrasena != null, contrasena != ""              
 	 * @param nombre          Es el nombre de la persona. nombre != null, nombre != ""
-	 * 
 	 * @param apellido        Es el apellido de la persona. apellido != null,
 	 *                        apellido != " "
 	 * @param genero          Es el género de la persona, los posibles valores son: Femenino, maculino. genero != null,
@@ -105,20 +89,13 @@ public class Persona implements Serializable {
 	 *                        fecha != null, fecha != " "
 	 * @param edad        	  Es la edad de la persona, se cálcula a partir de la fecha de nacimiento. edad != null,
 	 *                        edad != " "
-	 * @param correo          Es el correo del usuario. correo != null, correo != "
-	 *                        "
+	 * @param correo          Es el correo del usuario. correo != null, correo != ""
 	 * @param divorcios       Indica si la persona tiene divorcios, es obligatorio cuando el género femenino, los posibles valores son en SI, NO. Para en género masculino el valor por defecto es: No Aplica.
-	 * 
 	 * @param ingresos     	  Son los ingresos de la persona, es obligatorio cuando el género es masculino, debe ser en decimales, el valor por defecto es -1.0.
-	 * 
 	 * @param numLR     	  Es el número de me gusta recibidos, debe ser un valor numérico.
-	 * 
 	 * @param numLO     	  Es el número de me gusta que ha otorgado a otras personas, debe ser un valor numérico.
-	 * 
 	 * @param numM     	   	  Es el número de match que ha tenido una persona, debe ser un valor numérico.
-	 * 
 	 * @param estado     	  Es el estado de la persona, los posibles valores son: disponibles, no disponibles. Si la persona selecciona no disponible, no se puede registrar en BosTinder.
-	 * 
 	 * @param estatura		  La estatura de la persona, es requerida para el género masculino y opcional para el género femenino.
 	 */
 

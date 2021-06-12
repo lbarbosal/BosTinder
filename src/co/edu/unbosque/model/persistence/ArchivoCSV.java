@@ -6,11 +6,24 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.Persona;
-
+/**
+ * Clase Archivo CSV
+ * Nececita un documento txt.
+ * 
+ * @author Grupo 3
+ * @version 12/06/2021
+ */
 public class ArchivoCSV {
-
+	
 	public static final String SEPARADOR = ";";
 
+	/**
+	 * Metodo para cargar el archivo
+	 * <b>pre</b> Se deben tener el archivo plano y demas informacion de las mesas de votacion<br>
+	 * <b>pos</b> Carga al programa el archivo<br>
+	 * 
+	 * @return puestos Muestra las informacion en la consola
+	 */
 	public ArrayList cargarArchivo(ArrayList<Persona> personas) {
 		BufferedReader bufferLectura = null;
 		String genero = "";

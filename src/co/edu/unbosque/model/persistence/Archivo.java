@@ -62,7 +62,7 @@ public class Archivo {
 		}
 	}
 	/**
-	 * Metodo de ArrayList el cual lee el archivo 
+	 * Método de ArrayList el cual lee el archivo 
 	 * <b>pre</b> Se necesita un archivo txt y la lista de personas<br>
 	 * <b>pos</b> Lee directamente el archivo<br>
 	 * 
@@ -86,6 +86,17 @@ public class Archivo {
 		return personas;
 	}
 	
+	/**
+	 * Método que escribe en un PDF las estadísticas
+	 * 
+	 * @param ruta          				Es la ruta para guardar el pdf. ruta != null, ruta != " "
+	 * @param nombre        				Es el nombre de la persona. nombre != null, nombre != " "
+	 * @param nombreArch    				Es el nombre con el que se va a guardar el archivo PDF. nombreArch != null, nombreArch != " "
+	 * @param media         				Es la media del top 10 de usuarios por like o ingresos. media != null, media != " " 
+	 * @param moda          				Es la moda del top de usuarios por like o ingresos. moda != null, moda != " "
+	 * @param mediana       				Es la mediana del top de usuarios por like o ingresos. mediana != null, media != " "
+	 * @throws IOException  Excepction 		Se genera una excepción por si ya existe el archivo. 
+	 */
 	public void escribirPDF(String ruta, String nombre, String nombreArch, double media, double moda, double mediana) throws IOException {
 		Date fecha = new Date();
 		LocalDate ahoraActual = LocalDate.now();
