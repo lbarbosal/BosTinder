@@ -76,7 +76,7 @@ public class ViewRegistro extends JPanel{
 		txtContrasenia.setBounds(322, 237, 177, 27);
 		add(txtContrasenia);
 
-		JLabel lbCorreo = new JLabel("Correo Electronico");
+		JLabel lbCorreo = new JLabel("Correo Electrónico");
 		lbCorreo.setBounds(102,284,111,21);
 		add(lbCorreo);
 		txtCorreo = new JTextField();
@@ -128,7 +128,7 @@ public class ViewRegistro extends JPanel{
 		cbxEstado.setBounds(102,378,177,27);
 		add(cbxEstado);
 		
-		JLabel lbGenero = new JLabel("Genero");
+		JLabel lbGenero = new JLabel("Género");
 		lbGenero.setBounds(322, 357, 45, 21);
 		add(lbGenero);
 		cbxGenero = new JComboBox();

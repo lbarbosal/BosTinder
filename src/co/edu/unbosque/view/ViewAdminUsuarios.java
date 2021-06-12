@@ -41,7 +41,7 @@ public class ViewAdminUsuarios extends JPanel{
 			add(btnBuscar);
 			
 			cbxDato = new JComboBox();
-			cbxDato.setModel(new DefaultComboBoxModel(new String[] {"Numero De Likes","Apellido","Edad","Alias"}));
+			cbxDato.setModel(new DefaultComboBoxModel(new String[] {"Número De Likes","Apellido","Edad","Alias"}));
 			cbxDato.setBounds(35,169,242,27);
 			add(cbxDato);
 			
