@@ -7,7 +7,16 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import co.edu.unbosque.model.Persona;
 
@@ -75,6 +84,56 @@ public class Archivo {
 			}
 		}
 		return personas;
+	}
+	
+	public void escribirPDF(String ruta, String nombre, String nombreArch, double media, double moda, double mediana) throws IOException {
+		Date fecha = new Date();
+		LocalDate ahoraActual = LocalDate.now();
+		try (PDDocument document = new PDDocument()) {
+            PDPage page = new PDPage(PDRectangle.A6);
+            document.addPage(page);
+
+            PDPageContentStream contentStream = new PDPageContentStream(document, page);
+
+            // Text
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.TIMES_BOLD, 32);
+            contentStream.newLineAtOffset( 20, page.getMediaBox().getHeight() - 52);
+            contentStream.showText("Estadísticas");
+            contentStream.endText();
+            
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.TIMES_BOLD, 20);
+            contentStream.newLineAtOffset( 20, page.getMediaBox().getHeight() - 90);
+            contentStream.showText("Media: " + media);
+            contentStream.endText();
+            
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.TIMES_BOLD, 20);
+            contentStream.newLineAtOffset( 20, page.getMediaBox().getHeight() - 110);
+            contentStream.showText("Moda: " + moda);
+            contentStream.endText();
+            
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.TIMES_BOLD, 20);
+            contentStream.newLineAtOffset( 20, page.getMediaBox().getHeight() - 130);
+            contentStream.showText("Mediana: " + mediana);
+            contentStream.endText();
+            
+            contentStream.beginText();
+            contentStream.setFont(PDType1Font.TIMES_BOLD, 14);
+            contentStream.newLineAtOffset( 140, page.getMediaBox().getHeight() - 150);
+            contentStream.showText("Fecha actual: " +  ahoraActual); 
+            contentStream.endText();
+
+            // Image
+            PDImageXObject image = PDImageXObject.createFromFile(ruta + nombre,document );
+            contentStream.drawImage(image, 25,90, image.getWidth() / 2, image.getHeight() / 2); 
+
+            contentStream.close();
+
+            document.save("data/" + nombreArch);
+        }
 	}
 	
 	public ObjectInputStream getEntrada() {

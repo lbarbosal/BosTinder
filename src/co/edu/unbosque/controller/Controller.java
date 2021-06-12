@@ -2,6 +2,8 @@ package co.edu.unbosque.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,6 +21,8 @@ import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 import co.edu.unbosque.model.AgenciaDTO;
 import co.edu.unbosque.model.Persona;
+import co.edu.unbosque.model.persistence.Archivo;
+import co.edu.unbosque.model.persistence.PersonaDAO;
 import co.edu.unbosque.view.VentanaPrincipal;
 
 public class Controller implements ActionListener {
@@ -295,7 +299,23 @@ public class Controller implements ActionListener {
 			vista.getpAMenu().getBtnUsuarios().setEnabled(true);
 			
 		}
-		
+		if(e.getActionCommand().equals("Crear PDF actual")){
+			Date fecha = new Date();
+			String nombre = "/Estadisticas" + fecha.getDay() + fecha.getMonth() + fecha.getYear() + fecha.getHours() + fecha.getMinutes() + fecha.getSeconds() + ".jpg";
+			String nombreArch = "/Estadisticas" + fecha.getDay() + fecha.getMonth() + fecha.getYear() + fecha.getHours() + fecha.getMinutes() + fecha.getSeconds() + ".pdf";
+			datos = vista.getpAEstadisticas().getCbxDatos().getSelectedItem().toString();
+			gen = vista.getpAEstadisticas().getCbxGenero().getSelectedItem().toString();
+			double media = agencia.getPersonaDAO().calcMedia(agencia.getPersonas(), datos, gen);
+			double moda = agencia.getPersonaDAO().calcModa(agencia.getPersonas(), datos, gen);
+			double mediana = agencia.getPersonaDAO().calcMediana(agencia.getPersonas(), datos, gen);
+			try {
+				vista.getpAEstadisticas().saveChartAsPNG(new File("graphics/Estadisticas"),nombre, vista.getpAEstadisticas().getGraficoBarra(), 500, 500);
+				agencia.getArchivo().escribirPDF("graphics/Estadisticas/",nombre, nombreArch, media , moda, mediana);
+			} catch (IOException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+		}
 		
 	}
 	

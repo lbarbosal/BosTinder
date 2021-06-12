@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -17,6 +19,7 @@ import javax.swing.border.MatteBorder;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
+import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
@@ -81,6 +84,12 @@ public class ViewAdminEstadisticas extends JPanel{
 		updateUI();
 		
 	}
+	
+	public void saveChartAsPNG(File file,String nombre, JFreeChart graficoBarra,
+		    int width, int height) throws IOException {
+		  ChartUtilities.saveChartAsJPEG(new File(file + nombre), 1, graficoBarra, 500, 300);
+	}
+	
 	public JButton getBtnGenePDF() {
 		return btnGenePDF;
 	}
