@@ -63,7 +63,7 @@ public class ViewPerfil extends JPanel{
 		add(btnEliminar);
 		
 		btnEditar = new JButton("Editar");
-		btnEditar.setBounds(489,482,60,27);
+		btnEditar.setBounds(473,482,60,27);
 		btnEditar.setBackground(Color.white);
 		btnEditar.setFont(new Font("arial",0,11));
 		btnEditar.setBorder( new MatteBorder(0,0,3,3,Color.black));
@@ -102,7 +102,7 @@ public class ViewPerfil extends JPanel{
 		add(lbApellido);
 		
 		JLabel lbnacimiento = new JLabel("Fecha De Nacimiento");
-		lbnacimiento.setBounds(74,316,105,21);
+		lbnacimiento.setBounds(58,316,121,21);
 		lbnacimiento.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbnacimiento);
 		lbFNacimiento = new JLabel("--");
@@ -118,7 +118,7 @@ public class ViewPerfil extends JPanel{
 		add(lbAlias);
 		
 		JLabel lbcorreo = new JLabel("E-Mail");
-		lbcorreo.setBounds(274,339,116,21);
+		lbcorreo.setBounds(264,339,126,21);
 		lbcorreo.setHorizontalAlignment(JLabel.RIGHT);
 		add(lbcorreo);
 		lbCorreo = new JLabel("--");

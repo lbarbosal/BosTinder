@@ -65,6 +65,7 @@ public class Controller implements ActionListener {
 	 * Metodo para iniciar los componentes de la aplicacion
 	 */
 	public void iniciarAplicacion() {
+		
 		vista = new VentanaPrincipal();
 		vista.setVisible(true);
 		vista.getpInicio().getBtnIngresar().addActionListener(this);
@@ -117,6 +118,7 @@ public class Controller implements ActionListener {
 					cambioAleatorio();
 					vista.getpInicio().setVisible(false);
 					vista.getpConocer().setVisible(true); 
+					System.out.println(logueada.getDivorcios());
 				} else {
 					JOptionPane.showMessageDialog(null, "ERROR: El alias o la contraseña son incorrectas");
 				}
@@ -139,7 +141,10 @@ public class Controller implements ActionListener {
 			fNaci = vista.getpRegistro().getTxtFNacimiento().getDate();
 			estatura = vista.getpRegistro().getTxtEstatura().getText();
 			estado = vista.getpRegistro().getCbxEstado().getSelectedItem().toString();
-			divorcios = vista.getpRegistro().getBtnGDivorcios().getSelection().toString();
+			if(vista.getpRegistro().getSi().isSelected())
+			divorcios = "si" ;
+			else 
+				divorcios ="No";
 			salario = vista.getpRegistro().getTxtIngresos().getText();
 			dateFormat = new SimpleDateFormat("dd-MM-yyyy");	
 			if(validarDatos()) {
@@ -274,8 +279,8 @@ public class Controller implements ActionListener {
 			vista.getpPerfil().getLbEstado().setText(logueada.getEstado());
 			vista.getpPerfil().getLbEstatura().setText(logueada.getEstatura());
 			vista.getpPerfil().getLbFNacimiento().setText(logueada.getFecha());
-			vista.getpPerfil().getLbLOtorgados().setText(Integer.toString(logueada.getNumLO()));
-			vista.getpPerfil().getLbLRecibidos().setText(Integer.toString(logueada.getNumLR()));
+			vista.getpPerfil().getLbLOtorgados().setText(Integer.toString(logueada.getNumLR()));
+			vista.getpPerfil().getLbLRecibidos().setText(Integer.toString(logueada.getNumLO()));
 			vista.getpPerfil().getLbGenero().setText(logueada.getGenero());
 			if(logueada.getGenero().equals("Masculino")) {
 				vista.getpPerfil().getLbDepende().setText("Ingresos");
