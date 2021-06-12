@@ -34,7 +34,7 @@ public class ViewAdminBuscar extends JPanel{
 	 private JLabel lbEstatura;
 	 private JLabel lbDepende;
 	 private JLabel lbRespuesta;
-	 private JLabel lbLResibidos;
+	 private JLabel lbLRecibidos;
 	 private JLabel lbLOtorgados;
 	 private JButton btnEliminar;
 	 
@@ -153,17 +153,17 @@ public class ViewAdminBuscar extends JPanel{
 		lbRespuesta.setBounds(403,341,116,21);
 		add(lbRespuesta);
 		
-		JLabel lblResibidos = new JLabel("Like recibidos");
-		lblResibidos.setBounds(120,387,105,21);
-		add(lblResibidos);
-		lbLResibidos = new JLabel("-");
-		lbLResibidos.setBounds(89,384,24,24);
-		lbLResibidos.setHorizontalAlignment(JLabel.CENTER);
-		add(lbLResibidos);
-		JLabel LResibidos = new JLabel();
-		LResibidos.setBounds(89,384,24,24);
-		LResibidos.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(lbLResibidos.getWidth(), lbLResibidos.getHeight(),Image.SCALE_SMOOTH)));
-		add(LResibidos);
+		JLabel lblRecibidos = new JLabel("Like recibidos");
+		lblRecibidos.setBounds(120,387,105,21);
+		add(lblRecibidos);
+		lbLRecibidos = new JLabel("-");
+		lbLRecibidos.setBounds(89,384,24,24);
+		lbLRecibidos.setHorizontalAlignment(JLabel.CENTER);
+		add(lbLRecibidos);
+		JLabel LRecibidos = new JLabel();
+		LRecibidos.setBounds(89,384,24,24);
+		LRecibidos.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(LRecibidos.getWidth(), LRecibidos.getHeight(),Image.SCALE_SMOOTH)));
+		add(LRecibidos);
 		
 		JLabel lblOtorgados = new JLabel("Like Otorgados");
 		lblOtorgados.setBounds(405,387,105,21);
@@ -286,7 +286,7 @@ public class ViewAdminBuscar extends JPanel{
 	 * @param lbApellido
 	 */
 	public void setLbApellido(JLabel lbApellido) {
-		this.lbApellido = lbApellido;
+		this.lbApellido = lbApellido; 
 	}
 	
 	/**
@@ -416,31 +416,21 @@ public class ViewAdminBuscar extends JPanel{
 	public void setLbRespuesta(JLabel lbRespuesta) {
 		this.lbRespuesta = lbRespuesta;
 	}
-<<<<<<< HEAD
 	
 	/**
 	 * Devuelve el título de registros
-	 * @return lbLResividos
+	 * @return lbLRecibidos
 	 */
-	public JLabel getLbLResividos() {
-		return lbLResividos;
+	public JLabel getLbLRecibidos() {
+		return lbLRecibidos;
 	}
 	
 	/**
 	 * Modifica el título de registros
 	 * @param lbLResividos
 	 */
-	public void setLbLResividos(JLabel lbLResividos) {
-		this.lbLResividos = lbLResividos;
-=======
-
-	public JLabel getLbLResibidos() {
-		return lbLResibidos;
-	}
-
-	public void setLbLResibidos(JLabel lbLResividos) {
-		this.lbLResibidos = lbLResividos;
->>>>>>> 3dde1b764a65603f237e20355b562bb313052330
+	public void setLbLRecibidos(JLabel lbLRecibidos) {
+		this.lbLRecibidos = lbLRecibidos;
 	}
 	
 	/**

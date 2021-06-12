@@ -120,55 +120,98 @@ public class ViewAdminEstadisticas extends JPanel{
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Devuelve el botón del para crear el PDF
+	 * @return btnGenePDF
 	 */
 	public JButton getBtnGenePDF() {
 		return btnGenePDF;
 	}
-
+	
+	/**
+	 * Modifica el botón del para crear el PDF
+	 * @param btnGenePDF
+	 */
 	public void setBtnGenePDF(JButton btnGenePDF) {
 		this.btnGenePDF = btnGenePDF;
 	}
-
+	
+	/**
+	 * Devuelve el panel de la grafica
+	 * @return panel
+	 */
 	public ChartPanel getPanel() {
 		return panel;
 	}
-
+	
+	/**
+	 * Modifica el panel de la grafica
+	 * @param panel
+	 */
 	public void setPanel(ChartPanel panel) {
 		this.panel = panel;
 	}
-
+	
+	/**
+	 * Devuelve el grafico de barras
+	 * @return graficoBarra
+	 */
 	public JFreeChart getGraficoBarra() {
 		return graficoBarra;
 	}
-
+	
+	/**
+	 * modifica el grafico de barras
+	 * @param graficoBarra
+	 */
 	public void setGraficoBarra(JFreeChart graficoBarra) {
 		this.graficoBarra = graficoBarra;
 	}
-
+	
+	/**
+	 * Devuelve el combo box de los datos 
+	 * @return cbxDatos
+	 */
 	public JComboBox<?> getCbxDatos() {
 		return cbxDatos;
 	}
-
+	
+	/**
+	 * Modifica el combo box de los datos
+	 * @param cbxDatos
+	 */
 	public void setCbxDatos(JComboBox<?> cbxDatos) {
 		this.cbxDatos = cbxDatos;
 	}
-
+	
+	/**
+	 * Devuelve el combo box del genero
+	 * @return cbxGenero
+	 */
 	public JComboBox<?> getCbxGenero() {
 		return cbxGenero;
 	}
-
+	
+	/**
+	 * Modifica el combo box del genero
+	 * @param cbxGenero
+	 */
 	public void setCbxGenero(JComboBox<?> cbxGenero) {
 		this.cbxGenero = cbxGenero;
 	}
-
+	
+	/**
+	 * Devuelve el título de Bostinder
+	 * @return bostinder
+	 */
 	public JLabel getBostinder() {
 		return bostinder;
 	}
-
+	
+	/**
+	 * Modifica el título de Bostinder
+	 * @param bostinder
+	 */
 	public void setBostinder(JLabel bostinder) {
 		this.bostinder = bostinder;
 	}
-
 }

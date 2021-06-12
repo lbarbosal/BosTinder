@@ -27,7 +27,7 @@ public class ViewPerfil extends JPanel{
 	private JLabel lbEstatura;
 	private JLabel lbDepende;
 	private JLabel lbRespuesta;
-	private JLabel lbLResibidos;
+	private JLabel lbLRecibidos;
 	private JLabel lbLOtorgados;
 	private JButton btnSalir;
 	private JButton btnConocer;
@@ -168,13 +168,13 @@ public class ViewPerfil extends JPanel{
 		JLabel lblResibidos = new JLabel("Like Resividos");
 		lblResibidos.setBounds(130,430,105,21);
 		add(lblResibidos);
-		lbLResibidos = new JLabel("-");
-		lbLResibidos.setBounds(83,427,24,24);
-		lbLResibidos.setHorizontalAlignment(JLabel.CENTER);
-		add(lbLResibidos);
+		lbLRecibidos = new JLabel("-");
+		lbLRecibidos.setBounds(83,427,24,24);
+		lbLRecibidos.setHorizontalAlignment(JLabel.CENTER);
+		add(lbLRecibidos);
 		JLabel LResibidos = new JLabel();
 		LResibidos.setBounds(83,427,24,24);
-		LResibidos.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(lbLResibidos.getWidth(), lbLResibidos.getHeight(),Image.SCALE_SMOOTH)));
+		LResibidos.setIcon(new ImageIcon(lbLikeR.getImage().getScaledInstance(lbLRecibidos.getWidth(), lbLRecibidos.getHeight(),Image.SCALE_SMOOTH)));
 		add(LResibidos);
 		
 		JLabel lblOtorgados = new JLabel("Like Otorgados");
@@ -286,12 +286,12 @@ public class ViewPerfil extends JPanel{
 		this.lbRespuesta = lbRespuesta;
 	}
 
-	public JLabel getLbLResibidos() {
-		return lbLResibidos;
+	public JLabel getLbLRecibidos() {
+		return lbLRecibidos;
 	}
 
-	public void setLbLResibidos(JLabel lbLResividos) {
-		this.lbLResibidos = lbLResividos;
+	public void setLbLRecibidos(JLabel lbLResividos) {
+		this.lbLRecibidos = lbLResividos;
 	}
 
 	public JLabel getLbLOtorgados() {

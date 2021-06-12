@@ -45,13 +45,8 @@ public class Controller implements ActionListener {
 		iniciarAplicacion();
 		agencia = new AgenciaDTO();
 		try {
-<<<<<<< HEAD
-			agencia.setPersonas(agencia.getA().cargarArchivo());
-			agencia.getArchivo().escribirEnArchivo(agencia.getPersonas(), agencia.getFile());
-			System.out.println(agencia.getPersonas().size());
-=======
+
 			agencia.setPersonas(agencia.getA().cargarArchivo(agencia.getPersonas()));
->>>>>>> 3dde1b764a65603f237e20355b562bb313052330
 		} catch (Exception e) {
 			System.out.println(e);
 			System.out.println("No se pudo cargar el archivo.");
@@ -174,7 +169,7 @@ public class Controller implements ActionListener {
 				vista.getpABuscar().getLbGenero().setText(per.getGenero());
 				vista.getpABuscar().getLbEstatura().setText(per.getEstatura());
 				vista.getpABuscar().getLbLOtorgados().setText(Integer.toString(per.getNumLO()));
-				vista.getpABuscar().getLbLResibidos().setText(Integer.toString(per.getNumLR()));
+				vista.getpABuscar().getLbLRecibidos().setText(Integer.toString(per.getNumLR()));
 				if(per.getEstatura() == null ) {
 					vista.getpABuscar().getLbEstatura().setText("N/A");
 				} else {
@@ -217,7 +212,7 @@ public class Controller implements ActionListener {
 					vista.getpABuscar().getLbGenero().setText("--");
 					vista.getpABuscar().getLbEstatura().setText("--");
 					vista.getpABuscar().getLbLOtorgados().setText("--");
-					vista.getpABuscar().getLbLResibidos().setText("--");
+					vista.getpABuscar().getLbLRecibidos().setText("--");
 					vista.getpABuscar().getLbRespuesta().setText("--");
 					vista.getpABuscar().getLbRespuesta().setText("--");
 				} else {
@@ -266,7 +261,7 @@ public class Controller implements ActionListener {
 			vista.getpPerfil().getLbEstatura().setText(logueada.getEstatura());
 			vista.getpPerfil().getLbFNacimiento().setText(logueada.getFecha());
 			vista.getpPerfil().getLbLOtorgados().setText(Integer.toString(logueada.getNumLO()));
-			vista.getpPerfil().getLbLResibidos().setText(Integer.toString(logueada.getNumLR()));
+			vista.getpPerfil().getLbLRecibidos().setText(Integer.toString(logueada.getNumLR()));
 			vista.getpPerfil().getLbGenero().setText(logueada.getGenero());
 			if(logueada.getGenero().equals("Masculino")) {
 				vista.getpPerfil().getLbDepende().setText("Ingresos");
@@ -333,7 +328,7 @@ public class Controller implements ActionListener {
 			vista.getpPerfil().getLbEstatura().setText(logueada.getEstatura());
 			vista.getpPerfil().getLbFNacimiento().setText(logueada.getFecha());
 			vista.getpPerfil().getLbLOtorgados().setText(Integer.toString(logueada.getNumLO()));
-			vista.getpPerfil().getLbLResibidos().setText(Integer.toString(logueada.getNumLR()));
+			vista.getpPerfil().getLbLRecibidos().setText(Integer.toString(logueada.getNumLR()));
 			vista.getpPerfil().getLbGenero().setText(logueada.getGenero());
 			if(logueada.getGenero().equals("Masculino")) {
 				vista.getpPerfil().getLbDepende().setText("Ingresos");
@@ -465,7 +460,7 @@ public class Controller implements ActionListener {
 		vista.getpConocer().getLbEstatura().setText(aleatoria.getEstatura());
 		
 		vista.getpConocer().getLbLOtorgados().setText(Integer.toString(aleatoria.getNumLO()));
-		vista.getpConocer().getLbLResibidos().setText(Integer.toString(aleatoria.getNumLR()));
+		vista.getpConocer().getLbLRecibidos().setText(Integer.toString(aleatoria.getNumLR()));
 		vista.getpConocer().fotoPerfil(aleatoria.getGenero());
 		if(aleatoria.getGenero().equals("Femenino")) {
 			vista.getpConocer().getLbDepende().setText("Divorcios: ");
