@@ -106,7 +106,7 @@ public class ViewModificar extends JPanel{
 		lbEstado.setBounds(102, 357, 42, 21);
 		add(lbEstado);
 		cbxEstado = new JComboBox();
-		cbxEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione","Disponible", "No Disponible"}));
+		cbxEstado.setModel(new DefaultComboBoxModel(new String[] {"Disponible", "No Disponible"}));
 		cbxEstado.setBounds(102,378,177,27);
 		add(cbxEstado);
 		
@@ -114,7 +114,7 @@ public class ViewModificar extends JPanel{
 		lbGenero.setBounds(322, 357, 45, 21);
 		add(lbGenero);
 		cbxGenero = new JComboBox();
-		cbxGenero.setModel(new DefaultComboBoxModel(new String[] {"Seleccione", "Masculino","Femenino"}));
+		cbxGenero.setModel(new DefaultComboBoxModel(new String[] {"Masculino","Femenino"}));
 		cbxGenero.setBounds(322,378,177,27);
 		cbxGenero.setActionCommand("pRegistroGenero");
 		cbxGenero.setEnabled(false);

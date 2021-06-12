@@ -303,10 +303,33 @@ public class Controller implements ActionListener {
 		if (e.getActionCommand().equals("Volver")) {
 			vista.getpModificar().setVisible(false);
 			vista.getpPerfil().setVisible(true);
+			vista.getpPerfil().getLbAlias().setText(logueada.getAlias());;
+			vista.getpPerfil().getLbNombre().setText(logueada.getNombre());;
+			vista.getpPerfil().getLbApellido().setText(logueada.getApellido());;
+			vista.getpPerfil().getLbCorreo().setText(logueada.getCorreo());
+			vista.getpPerfil().getLbEdad().setText(Integer.toString(logueada.getEdad()));
+			vista.getpPerfil().getLbEstado().setText(logueada.getEstado());
+			vista.getpPerfil().getLbEstatura().setText(logueada.getEstatura());
+			vista.getpPerfil().getLbFNacimiento().setText(logueada.getFecha());
+			vista.getpPerfil().getLbLOtorgados().setText(Integer.toString(logueada.getNumLO()));
+			vista.getpPerfil().getLbLResividos().setText(Integer.toString(logueada.getNumLR()));
+			vista.getpPerfil().getLbGenero().setText(logueada.getGenero());
+			if(logueada.getGenero().equals("Masculino")) {
+				vista.getpPerfil().getLbDepende().setText("Ingresos");
+				vista.getpPerfil().getLbRespuesta().setText(Double.toString(logueada.getIngresos()));
+			}else {
+				vista.getpPerfil().getLbDepende().setText("Divorsios");
+				vista.getpPerfil().getLbRespuesta().setText(logueada.getDivorcios());
+			}
 		}
 		
 		if (e.getActionCommand().equals("Actualizar Datos")) {
-			
+			String n = vista.getpModificar().getTxtNombre().getText();
+			String a= vista.getpModificar().getTxtApellido().getText();
+			String es = vista.getpModificar().getTxtEstatura().getText();
+			String o = vista.getpModificar().getTxtIngresos().getText();
+			String est = vista.getpModificar().getCbxEstado().getSelectedItem().toString();
+			agencia.getPersonaDAO().modificarPersona(logueada.getGenero(), n, a, es, logueada.getAlias(), o,est,agencia.getPersonas(),agencia.getFile());
 		}
 		
 		if (e.getActionCommand().equals("logout")) {
