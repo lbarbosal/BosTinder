@@ -7,11 +7,12 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test/src"/>
-	<classpathentry kind="lib" path="C:/Users/COLROSARIO 9/Documents/Universidad El Bosque/BosTinder/lib/activation.jar"/>
-	<classpathentry kind="lib" path="C:/Users/COLROSARIO 9/Documents/Universidad El Bosque/BosTinder/lib/mail.jar"/>
-	<classpathentry kind="lib" path="C:/Users/COLROSARIO 9/Documents/Universidad El Bosque/BosTinder/lib/jcalendar-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/COLROSARIO 9/Documents/Universidad El Bosque/BosTinder/lib/jcommon-1.0.23.jar"/>
-	<classpathentry kind="lib" path="C:/Users/COLROSARIO 9/Documents/Universidad El Bosque/BosTinder/lib/jfreechart-1.0.19.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/BosTinder/lib/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/BosTinder/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/BosTinder/lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/BosTinder/lib/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/BosTinder/lib/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Desktop/BosTinder/lib/orsonpdf-1.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

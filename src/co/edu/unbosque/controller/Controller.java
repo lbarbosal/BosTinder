@@ -41,9 +41,7 @@ public class Controller implements ActionListener {
 		iniciarAplicacion();
 		agencia = new AgenciaDTO();
 		try {
-			agencia.setPersonas(agencia.getA().cargarArchivo());
-			agencia.getArchivo().escribirEnArchivo(agencia.getPersonas(), agencia.getFile());
-
+			agencia.setPersonas(agencia.getA().cargarArchivo(agencia.getPersonas()));
 		} catch (Exception e) {
 			System.out.println(e);
 			System.out.println("No se pudo cargar el archivo.");
