@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import co.edu.unbosque.model.Persona;
 
 
-
 public class PersonaDAO {
 	
 	public Archivo archivo;
@@ -106,6 +105,10 @@ public class PersonaDAO {
 		Persona p = buscarPersona(alias, personas);
 		if(p != null) {
 			p.setNumLR(p.getNumLR()+1);
+			Persona p2 = p;
+			personas.remove(p);
+			personas.add(p2);
+			archivo.escribirEnArchivo(personas, file);
 			return true;
 		}
 		return false;
@@ -115,9 +118,10 @@ public class PersonaDAO {
 		Persona p = buscarPersona(alias, personas);
 		Persona p2 = p;
 		if(p != null) {
-			p.setNumLR(p.getNumLR()+1);
-			personas.remove(p2);
-			personas.add(p);
+			p2.setNumLR(p.getNumLR()+1);
+			personas.remove(p);
+			personas.add(p2);
+			archivo.escribirEnArchivo(personas, file);
 			return true;
 		}
 		
