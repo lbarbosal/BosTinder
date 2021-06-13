@@ -20,6 +20,13 @@ public class PersonaDAOTest extends TestCase{
 	Persona persona_2;
 	Persona persona_3;
 	Persona persona_4;
+	Persona persona_5;
+	Persona persona_6;
+	Persona persona_7;
+	Persona persona_8;
+	Persona persona_9;
+	Persona persona_10;
+	Persona persona_11;
 	
 	private void setupStage() {
 		file.delete();
@@ -103,6 +110,211 @@ public class PersonaDAOTest extends TestCase{
 		
 		lista.add(persona_1);
 		lista.add(persona_2);
+	}
+	
+	private void setupStageToSearch() {
+		file.delete();
+		try {
+			file.createNewFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		archivo = new Archivo(file);
+		lista = archivo.leerArchivo(file);
+		System.out.println(lista.size());
+		persona = new PersonaDAO(archivo);
+		
+		persona_1 = new Persona(1, 
+								"Nombre de prueba 1", 
+								"Apellido prueba 1", 
+								"Masculino", 
+								"Alias1", 
+								"123", 
+								"alias1@gmail.com", 
+								"25-09-1997",
+								23,
+								1000000,
+								"0", 
+								22,
+								32,
+								0,
+								"Soltero",
+								"1,73");
+		
+		persona_2 = new Persona(2, 
+								"Nombre de prueba 2", 
+								"Apellido prueba 2", 
+								"Femenino", 
+								"Alias2", 
+								"123", 
+								"alias2@gmail.com", 
+								"19-02-1996",
+								25,
+								2000000,
+								"0", 
+								9,
+								9,
+								0,
+								"Soltero",
+								"1,60");
+		
+		persona_3 = new Persona(3, 
+								"Nombre de prueba 3", 
+								"Apellido prueba 3", 
+								"Masculino", 
+								"Alias3", 
+								"123", 
+								"alias3@gmail.com", 
+								"04-08-1998",
+								23,
+								3000000,
+								"0", 
+								22,
+								45,
+								0,
+								"Soltero",
+								"1,70");
+		
+		persona_4 = new Persona(4, 
+								"Nombre de prueba 4", 
+								"Apellido prueba 4", 
+								"Femenino", 
+								"Alias4", 
+								"123", 
+								"alias4@gmail.com", 
+								"09-11-1998",
+								23,
+								4000000,
+								"0", 
+								88,
+								12,
+								0,
+								"Soltero",
+								"1,55");
+		persona_5 = new Persona(5, 
+								"Nombre de prueba 5", 
+								"Apellido prueba 5", 
+								"Femenino", 
+								"Alias5", 
+								"123", 
+								"alias5@gmail.com", 
+								"09-11-1998",
+								23,
+								4000000,
+								"0", 
+								33,
+								54,
+								0,
+								"Soltero",
+								"1,55");
+		persona_6 = new Persona(6, 
+								"Nombre de prueba 6", 
+								"Apellido prueba 6", 
+								"Masculino", 
+								"Alias6", 
+								"123", 
+								"alias6@gmail.com", 
+								"09-11-1998",
+								23,
+								4000000,
+								"0", 
+								143,
+								12,
+								0,
+								"Soltero",
+								"1,55");
+		persona_7 = new Persona(7, 
+								"Nombre de prueba 7", 
+								"Apellido prueba 7", 
+								"Masculino", 
+								"Alias7", 
+								"123", 
+								"alias7@gmail.com", 
+								"09-11-1998",
+								23,
+								4000000,
+								"0", 
+								28,
+								60,
+								0,
+								"Soltero",
+								"1,55");
+		persona_8 = new Persona(8, 
+								"Nombre de prueba 8", 
+								"Apellido prueba 8", 
+								"Masculino", 
+								"Alias8", 
+								"123", 
+								"alias8@gmail.com", 
+								"09-11-1998",
+								23,
+								4000000,
+								"0", 
+								199,
+								122,
+								0,
+								"Soltero",
+								"1,55");
+		persona_9 = new Persona(9, 
+								"Nombre de prueba 9", 
+								"Apellido prueba 9", 
+								"Femenino", 
+								"Alias9", 
+								"123", 
+								"alias9@gmail.com", 
+								"09-11-1998",
+								23,
+								4000000,
+								"0", 
+								92,
+								53,
+								0,
+								"Soltero",
+								"1,55");
+		persona_10 = new Persona(10, 
+								"Nombre de prueba 10", 
+								"Apellido prueba 10", 
+								"Femenino", 
+								"Alias10", 
+								"123", 
+								"alias10@gmail.com", 
+								"09-11-1998",
+								23,
+								4000000,
+								"0", 
+								60,
+								78,
+								0,
+								"Soltero",
+								"1,55");
+		persona_11 = new Persona(11, 
+								"Nombre de prueba 11", 
+								"Apellido prueba 11", 
+								"Femenino", 
+								"Alias11", 
+								"123", 
+								"alias11@gmail.com", 
+								"09-11-1998",
+								23,
+								4000000,
+								"0", 
+								72,
+								77,
+								0,
+								"Soltero",
+								"1,55");
+		
+		lista.add(persona_1);
+		lista.add(persona_2);
+		lista.add(persona_3);
+		lista.add(persona_4);
+		lista.add(persona_5);
+		lista.add(persona_6);
+		lista.add(persona_7);
+		lista.add(persona_8);
+		lista.add(persona_9);
+		lista.add(persona_10);
+		lista.add(persona_11);
 	}
 	
 	public void testPersonaDAO() {
@@ -192,29 +404,38 @@ public class PersonaDAOTest extends TestCase{
 	}
 
 	public void testCambioAleatorio() {
-		setupStage();
+		setupStageToSearch();
 		assertNotNull("Se debió obtener una persona", persona.cambioAleatorio(lista));
 	}
 	
 	public void testOrdenamientoIns() {
-		setupStage();
-		assertEquals("El total de personas deber ser 2", 2, persona.ordenamientoIns(lista, "Número de likes"));
+		setupStageToSearch();
+		assertEquals("El total de likes de la primera persona de la lista debe ser 199", 199, persona.ordenamientoIns(lista, "Número de likes").get(0));
 	}
+	
+	public void testOrdenamientoBur() {
+		setupStageToSearch();
+		assertEquals("El total de likes de la primera persona de la lista deber ser 9", 9, persona.ordenamientoBur(lista, "Número de likes", "Ascendente").get(0));
+	}	
 	
 	public void testTopUsuarios() {
-		setupStage();
-		assertEquals("El total de personas debe ser 2", 2, persona.topUsuarios(lista, "Número de likes", "Masculino"));
+		setupStageToSearch();
+		assertEquals("El total de likes de la primera persona de la lista debe ser 199", 199, persona.topUsuarios(lista, "Número de likes", "Masculino").get(0));
 	}
 	
-	public void testOrdenamientoSel() {
-		setupStage();
-		assertEquals("El total de personas deber ser 2", 2, persona.ordenamientoSel(lista, "Número de likes", "Ascendente"));
+	public void testCalcMedia() {
+		setupStageToSearch();
+		assertEquals("La media debe ser 75,9", 75.9,persona.calcMedia(lista, "Número de likes", "Femenino"));
 	}
 	
-	public void testCalcMEdia() {
-		setupStage();
-		assertEquals("La media debe ser 7", 7,persona.calcMEdia(lista, "Número de likes", "Femenino"));
+	public void testCalcMediana() {
+		setupStageToSearch();
+		assertEquals("La mediana debe ser 66", 66, persona.calcMediana(lista, "Número de likes", "Femenino"));
 	}
 	
+	public void testCalcModa() {
+		setupStageToSearch();
+		assertEquals("La moda debe ser 22", 22, persona.calcModa(lista, "Número de likes", "Femenino"));
+	}
 	
 }

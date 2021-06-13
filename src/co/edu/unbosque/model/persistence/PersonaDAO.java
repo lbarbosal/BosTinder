@@ -161,7 +161,7 @@ public class PersonaDAO {
 
 		Persona p = buscarPersona(alias, personas);
 		Persona p2 = p;
-		if (p2 == null && p2.getEdad() < 18) {
+		if (p2 == null ) {
 			return false;
 		}
 		p2.setNombre(nombre);
